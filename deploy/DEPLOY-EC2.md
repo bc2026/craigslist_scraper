@@ -75,17 +75,56 @@ The script will:
 
 ---
 
-## 5. Open the site
+## 5. How to know the deployment succeeded
+
+**On the EC2 instance (SSH session):**
+
+1. **Setup script finished without errors**  
+   You should have seen “Done. Web: http://…” at the end. Any Python or “command not found” errors mean a step failed.
+
+2. **Check that both services are running:**
+   ```bash
+   sudo systemctl status craigslist-web craigslist-scraper
+   ```
+   Both should say **active (running)** in green. If either says **failed** or **inactive**, the deploy didn’t fully succeed.
+
+3. **Optional – test the web app from the instance:**
+   ```bash
+   curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5000/
+   ```
+   You should see **200**. Anything else (e.g. 000, 502) means the app isn’t responding.
+
+**From your Mac (browser):**
+
+4. **Open the site** (use your instance’s public IP instead of 100.52.170.72 if different):
+   ```text
+   http://YOUR_EC2_PUBLIC_IP:5000
+   ```
+   You should see the **“Enter your name”** landing page. If the page never loads, check the security group allows **TCP port 5000** from your IP (or 0.0.0.0/0).
+
+**Scraper:**
+
+5. The scraper runs every 60 minutes. To confirm it’s working:
+   ```bash
+   sudo journalctl -u craigslist-scraper -n 30 --no-pager
+   ```
+   After at least one run you should see lines like “Scraping 1/…”, “Wrote … rows”, and possibly “Synced to site”.
+
+If all of the above are true, the instructions succeeded.
+
+---
+
+## 6. Open the site
 
 In your browser:
 
-**http://100.52.170.72:5000**
+**http://YOUR_EC2_PUBLIC_IP:5000**
 
 You should see the “Enter your name” landing page. The scraper runs in the background and will sync new listings to the site about every 60 minutes.
 
 ---
 
-## 6. Useful commands (on EC2)
+## 7. Useful commands (on EC2)
 
 ```bash
 # Check both services

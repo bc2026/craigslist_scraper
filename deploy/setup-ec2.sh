@@ -28,9 +28,17 @@ sudo -u "$APP_USER" "$APP_DIR/venv/bin/pip" install --upgrade pip
 sudo -u "$APP_USER" "$APP_DIR/venv/bin/pip" install -r "$DEPLOY_DIR/../requirements.txt"
 sudo -u "$APP_USER" "$APP_DIR/venv/bin/pip" install -r "$DEPLOY_DIR/../web/requirements.txt"
 
-echo "Copying app files (run from repo root or set REPO_ROOT)..."
 REPO_ROOT="${REPO_ROOT:-$(cd "$DEPLOY_DIR/.." && pwd)}"
-sudo -u "$APP_USER" cp -r "$REPO_ROOT/craigslist_to_csv.py" "$REPO_ROOT/web" "$APP_DIR/"
+# Only copy if repo is in a different location (e.g. when running from a build host)
+# When you scp the whole project to EC2, REPO_ROOT and APP_DIR are the same, so skip copy.
+REPO_ABS="$(cd "$REPO_ROOT" && pwd)"
+APP_ABS="$(cd "$APP_DIR" 2>/dev/null && pwd)" || true
+if [ -n "$APP_ABS" ] && [ "$REPO_ABS" = "$APP_ABS" ]; then
+    echo "App already at $APP_DIR, skipping copy."
+else
+    echo "Copying app files from $REPO_ROOT to $APP_DIR..."
+    sudo -u "$APP_USER" cp -r "$REPO_ROOT/craigslist_to_csv.py" "$REPO_ROOT/web" "$APP_DIR/"
+fi
 sudo -u "$APP_USER" mkdir -p "$APP_DIR/web/static" "$APP_DIR/web/instance"
 
 echo "Installing systemd services..."

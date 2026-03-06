@@ -111,26 +111,9 @@ def parse_detail(url):
         if m:
             price = m.group(0)
 
-    # Location: .location or from title " - City, ST" or .postingtitle
-    hood_el = (
-        soup.select_one(".location")
-        or soup.select_one(".postingtitle .postinglocation")
-        or soup.select_one("[class*='location']")
-    )
-    location = hood_el.get_text(strip=True) if hood_el else ""
-    if not location and title and " - " in title:
-        parts = title.split(" - ", 2)
-        if len(parts) >= 2:
-            location = parts[-1].strip()
-    # Fallback: get location from URL (e.g. newyork.craigslist.org -> "New York")
+    # Location: always from site URL (e.g. philadelphia.craigslist.org -> Philadelphia)
     site = site_from_url(url)
-    if not location and site:
-        location = location_label_from_site(site)
-    elif location and site:
-        # Prepend site/region so we always know which Craigslist (e.g. "New York · Fresh Meadows")
-        site_label = location_label_from_site(site)
-        if site_label and site_label not in location:
-            location = f"{site_label} · {location}"
+    location = location_label_from_site(site) if site else ""
 
     # Main body / description (avoid using the QR Code block as the description)
     body = soup.select_one("#postingbody")
