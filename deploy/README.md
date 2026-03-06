@@ -1,13 +1,13 @@
 # EC2 deployment: scraper + family review site
 
-Runs the Craigslist scraper **always** in the background and the review site so the family can view and review cars. After each scrape, listings are synced to the site automatically.
+Runs the Craigslist scraper **always** in the background and the review site so the family can view and review cars. Scraper and web app share one SQLite DB; new listings appear on the site as soon as the scraper writes them.
 
 ## What runs
 
 | Service | What it does |
 |--------|----------------|
 | **craigslist-web** | Flask app (Gunicorn) on port 5000. Family opens `http://YOUR_EC2_IP:5000`. |
-| **craigslist-scraper** | Scraper in watch mode (every 60 min). Writes CSV/HTML and POSTs CSV to the site so the site DB stays updated. |
+| **craigslist-scraper** | Scraper in watch mode (every 60 min). Writes new listings to `web/instance/cars.db` (same DB as the site). |
 
 Both are systemd services: they start on boot and restart if they crash.
 
@@ -40,18 +40,7 @@ sudo APP_USER=ec2-user APP_DIR=/opt/craigslist_scraper ./deploy/setup-ec2.sh
 
 Then copy the app into `APP_DIR` before running (or set `REPO_ROOT` if the script is run from elsewhere).
 
-## Scraper sync URL
-
-The scraper sends the CSV to the site after each run. By default it uses `http://127.0.0.1:5000` (same server). To point it at another URL:
-
-```bash
-sudo systemctl stop craigslist-scraper
-sudo mkdir -p /etc/systemd/system/craigslist-scraper.service.d
-echo '[Service]
-Environment="SYNC_URL=http://YOUR_EC2_IP:5000"' | sudo tee /etc/systemd/system/craigslist-scraper.service.d/sync.conf
-sudo systemctl daemon-reload
-sudo systemctl start craigslist-scraper
-```
+Scraper and web app use the same DB file (`web/instance/cars.db`); no sync URL or CSV step is needed.
 
 ## Useful commands
 
@@ -78,8 +67,7 @@ sudo systemctl restart craigslist-scraper
    - `web/`: `pip install -r web/requirements.txt`
 3. Copy `deploy/craigslist-scraper.service` and `deploy/craigslist-web.service` to `/etc/systemd/system/`.
 4. Edit both: set `WorkingDirectory`, `User`, `ExecStart` to your paths and venv.
-5. In the scraper service, set `Environment=SYNC_URL=http://127.0.0.1:5000` (or your site URL).
-6. Run:
+5. Run:
    ```bash
    sudo systemctl daemon-reload
    sudo systemctl enable --now craigslist-web craigslist-scraper

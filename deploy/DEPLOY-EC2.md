@@ -120,11 +120,116 @@ In your browser:
 
 **http://YOUR_EC2_PUBLIC_IP:5000**
 
-You should see the “Enter your name” landing page. The scraper runs in the background and will sync new listings to the site about every 60 minutes.
+You should see the “Enter your name” landing page. The scraper runs in the background and writes new listings to the same DB as the site every 60 minutes.
 
 ---
 
-## 7. Useful commands (on EC2)
+## 7. Redeploy (after code changes)
+
+From your **Mac**, copy the updated project to EC2 (use your key and instance IP/user):
+
+```bash
+cd /Users/bc
+scp -i /path/to/your-key.pem -r craigslist_scraper ubuntu@YOUR_EC2_IP:~/
+```
+
+Then **SSH in** and restart both services so they use the new code:
+
+```bash
+sudo systemctl restart craigslist-web craigslist-scraper
+```
+
+No need to run `setup-ec2.sh` again unless you changed dependencies or systemd unit files.
+
+---
+
+## 8. Deploy from git (update on new commits)
+
+To pull the latest code on EC2 instead of copying with `scp`, use git.
+
+**Prerequisite:** Your code is in a git repo you can pull from (e.g. GitHub, GitLab). The repo root should contain `craigslist_to_csv.py` and the `web/` folder.
+
+### One-time: switch EC2 to git
+
+If you already deployed with `scp`, you can turn the app dir into a git clone:
+
+**On EC2 (SSH):**
+
+```bash
+# Backup DB and scraper state if you care about them
+cp ~/craigslist_scraper/web/instance/cars.db ~/ 2>/dev/null || true
+
+# Replace app dir with a clone (use your repo URL)
+rm -rf ~/craigslist_scraper
+git clone https://github.com/YOUR_USER/craigslist_scraper.git ~/craigslist_scraper
+
+# Restore DB if you backed it up
+cp ~/cars.db ~/craigslist_scraper/web/instance/ 2>/dev/null || true
+
+# Re-run setup so venv and systemd point at the clone
+cd ~/craigslist_scraper && sudo ./deploy/setup-ec2.sh
+```
+
+Use your real repo URL. If the repo is private, use a personal access token or deploy key.
+
+### Option A: Deploy after each push (one command from Mac)
+
+After you `git push`, run (replace key path and host):
+
+```bash
+ssh -i /path/to/your-key.pem ubuntu@YOUR_EC2_IP 'cd ~/craigslist_scraper && git pull && sudo systemctl restart craigslist-web craigslist-scraper'
+```
+
+### Option B: EC2 pulls on a schedule (cron)
+
+On EC2, pull every 10 minutes and restart only if something changed:
+
+```bash
+sudo tee /usr/local/bin/craigslist-deploy << 'EOF'
+#!/bin/bash
+cd /home/ubuntu/craigslist_scraper || exit 1
+before=$(git rev-parse HEAD 2>/dev/null)
+git pull --ff-only -q 2>/dev/null || true
+after=$(git rev-parse HEAD 2>/dev/null)
+if [ -n "$after" ] && [ "$before" != "$after" ]; then
+  sudo systemctl restart craigslist-web craigslist-scraper
+  echo "Deployed $after"
+fi
+EOF
+sudo chmod +x /usr/local/bin/craigslist-deploy
+(crontab -l 2>/dev/null; echo "*/10 * * * * /usr/local/bin/craigslist-deploy") | crontab -
+```
+
+(Use `ec2-user` instead of `ubuntu` on Amazon Linux. If `sudo systemctl` asks for a password in cron, run `sudo crontab -e` and add the same line there so it runs as root.)
+
+### Option C: Deploy on push with GitHub Actions
+
+On push to `main`, GitHub Actions can SSH to EC2 and run `git pull` + restart. Add a deploy key or SSH key to the repo secrets and create `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to EC2
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/craigslist_scraper && git pull --ff-only && sudo systemctl restart craigslist-web craigslist-scraper
+```
+
+In the repo **Settings → Secrets and variables → Actions** add `EC2_HOST` (e.g. `3.214.184.4`) and `EC2_SSH_KEY` (full private key content). The EC2 key pair’s **public** key must be in `~/.ssh/authorized_keys` on the instance.
+
+---
+
+## 9. Useful commands (on EC2)
 
 ```bash
 # Check both services
@@ -151,5 +256,5 @@ sudo systemctl restart craigslist-scraper
 - **Site not loading**  
   Confirm the security group allows inbound TCP 5000 from your IP (or 0.0.0.0/0). Confirm the web service is running: `sudo systemctl status craigslist-web`.
 
-- **Scraper not syncing**  
-  It posts to `http://127.0.0.1:5000` by default. If the web app is on another port or host, set `SYNC_URL` for the scraper (see main deploy README).
+- **Scraper not updating the site**  
+  Scraper and web app share `web/instance/cars.db`. Ensure both services use the same app directory so they see the same DB file.

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Run on a fresh Amazon Linux 2023 or Ubuntu 22.04 EC2 instance.
 # Usage: sudo ./setup-ec2.sh
-# Then set SYNC_URL in the scraper service to your site URL (e.g. http://YOUR_EC2_IP:5000).
+# Scraper and web app share web/instance/cars.db; no sync config needed.
 
 set -e
 APP_USER="${APP_USER:-ubuntu}"

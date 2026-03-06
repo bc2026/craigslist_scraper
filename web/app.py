@@ -1,14 +1,12 @@
 """
 Family car review site: view Craigslist listings, add reviews, mark as reviewed.
-Run: flask --app app run  (or python app.py)
-Sync: POST /api/sync, or automatic from CSV file (see AUTO_SYNC_* env vars).
+Listings are in the same SQLite DB the scraper writes to. Run: flask --app app run
+Optional: POST /api/sync with a CSV to import listings manually.
 """
 import csv
 import io
 import os
 import sqlite3
-import threading
-import time
 from datetime import datetime
 from pathlib import Path
 
@@ -251,41 +249,6 @@ def api_sync():
 
 # Ensure DB exists when app is loaded (e.g. by gunicorn)
 init_db()
-
-# -----------------------------------------------------------------------------
-# Automatic sync from CSV file (when scraper writes to disk)
-# -----------------------------------------------------------------------------
-_auto_sync_lock = threading.Lock()
-_last_auto_sync_mtime = 0.0
-
-
-def _auto_sync_loop():
-    global _last_auto_sync_mtime
-    interval = int(os.environ.get("AUTO_SYNC_INTERVAL_SECONDS", "120"))
-    csv_path = os.environ.get("CRAIGSLIST_CSV") or str(BASE_DIR.parent / "craigslist_cars_detailed.csv")
-    while True:
-        time.sleep(interval)
-        path = Path(csv_path)
-        if not path.is_file():
-            continue
-        mtime = path.stat().st_mtime
-        with _auto_sync_lock:
-            if mtime <= _last_auto_sync_mtime:
-                continue
-        try:
-            raw = path.read_text(encoding="utf-8", errors="replace")
-            result = sync_from_csv_content(raw)
-            if result is not None:
-                with _auto_sync_lock:
-                    _last_auto_sync_mtime = mtime
-                print(f"Auto-sync: {result[0]} new, {result[1]} updated from {path.name}")
-        except Exception as e:
-            print(f"Auto-sync error: {e}")
-
-
-if os.environ.get("AUTO_SYNC", "1").strip().lower() not in ("0", "false", "no"):
-    _auto_sync_thread = threading.Thread(target=_auto_sync_loop, daemon=True)
-    _auto_sync_thread.start()
 
 # -----------------------------------------------------------------------------
 # Run

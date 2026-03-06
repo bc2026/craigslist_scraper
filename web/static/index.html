@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Family car reviews</title>
   <style>
-    body { font-family: system-ui, sans-serif; margin: 1rem 2rem; background: #f5f5f5; }
-    h1 { color: #333; }
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 1rem 2rem; background: #f5f5f5; -webkit-text-size-adjust: 100%; }
+    h1 { color: #333; font-size: 1.5rem; }
     table { border-collapse: collapse; background: #fff; width: 100%; }
     th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
     th { background: #333; color: #fff; }
@@ -25,31 +25,60 @@
     .detail-images a { display: block; }
     .detail-images img { width: 120px; height: 90px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
     .detail-images img:hover { border-color: #0066cc; }
-    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 20; align-items: center; justify-content: center; cursor: pointer; }
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 20; align-items: center; justify-content: center; cursor: pointer; padding: 1rem; box-sizing: border-box; }
     #lightbox.show { display: flex; }
-    #lightbox img { max-width: 95vw; max-height: 95vh; object-fit: contain; pointer-events: none; }
-    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10; align-items: center; justify-content: center; }
+    #lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10; align-items: center; justify-content: center; padding: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
     .modal.show { display: flex; }
-    .modal-inner { background: #fff; padding: 1.5rem; max-width: 600px; max-height: 90vh; overflow: auto; border-radius: 8px; }
+    .modal-inner { background: #fff; padding: 1.5rem; max-width: 600px; max-height: 90vh; overflow: auto; border-radius: 8px; -webkit-overflow-scrolling: touch; }
     .reviews { margin: 1rem 0; }
     .review { border-left: 3px solid #0066cc; padding-left: 0.75rem; margin-bottom: 0.75rem; }
-    button, .btn { cursor: pointer; padding: 0.4rem 0.8rem; background: #0066cc; color: #fff; border: none; border-radius: 4px; }
+    button, .btn { cursor: pointer; padding: 0.4rem 0.8rem; background: #0066cc; color: #fff; border: none; border-radius: 4px; min-height: 44px; }
     button.secondary { background: #666; }
     button:disabled { opacity: 0.6; cursor: not-allowed; }
-    input, textarea { padding: 0.4rem; margin: 0.25rem 0; width: 100%; box-sizing: border-box; }
+    input, textarea { padding: 0.5rem; margin: 0.25rem 0; width: 100%; box-sizing: border-box; font-size: 16px; }
     #refresh { margin-bottom: 1rem; }
     #landing { max-width: 360px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     #landing h2 { margin-top: 0; color: #333; }
-    #landing input { font-size: 1rem; padding: 0.6rem; }
+    #landing input { font-size: 16px; padding: 0.6rem; }
     #main { display: none; }
     #main.show { display: block; }
     .user-bar { margin-bottom: 1rem; color: #666; }
     .user-bar a { color: #0066cc; margin-left: 0.5rem; }
     .stars { color: #e6b800; font-size: 1.2rem; letter-spacing: 0.1em; }
     .stars-input { display: flex; gap: 0.25rem; margin: 0.5rem 0; }
-    .stars-input button { padding: 0.25rem; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #ddd; }
+    .stars-input button { padding: 0.35rem; min-width: 44px; min-height: 44px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #ddd; }
     .stars-input button:hover, .stars-input button.active { color: #e6b800; }
     .stars-input button[data-value] { transition: color 0.15s; }
+
+    @media (max-width: 768px) {
+      body { margin: 0.75rem 1rem; }
+      h1 { font-size: 1.25rem; }
+      #landing { margin: 1.5rem 1rem; padding: 1.5rem; }
+      #main p { font-size: 0.9rem; }
+      #refresh { width: 100%; padding: 0.75rem; font-size: 1rem; }
+      .list-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -1rem; padding: 0 1rem; }
+      .list-wrap table { min-width: 100%; }
+      .modal { align-items: flex-start; padding: 0; }
+      .modal.show { display: block; overflow-y: auto; }
+      .modal-inner { max-width: none; width: 100%; min-height: 100vh; max-height: none; border-radius: 0; padding: 1rem; margin: 0; }
+      .detail-images img { width: 100px; height: 75px; }
+      .modal-inner .btn { min-height: 48px; padding: 0.75rem; font-size: 1rem; }
+      .modal-inner button[type="submit"], .modal-inner #mark-reviewed { width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      body { margin: 0.5rem; }
+      thead { display: none; }
+      .list-wrap table, .list-wrap tbody, .list-wrap tr { display: block; }
+      .list-wrap tr { background: #fff; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #eee; }
+      .list-wrap td { display: block; padding: 0.5rem 1rem; border-bottom: none; }
+      .list-wrap td:last-child { border-top: 1px solid #eee; padding: 0.75rem 1rem; }
+      .list-wrap td::before { content: attr(data-label); display: block; font-size: 0.75rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
+      .list-wrap td:last-child::before { display: none; }
+      .list-wrap .btn { width: 100%; padding: 0.75rem; font-size: 1rem; }
+      #list .tag { display: block; margin-bottom: 0.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -249,16 +278,16 @@
       }
       var rows = sorted.map(function(l) {
         return '<tr>' +
-          '<td>' + escapeHtml(l.title || '—') + '</td>' +
-          '<td>' + escapeHtml(l.price || '—') + '</td>' +
-          '<td>' + escapeHtml(l.location || '—') + '</td>' +
-          '<td>' + escapeHtml(l.mileage || '—') + '</td>' +
-          '<td>' + statusTags(l) + '</td>' +
-          '<td>' + formatDate(l.updated_at) + '</td>' +
+          '<td data-label="Title">' + escapeHtml(l.title || '—') + '</td>' +
+          '<td data-label="Price">' + escapeHtml(l.price || '—') + '</td>' +
+          '<td data-label="Location">' + escapeHtml(l.location || '—') + '</td>' +
+          '<td data-label="Mileage">' + escapeHtml(l.mileage || '—') + '</td>' +
+          '<td data-label="Status">' + statusTags(l) + '</td>' +
+          '<td data-label="Updated">' + formatDate(l.updated_at) + '</td>' +
           '<td><button class="btn" onclick="openDetail(' + l.id + ')">View & review</button></td>' +
           '</tr>';
       }).join('');
-      el.innerHTML = '<table><thead>' + thead + '</thead><tbody>' + rows + '</tbody></table>';
+      el.innerHTML = '<div class="list-wrap"><table><thead>' + thead + '</thead><tbody>' + rows + '</tbody></table></div>';
       el.querySelectorAll('th[data-sort]').forEach(function(th) {
         th.addEventListener('click', function() { setSort(th.getAttribute('data-sort')); });
       });

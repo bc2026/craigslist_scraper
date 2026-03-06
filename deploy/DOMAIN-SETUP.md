@@ -108,19 +108,7 @@ Then `sudo nginx -t && sudo systemctl reload nginx`. After that, http://YOUR_EC2
 
 ---
 
-## 5. Sync URL (if you use it)
-
-If the scraper uses `SYNC_URL` to push to the site, you can point it at the domain:
-
-```bash
-sudo mkdir -p /etc/systemd/system/craigslist-scraper.service.d
-echo '[Service]
-Environment="SYNC_URL=http://127.0.0.1:5000"' | sudo tee /etc/systemd/system/craigslist-scraper.service.d/sync.conf
-sudo systemctl daemon-reload
-sudo systemctl restart craigslist-scraper
-```
-
-Keeping `http://127.0.0.1:5000` is fine; the scraper talks to the app on the same machine. No need to use cars.bhag.dev for SYNC_URL unless the app runs elsewhere.
+The scraper and web app share the same DB (`web/instance/cars.db`); no sync URL or CSV step is needed.
 
 ---
 
