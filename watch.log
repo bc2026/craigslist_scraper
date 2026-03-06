@@ -1,0 +1,1140 @@
+/Users/bc/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Watch mode: scraping every 60 minutes. Ctrl+C to stop.
+Page length: 34846
+Found result rows: 322
+Extracted links: 322
+Scraping 1/322: https://hudsonvalley.craigslist.org/cto/d/hopewell-junction-2015-subaru-forester/7919538778.html
+  Got row: 2015 Subaru Forester-$6,400(Hopewell Junction) | $6,400
+Scraping 2/322: https://newjersey.craigslist.org/cto/d/west-new-york-2003-cadillac-deville-low/7919536511.html
+  Got row: 2003 Cadillac Deville low mileage-$3,500(West New  | $3,500
+Scraping 3/322: https://philadelphia.craigslist.org/ctd/d/burlington-2010-mini-cooper-2dr/7919535438.html
+  Got row: 2010 Mini Cooper S 2dr Hatchback-$4,000(_Mini_ _Co | $4,000
+Scraping 4/322: https://york.craigslist.org/ctd/d/york-2007-ford-150/7919532958.html
+  Got row: 2007 Ford F 150-$1,600(York) | $1,600
+Scraping 5/322: https://harrisburg.craigslist.org/ctd/d/new-kingstown-2012-mazda-i-touring/7919532747.html
+  Got row: 2012 Mazda 3 i Touring Hatchback • Low Miles • Rel | $7,950
+Scraping 6/322: https://york.craigslist.org/ctd/d/york-1992-plymouth-sundance/7919532529.html
+  Got row: 1992 Plymouth Sundance-$9,500(York) | $9,500
+Scraping 7/322: https://york.craigslist.org/ctd/d/york-1980-chevrolet-20/7919532058.html
+  Got row: 1980 Chevrolet K 20-$5,900(York) | $5,900
+Scraping 8/322: https://newjersey.craigslist.org/ctd/d/passaic-2017-mercedes-benz-cclass-class/7919526574.html
+  Got row: 2017 Mercedes-Benz CClass C Class C-Class C 300 4M | $8,535
+Scraping 9/322: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919526286.html
+  Got row: FAST AND EASY CREDIT APPROVAL  2015 Nissan JUKE AW | $9,950
+Scraping 10/322: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919525972.html
+  Got row: FAST AND EASY CREDIT APPROVAL 6-SP MANUAL!! 2006 A | $7,450
+Scraping 11/322: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919525577.html
+  Got row: FAST AND EASY CREDIT APPROVAL   2012 Nissan Juke S | $9,950
+Scraping 12/322: https://hudsonvalley.craigslist.org/ctd/d/poughkeepsie-2012-ford-flex-sel-all/7919525179.html
+  Got row: 2012 Ford Flex SEL All Wheel Drive *Only 80K* Very | $8,495
+Scraping 13/322: https://newyork.craigslist.org/brx/ctd/d/passaic-2021-chevrolet-malibu-sdn-lt/7919517609.html
+  Got row: 2021 Chevrolet Malibu Sdn LT-$7,789(The price in t | $7,789
+Scraping 14/322: https://scranton.craigslist.org/ctd/d/taylor-2014-dodge-challenger-sxt-2180/7919512828.html
+  Got row: 2014 Dodge Challenger SXT (2180)-$6,995(OLD FORGE) | $6,995
+Scraping 15/322: https://delaware.craigslist.org/cto/d/wilmington-1996-jaguar-xjs-convertible/7919512452.html
+  Got row: 1996 Jaguar XJS Convertible, Low miles!, Excellent | $7,995
+Scraping 16/322: https://newyork.craigslist.org/que/cto/d/corona-nissan-sentra-sr-midnight/7919511355.html
+  Got row: Nissan Sentra SR Midnight edition 2018 52 k miles- | $8,499
+Scraping 17/322: https://reading.craigslist.org/ctd/d/fogelsville-2018-nissan-rogue-sv-awd/7919502952.html
+  Got row: 2018 Nissan Rogue SV AWD-$9,990(FOGELSVILLE, PA.) | $9,990
+Scraping 18/322: https://reading.craigslist.org/ctd/d/fogelsville-2016-fiat-500x-trekking-awd/7919502555.html
+  Got row: 2016 Fiat 500x TREKKING AWD-$7,990(FOGELSVILLE, PA | $7,990
+Scraping 19/322: https://longisland.craigslist.org/cto/d/island-park-1989-oldsmobile-toronado/7919502397.html
+  Got row: 1989 Oldsmobile Toronado Trifari 2dr Coupe-$8,500 | $8,500
+Scraping 20/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-toyota/7919498433.html
+  Got row: Toyota-$2,000(Brooklyn) | $2,000
+Scraping 21/322: https://jerseyshore.craigslist.org/cto/d/toms-river-2011-chevy-cruze-lt-low-miles/7919494254.html
+  Got row: 2011 Chevy Cruze LT - Low Miles-$3,000(Toms River) | $3,000
+Scraping 22/322: https://newjersey.craigslist.org/ctd/d/fair-lawn-jaguar-2008-type-black-with/7919494231.html
+  Got row: JAGUAR  2008 S-TYPE BLACK WITH BEIGE LEATHER-$4,58 | $4,588
+Scraping 23/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-have-the-permits-if-you-have/7919490423.html
+  Got row: I have the permits if you have the truck-$1(Brookl | $1
+Scraping 24/322: https://newyork.craigslist.org/fct/cto/d/stamford-florida-dealer-plates-and/7919487147.html
+  Got row: Florida Dealer Plates and Auction Access-$1,800(NY | $1,800
+Scraping 25/322: https://newyork.craigslist.org/que/cto/d/maspeth-2004-honda-cr-auto-4cyl-115k/7919486462.html
+  Got row: 2004 HONDA CR-V AUTO 4CYL 115K SUNROOF 1 OWNER-$2, | $2,650
+Scraping 26/322: https://scranton.craigslist.org/ctd/d/taylor-2021-chevrolet-traverse-premier/7919485912.html
+  Got row: 2021 Chevrolet Traverse Premier (2286)-$2,286(OLD  | $2,286
+Scraping 27/322: https://newjersey.craigslist.org/cto/d/north-arlington-2011-ford-mustang/7919481712.html
+  Got row: 2011 Ford Mustang-$8,500 | $8,500
+Scraping 28/322: https://scranton.craigslist.org/ctd/d/taylor-2016-bmw-x3-xdrive-28i-2289/7919480373.html
+  Got row: 2016 BMW X3 Xdrive 28I (2289)-$9,995(OLD FORGE) | $9,995
+Scraping 29/322: https://cnj.craigslist.org/ctd/d/trenton-2006-chrysler-town-country/7919480016.html
+  Got row: 2006 Chrysler Town & Country Limited 4dr Extended  | $4,900
+Scraping 30/322: https://newjersey.craigslist.org/cto/d/union-auction-access-dealers-license/7919477816.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 31/322: https://newyork.craigslist.org/lgi/cto/d/lakewood-auction-access-dealers-license/7919477400.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 32/322: https://newyork.craigslist.org/stn/cto/d/staten-island-2010-toyota-camry/7919477065.html
+  Got row: 2010 TOYOTA CAMRY-$999(Staten Island) | $999
+Scraping 33/322: https://newjersey.craigslist.org/cto/d/river-edge-2012-honda-accord/7919476990.html
+  Got row: 2012 HONDA ACCORD-$800(New Jersey) | $800
+Scraping 34/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2007-dodge-sprinter-low-miles/7919472564.html
+  Got row: 2007 Dodge Sprinter - Low Miles 62K - OBO-$9,900(B | $9,900
+Scraping 35/322: https://binghamton.craigslist.org/ctd/d/endicott-2008-audi-a6-quattro-32l-v6/7919463029.html
+  Got row: 2008 Audi A6 Quattro 3.2L V6 Automatic AWD LOADED! | $9,995
+Scraping 36/322: https://philadelphia.craigslist.org/cto/d/ardmore-2014-mercedes-benz-c300/7919462214.html
+  Got row: 2014 Mercedes Benz C300-$8,500(Ardmore) | $8,500
+Scraping 37/322: https://newjersey.craigslist.org/cto/d/north-bergen-2010-nissan-rogue-4cyl/7919458715.html
+  Got row: 2010 nissan rogue 4cyl-$4,500(North Bergen) | $4,500
+Scraping 38/322: https://newyork.craigslist.org/lgi/ctd/d/inwood-2012-mazda-mazda3-grand-touring/7919454693.html
+  Got row: 2012 Mazda MAZDA3 i Grand Touring 4dr Sedan-$6,495 | $6,495
+Scraping 39/322: https://harrisburg.craigslist.org/ctd/d/palmyra-2006-audi-a4-quattro-cabriolet/7919454437.html
+  Got row: 2006 Audi A4 Quattro Cabriolet 74,000 Miles Clean  | $9,250
+Scraping 40/322: https://harrisburg.craigslist.org/ctd/d/palmyra-2014-bmw-i3-giga-world-miles/7919454417.html
+  Got row: 2014 BMW i3 Giga World 46,000 Miles Clean Carfax F | $8,850
+Scraping 41/322: https://southjersey.craigslist.org/cto/d/collingswood-1972-lincoln-mark-iv/7919450172.html
+  Got row: 1972 Lincoln Mark IV-$5,900(Cherry Hill NJ area) | $5,900
+Scraping 42/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2022-bmw-x3-3-3-xdrive30i/7919449464.html
+  Got row: 2022 BMW X3 X 3 X-3 xDrive30i xDrive 30 i xDrive-3 | $449
+Scraping 43/322: https://newyork.craigslist.org/que/cto/d/brooklyn-2010-subaru-outback-99-milles/7919447331.html
+  Got row: 2010 Subaru Outback 99 k milles   Leather seats $4 | $4,500
+Scraping 44/322: https://newyork.craigslist.org/lgi/cto/d/valley-stream-2013-honda-pilot-6500/7919446990.html
+  Got row: 2013 Honda pilot $6500 NEGOTIABLE!!!!-$6,500 | $6,500
+Scraping 45/322: https://williamsport.craigslist.org/ctd/d/mifflinburg-2015-dodge-dart-rallye/7919446293.html
+  Got row: 2015 DODGE DART RALLYE-$9,500(Mifflinburg) | $9,500
+Scraping 46/322: https://newyork.craigslist.org/wch/cto/d/mount-vernon-2012-nissan-rogue-sv/7919441578.html
+  Got row: 2012 Nissan Rogue SV-$5,900 | $5,900
+Scraping 47/322: https://newjersey.craigslist.org/cto/d/clifton-2006-ford-150/7919440207.html
+  Got row: 2006 ford F-150-$1,600(Clifton) | $1,600
+Scraping 48/322: https://newjersey.craigslist.org/cto/d/berkeley-heights-2017-ford-escape-se-awd/7919439224.html
+  Got row: 2017 Ford Escape SE AWD-$6,800(Berkeley Heights) | $6,800
+Scraping 49/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-1979-all-custom-oldsmobile/7919438619.html
+  Got row: 1979 ALL CUSTOM OLDSMOBILE CUTLASS-$9,500(SUNSET P | $9,500
+Scraping 50/322: https://southjersey.craigslist.org/ctd/d/burlington-2009-mini-cooper-2dr/7919437710.html
+  Got row: 2009 Mini Cooper S 2dr Hatchback-$3,995(_Mini_ _Co | $3,995
+Scraping 51/322: https://cnj.craigslist.org/ctd/d/burlington-2009-mercedes-benz-class-350/7919437677.html
+  Got row: 2009 Mercedes-Benz E Class E 350 4MATIC AWD 4dr Se | $5,850
+Scraping 52/322: https://southjersey.craigslist.org/cto/d/delanco-dodge-grand-caravan/7919437229.html
+  Got row: Dodge Grand Caravan-$6,199 | $6,199
+Scraping 53/322: https://southjersey.craigslist.org/cto/d/delanco-toyota-corolla/7919436717.html
+  Got row: Toyota Corolla-$4,499 | $4,499
+Scraping 54/322: https://southjersey.craigslist.org/cto/d/delanco-nissan-sentra/7919436600.html
+  Got row: Nissan Sentra-$5,999(South Jersey) | $5,999
+Scraping 55/322: https://southjersey.craigslist.org/ctd/d/riverton-2015-impala-ltz-stuck-in-open/7919436326.html
+  Got row: 2015 Impala ltz/STUCK IN OPEN LOAN/GET OUT/ALL CAR | $9,895
+Scraping 56/322: https://longisland.craigslist.org/cto/d/westbury-2011-buick-regal-cxl-84k/7919435565.html
+  Got row: 2011 Buick Regal CXL 84k Leather, Heated Seats-$4, | $4,500
+Scraping 57/322: https://binghamton.craigslist.org/ctd/d/binghamton-2012-chrysler-town-and/7919434414.html
+  Got row: 2012 Chrysler Town and Country Touring Fully Loade | $8,995
+Scraping 58/322: https://binghamton.craigslist.org/ctd/d/binghamton-2014-ford-focus-se-only-63k/7919434285.html
+  Got row: 2014 Ford Focus SE only 63k miles gas saver-$6,995 | $6,995
+Scraping 59/322: https://newyork.craigslist.org/jsy/ctd/d/spotswood-2013-mazda-mazda3-sv-4dr/7919433918.html
+  Got row: 2013 Mazda Mazda3 i SV 4dr Sedan 5M-$5,900(East Br | $5,900
+Scraping 60/322: https://philadelphia.craigslist.org/ctd/d/huntingdon-valley-2017-nissan/7919432253.html
+  Got row: 2017 Nissan Pathfinder Platinum 4x4 4dr SUV-$9999. | $9999.00
+Scraping 61/322: https://philadelphia.craigslist.org/ctd/d/huntingdon-valley-2015-nissan-rogue-sl/7919432245.html
+  Got row: 2015 Nissan Rogue SL AWD 4dr Crossover-$8999.00 | $8999.00
+Scraping 62/322: https://delaware.craigslist.org/ctd/d/wilmington-2012-honda-accord-ex/7919432226.html
+  Got row: 2012 HONDA ACCORD EX-$2,500(WILMINGTON DELAWARE) | $2,500
+Scraping 63/322: https://newjersey.craigslist.org/cto/d/south-orange-honda-civic-2013-white-in/7919431175.html
+  Got row: Honda Civic 2013 (White in good condition)-$7,000( | $7,000
+Scraping 64/322: https://delaware.craigslist.org/ctd/d/wilmington-2013-hyundai-sonata/7919429853.html
+  Got row: 2013 HYUNDAI SONATA-$2,995(WILMINGTON DELAWARE) | $2,995
+Scraping 65/322: https://williamsport.craigslist.org/cto/d/danville-2016-chevy-equinox-ltz-awd/7919429271.html
+  Got row: 2016 Chevy Equinox LTZ AWD-$6,000(Danville) | $6,000
+Scraping 66/322: https://allentown.craigslist.org/cto/d/whitehall-2015-fiat-500-pop/7919428526.html
+  Got row: 2015 fiat 500 pop-$6,300(whitehall) | $6,300
+Scraping 67/322: https://philadelphia.craigslist.org/cto/d/morton-1980-triumph-tr7-roadster/7919425436.html
+  Got row: 1980 Triumph TR7 Roadster/Covertible/Cabrio-$9,500 | $9,500
+Scraping 68/322: https://cnj.craigslist.org/ctd/d/iselin-2020-nissan-versa-sv-mint/7919423193.html
+  Got row: 2020 NISSAN VERSA SV MINT CONDITION RUNS EXCELLENT | $7,499
+Scraping 69/322: https://newjersey.craigslist.org/ctd/d/iselin-2020-nissan-versa-sv-mint/7919423142.html
+  Got row: 2020 NISSAN VERSA SV MINT CONDITION RUNS EXCELLENT | $7,499
+Scraping 70/322: https://newjersey.craigslist.org/ctd/d/parsippany-2005-toyota-sienna-ce-65k/7919409902.html
+  Got row: 2005 Toyota Sienna CE (65k Miles) - 1 Owner-$8,700 | $8,700
+Scraping 71/322: https://philadelphia.craigslist.org/cto/d/philadelphia-2006-pontiac-grand-prix/7919408621.html
+  Got row: 2006 Pontiac Grand Prix GXP - Project Car-$1,500(P | $1,500
+Scraping 72/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2011-honda-pilot/7919408510.html
+  Got row: 2011 Honda Pilot (Low Miles) (Very Clean)-$8,700(F | $8,700
+Scraping 73/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2012-hyundai/7919408174.html
+  Got row: 2012 Hyundai Sonata Limited (Clean Carfax) (Low Mi | $5,900
+Scraping 74/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2010-bmw-328i/7919407862.html
+  Got row: 2010 BMW 328i X-Drive 2-Door (Low Miles) (Clean Ca | $6,700
+Scraping 75/322: https://newjersey.craigslist.org/cto/d/closter-2015-subaru-forester-limited/7919401583.html
+  Got row: 2015 SUBARU FORESTER LIMITED 1 OWNER-$8,980(Closte | $8,980
+Scraping 76/322: https://newjersey.craigslist.org/ctd/d/branchville-2008-chevrolet-express-3500/7919401278.html
+  Got row: 2008 CHEVROLET EXPRESS 3500 BOX TRUCK-$9,900(BRANC | $9,900
+Scraping 77/322: https://albany.craigslist.org/ctd/d/branchville-2009-chevrolet-express-box/7919400313.html
+  Got row: 2009 CHEVROLET EXPRESS BOX TRUCK 2500-$9,900(BRANC | $9,900
+Scraping 78/322: https://cnj.craigslist.org/ctd/d/port-monmouth-2014-kia-sportage-sx-awd/7919398615.html
+  Got row: 2014 Kia Sportage SX AWD-$9,999(Port Monmouth/Midd | $9,999
+Scraping 79/322: https://southjersey.craigslist.org/ctd/d/burlington-2008-volvo-s40-24i-4dr-sedan/7919397099.html
+  Got row: 2008 Volvo S40 2.4i 4dr Sedan-$2,395(_Volvo_ _S40_ | $2,395
+Scraping 80/322: https://reading.craigslist.org/cto/d/birdsboro-2002-mercedes-benz-skl-320/7919396109.html
+  Got row: 2002 Mercedes-Benz SKL 320-$4,500 | $4,500
+Scraping 81/322: https://newjersey.craigslist.org/ctd/d/north-bergen-2000-off-on-any-new-buick/7919395412.html
+  Got row: $2000 off on any new BUICK OR GMC if you are a fir | $2,500
+Scraping 82/322: https://southjersey.craigslist.org/ctd/d/burlington-2008-jaguar-type-30-4dr/7919395069.html
+  Got row: 2008 Jaguar S-TYPE 3.0 4dr Sedan Luxury-$4,850(_Ja | $4,850
+Scraping 83/322: https://newyork.craigslist.org/jsy/ctd/d/spotswood-2003-ford-focus-se-4dr-wagon/7919394833.html
+  Got row: 2003 Ford Focus SE 4dr Wagon-$2,900(East Brunswick | $2,900
+Scraping 84/322: https://philadelphia.craigslist.org/ctd/d/burlington-1997-nissan-maxima-gle-4dr/7919394822.html
+  Got row: 1997 Nissan Maxima GLE 4dr Sedan-$2,250(_Nissan_ _ | $2,250
+Scraping 85/322: https://philadelphia.craigslist.org/ctd/d/burlington-1989-cadillac-fleetwood-base/7919394813.html
+  Got row: 1989 Cadillac Fleetwood Base 4dr Sedan-$5,995(_Cad | $5,995
+Scraping 86/322: https://cnj.craigslist.org/ctd/d/spotswood-2015-nissan-rogue-sv-4dr/7919394605.html
+  Got row: 2015 Nissan Rogue SV 4dr Crossover-$7,500(East Bru | $7,500
+Scraping 87/322: https://cnj.craigslist.org/ctd/d/spotswood-2010-nissan-murano-sl-awd-4dr/7919394566.html
+  Got row: 2010 Nissan Murano SL AWD 4dr SUV-$8,500(East Brun | $8,500
+Scraping 88/322: https://cnj.craigslist.org/ctd/d/spotswood-2016-audi-a3-tron-14t/7919394515.html
+  Got row: 2016 Audi A3 e-tron 1.4T Prestige 4dr Sportback-$9 | $9,000
+Scraping 89/322: https://cnj.craigslist.org/ctd/d/spotswood-2016-hyundai-sonata-se-4dr/7919394448.html
+  Got row: 2016 Hyundai Sonata SE 4dr Sedan-$6,800(East Bruns | $6,800
+Scraping 90/322: https://cnj.craigslist.org/ctd/d/spotswood-2009-nissan-maxima-35-sv-4dr/7919394409.html
+  Got row: 2009 Nissan Maxima 3.5 SV 4dr Sedan-$5,900(East Br | $5,900
+Scraping 91/322: https://philadelphia.craigslist.org/ctd/d/spotswood-2011-jaguar-xj-base-4dr-sedan/7919394362.html
+  Got row: 2011 Jaguar XJ Base 4dr Sedan-$8,000(East Brunswic | $8,000
+Scraping 92/322: https://cnj.craigslist.org/ctd/d/trenton-2005-dodge-caravan-se-plus-4dr/7919394233.html
+  Got row: 2005 Dodge Caravan SE Plus 4dr Extended Mini Van-$ | $6,900
+Scraping 93/322: https://philadelphia.craigslist.org/ctd/d/trenton-2005-chrysler-pt-cruiser/7919394131.html
+  Got row: 2005 Chrysler PT Cruiser Signature Series 4dr Wago | $3,000
+Scraping 94/322: https://newyork.craigslist.org/mnh/ctd/d/new-york-2007-honda-civic-hybrid/7919393039.html
+  Got row: 2007 Honda Civic Hybrid-$5,000(Autotrader Private  | $5,000
+Scraping 95/322: https://newyork.craigslist.org/brk/ctd/d/brooklyn-ford-fusion-hybrid-plug-in/7919392828.html
+  Got row: Ford Fusion Hybrid Plug-in  2018 Titanium-$9,500(B | $9,500
+Scraping 96/322: https://williamsport.craigslist.org/ctd/d/catawissa-1992-chevrolet-corvette-c4/7919392403.html
+  Got row: 1992 Chevrolet Corvette C4 LT1 Auto Polo Green wit | $8,800
+Scraping 97/322: https://newyork.craigslist.org/lgi/cto/d/hempstead-2019-honda-accord-sport-20l/7919384042.html
+  Got row: 2019 HONDA ACCORD SPORT 2.0L-$10,000(HEMPSTEAD) | $10,000
+Scraping 98/322: https://scranton.craigslist.org/cto/d/wilkes-barre-2011-ford-fusion-low-miles/7919380194.html
+  Got row: 2011 ford fusion low miles wont last-$4,250(Wilkes | $4,250
+Scraping 99/322: https://cnj.craigslist.org/cto/d/warren-2017-nissan-quest/7919368644.html
+  Got row: 2017 Nissan Quest-$6,800(Warren) | $6,800
+Scraping 100/322: https://newyork.craigslist.org/que/cto/d/far-rockaway-2011-hyundai-sonata-limited/7919359786.html
+  Got row: 2011 Hyundai sonata limited-$2,000(FarRockway) | $2,000
+Scraping 101/322: https://newjersey.craigslist.org/cto/d/moonachie-2016-mini-cooper-clubman/7919359196.html
+  Got row: 2016 mini cooper clubman-$9,500 | $9,500
+Scraping 102/322: https://cnj.craigslist.org/cto/d/flemington-2017-gmc-terrain-sle-sport/7919359076.html
+  Got row: 2017 GMC Terrain SLE-2 Sport Utility 4D-$6,500(Fle | $6,500
+Scraping 103/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2018-jaguar-pace-dynamic-p300/7919355689.html
+  Got row: 2018 Jaguar E-Pace R-Dynamic P300 SE Fully Loaded  | $9,990
+Scraping 104/322: https://newyork.craigslist.org/brx/cto/d/bronx-2017-bmw-330i-xdrive/7919354499.html
+  Got row: 2017 BMW 330I XDRIVE-$10,000 | $10,000
+Scraping 105/322: https://philadelphia.craigslist.org/ctd/d/norristown-2014-fiat-500l/7919353506.html
+  Got row: 2014 FIAT 500L-$6,998(MANCINI MOTORS- NORRISTOWN) | $6,998
+Scraping 106/322: https://philadelphia.craigslist.org/ctd/d/norristown-2011-ford-escape-xlt-4x4/7919352311.html
+  Got row: 2011 FORD ESCAPE XLT 4X4-$8,998(MANCINI MOTORS- NO | $8,998
+Scraping 107/322: https://philadelphia.craigslist.org/ctd/d/norristown-2011-subaru-forester-25x/7919351844.html
+  Got row: 2011 SUBARU FORESTER 2.5X PREMIUM AWD 'RARE 5 SPEE | $9,998
+Scraping 108/322: https://delaware.craigslist.org/ctd/d/newark-2013-bmw-x5/7919341662.html
+  Got row: 2013 Bmw X5-$7,200(Newark) | $7,200
+Scraping 109/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2009-mercedes-c300-38k-miles/7919340828.html
+  Got row: 2009 Mercedes C300 38K Miles-$5,700(Brooklyn) | $5,700
+Scraping 110/322: https://newyork.craigslist.org/brk/ctd/d/staten-island-2014-ram-pro-master-cargo/7919339888.html
+  Got row: 2014 RAM PRO MASTER CARGO VAN 1 OWNER FULLY SERVIC | $4,999
+Scraping 111/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2004-buick-lesabre/7919337010.html
+  Got row: 2004 buick LeSabre        with only 71,000 miles-$ | $4,500
+Scraping 112/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2015-hyundai/7919334882.html
+  Got row: 2015 hyundai accent hatchback  new inspection-$7,2 | $7,200
+Scraping 113/322: https://scranton.craigslist.org/cto/d/milford-cash-cars/7919333292.html
+  Got row: CASH 4 CARS-$123(Milford) | $123
+Scraping 114/322: https://newjersey.craigslist.org/ctd/d/branchville-2010-ford-mustang-premium/7919331560.html
+  Got row: 2010 FORD MUSTANG PREMIUM-$7,900(BRANCHVILLE) | $7,900
+Scraping 115/322: https://york.craigslist.org/ctd/d/york-2013-bmw-x5/7919331295.html
+  Got row: 2013 Bmw X5-$7,200(York) | $7,200
+Scraping 116/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2011-nissan-altima/7919330834.html
+  Got row: 2011 nissan altima        71000 original miles  on | $6,200
+Scraping 117/322: https://philadelphia.craigslist.org/cto/d/bensalem-2012-mercedes-benz-class-c300/7919329226.html
+  Got row: 2012 Mercedes-Benz c-class C300-$7,499(Bensalem) | $7,499
+Scraping 118/322: https://york.craigslist.org/ctd/d/york-1979-chevrolet-corvette/7919328763.html
+  Got row: 1979 Chevrolet Corvette-$4,700(York) | $4,700
+Scraping 119/322: https://newyork.craigslist.org/que/cto/d/lawrence-2011-toyota-prius-one-one-4dr/7919328511.html
+  Got row: 2011 Toyota Prius One One 4dr Hatchback-$8,000(Law | $8,000
+Scraping 120/322: https://albany.craigslist.org/ctd/d/branchville-1966-buick-wildcat-classic/7919323481.html
+  Got row: 1966 BUICK WILDCAT CLASSIC CAR-$7,500(BRANCHVILLE) | $7,500
+Scraping 121/322: https://allentown.craigslist.org/ctd/d/hellertown-2008-buick-lacrosse-cxl-38/7919322510.html
+  Got row: 2008 Buick LaCrosse CXL - 3.8, lower mileage, runs | $2,800
+Scraping 122/322: https://scranton.craigslist.org/cto/d/scranton-bmw-328-xi/7919322389.html
+  Got row: BMW 328 XI-$5,999 | $5,999
+Scraping 123/322: https://newyork.craigslist.org/stn/cto/d/staten-island-subaru-forester-25x-awd/7919321263.html
+  Got row: SUBARU FORESTER  2.5X  AWD PEARL WHITE  SUPER CLEA | $8,999
+Scraping 124/322: https://york.craigslist.org/ctd/d/york-1962-chevrolet-impala/7919320573.html
+  Got row: 1962 Chevrolet Impala-$3,500(York) | $3,500
+Scraping 125/322: https://newjersey.craigslist.org/ctd/d/branchville-1965-buick-skylark-classic/7919320073.html
+  Got row: 1965 BUICK SKYLARK CLASSIC CAR-$9,500(BRANCHVILLE) | $9,500
+Scraping 126/322: https://york.craigslist.org/ctd/d/york-1969-mercury-cougar/7919318157.html
+  Got row: 1969 Mercury Cougar-$4,500(York) | $4,500
+Scraping 127/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2024-toyota-bz4x-bz-x-bz-x/7919317973.html
+  Got row: 2024 Toyota bZ4X bZ 4 X bZ-4-X Limited-$349(Import | $349
+Scraping 128/322: https://newjersey.craigslist.org/cto/d/lyndhurst-2014-ford-fiesta-st/7919317107.html
+  Got row: 2014 Ford Fiesta ST-$8,000(Lyndhurst) | $8,000
+Scraping 129/322: https://york.craigslist.org/ctd/d/york-1970-buick-skylark/7919316774.html
+  Got row: 1970 Buick Skylark-$2,500(York) | $2,500
+Scraping 130/322: https://newyork.craigslist.org/lgi/ctd/d/valley-stream-ive-got-real-nice-2011/7919312312.html
+  Got row: I've Got A Real Nice 2011 TOYOTA CAMRY LE For You! | $8,500
+Scraping 131/322: https://philadelphia.craigslist.org/ctd/d/norristown-2007-kia-spectra-ex/7919312284.html
+  Got row: 2007 KIA SPECTRA EX-$4,998(MANCINI MOTORS- NORRIST | $4,998
+Scraping 132/322: https://philadelphia.craigslist.org/ctd/d/norristown-2014-ford-focus-only-51k/7919312141.html
+  Got row: 2014 FORD FOCUS S 'ONLY 51K MILES'-$9,998(MANCINI  | $9,998
+Scraping 133/322: https://philadelphia.craigslist.org/ctd/d/norristown-2009-ford-taurus-se/7919311777.html
+  Got row: 2009 FORD TAURUS SE-$6,998(MANCINI MOTORS- NORRIST | $6,998
+Scraping 134/322: https://jerseyshore.craigslist.org/cto/d/point-pleasant-beach-2010-kia-soul/7919304101.html
+  Got row: 2010 Kia Soul - 5 Speed Manual - 106 k - Reliable  | $4,950
+Scraping 135/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2017-mercedes-benz-cclass/7919297855.html
+  Got row: 2017 Mercedes-Benz CClass C Class C-Class C 300-$3 | $349
+Scraping 136/322: https://newjersey.craigslist.org/cto/d/union-we-buy-any-cars-running-or-not/7919297487.html
+  Got row: we Buy Any Cars running or not any condition with  | $5,000
+Scraping 137/322: https://jerseyshore.craigslist.org/cto/d/fords-we-buy-any-cars-running-or-not/7919297131.html
+  Got row: we Buy Any Cars running or not any condition with  | $1,000
+Scraping 138/322: https://cnj.craigslist.org/cto/d/springfield-we-buy-2010-and-up-toyota/7919296651.html
+  Got row: We buy 2010 and up Toyota corolla Toyota RAV4 Lexu | $123
+Scraping 139/322: https://reading.craigslist.org/cto/d/temple-2003-subaru-legacy/7919294169.html
+  Got row: 2003 subaru legacy-$5,500(Temple) | $5,500
+Scraping 140/322: https://newyork.craigslist.org/wch/cto/d/yonkers-2006-audi-a6/7919293578.html
+  Got row: 2006 Audi a6-$2,500(Yonkers) | $2,500
+Scraping 141/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-toyota-rav4/7919289693.html
+  Got row: Toyota RAV4-$5,500(Brooklyn) | $5,500
+Scraping 142/322: https://scranton.craigslist.org/ctd/d/taylor-2016-gmc-terrain-denali-2306/7919282776.html
+  Got row: 2016 GMC Terrain Denali (2306)-$8,495(OLD FORGE) | $8,495
+Scraping 143/322: https://newyork.craigslist.org/que/cto/d/lawrence-2014-kia-sportage-lx-awd-lx/7919282189.html
+  Got row: 2014 Kia Sportage LX AWD LX 4dr SUV-$5,900(Lawrenc | $5,900
+Scraping 144/322: https://scranton.craigslist.org/ctd/d/taylor-2015-jeep-cherokee-latitude-2308/7919282093.html
+  Got row: 2015 Jeep Cherokee Latitude (2308)-$7,495(OLD FORG | $7,495
+Scraping 145/322: https://philadelphia.craigslist.org/cto/d/cherry-hill-2012-nissan-altima/7919278837.html
+  Got row: 2012 NISSAN ALTIMA-$4,150 | $4,150
+Scraping 146/322: https://southjersey.craigslist.org/cto/d/cherry-hill-2012-nissan-altima/7919277380.html
+  Got row: 2012 NISSAN ALTIMA-$4,150 | $4,150
+Scraping 147/322: https://newjersey.craigslist.org/cto/d/wyckoff-2012-mercedes-glk350-4matic/7919273966.html
+  Got row: 2012 Mercedes GLK350 4matic 118k miles v6-$8,500(W | $8,500
+Scraping 148/322: https://newjersey.craigslist.org/cto/d/wyckoff-2015-jeep-cherokee-limited-low/7919273666.html
+  Got row: 2015 jeep Cherokee limited 87000 low miles , fully | $8,500
+Scraping 149/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2018-mercedes-benz-gle-350/7919273431.html
+  Got row: 2018 Mercedes-Benz GLE 350-$349(Import Masters) | $349
+Scraping 150/322: https://philadelphia.craigslist.org/cto/d/cherry-hill-2010-volvo-xc90/7919273202.html
+  Got row: 2010 volvo xc90-$4,150 | $4,150
+Scraping 151/322: https://southjersey.craigslist.org/cto/d/marlton-2010-volvo-xc90/7919273012.html
+  Got row: 2010 VOLVO XC90-$4,150 | $4,150
+Scraping 152/322: https://southjersey.craigslist.org/cto/d/marlton-2013-dodge-caravan/7919271528.html
+  Got row: 2013 dodge caravan-$4,200 | $4,200
+Scraping 153/322: https://newyork.craigslist.org/que/cto/d/fresh-meadows-clean-2011-bmw-328i/7919269391.html
+  Got row: Clean 2011 BMW 328i xDrive Sport Sedan Low mileage | $6,700
+Scraping 154/322: https://scranton.craigslist.org/ctd/d/taylor-2011-jaguar-xk-2288/7919268854.html
+  Got row: 2011 Jaguar XK (2288)-$9,995(OLD FORGE) | $9,995
+Scraping 155/322: https://scranton.craigslist.org/ctd/d/taylor-2017-nissan-altima/7919267985.html
+  Got row: 2017 Nissan Altima 2.5 (2294)-$7,495(OLD FORGE) | $7,495
+Scraping 156/322: https://newjersey.craigslist.org/cto/d/lodi-2011-nissan-altima-25s-se/7919266032.html
+  Got row: 2011 Nissan Altima 2.5s SE-$5,995(Lodi) | $5,995
+Scraping 157/322: https://philadelphia.craigslist.org/cto/d/huntingdon-valley-toyota-rav4-excellent/7919260473.html
+  Got row: Toyota RAV4 Excellent Condition-$2,900 | $2,900
+Scraping 158/322: https://lancaster.craigslist.org/ctd/d/elizabethtown-2000-jaguar-type/7919256876.html
+  Got row: 2000 jaguar s-type-$4,500 | $4,500
+Scraping 159/322: https://philadelphia.craigslist.org/cto/d/philadelphia-2016-ford-mustang/7919255161.html
+  Got row: 2016 Ford Mustang-$10,000(Philadelphia) | $10,000
+Scraping 160/322: https://hudsonvalley.craigslist.org/ctd/d/goshen-2014-hyundai-elantra-se-4dr/7919244737.html
+  Got row: 2014 Hyundai Elantra SE 4dr Sedan 6A-$6,995(+ IK A | $6,995
+Scraping 161/322: https://newjersey.craigslist.org/ctd/d/paterson-2020-ford-ecosport-se/7919244663.html
+  Got row: 2020 Ford EcoSport SE-$8,190(All advertised prices | $8,190
+Scraping 162/322: https://newjersey.craigslist.org/cto/d/cedar-grove-2018-nissan-pathfinder/7919243890.html
+  Got row: 2018 Nissan Pathfinder-$7,950(Cedar Grove) | $7,950
+Scraping 163/322: https://allentown.craigslist.org/cto/d/easton-jeep-patriot-4x4/7919240623.html
+  Got row: Jeep Patriot 4x4-$5,500(Easton) | $5,500
+Scraping 164/322: https://newyork.craigslist.org/que/cto/d/mamaroneck-work-van/7919240311.html
+  Got row: Work van-$3,800(Queens) | $3,800
+Scraping 165/322: https://cnj.craigslist.org/cto/d/jersey-city-2013-kia-forte-koupe/7919237718.html
+  Got row: 2013 Kia Forte Koupe-$6,300 | $6,300
+Scraping 166/322: https://cnj.craigslist.org/cto/d/perth-amboy-2011-vw-routan/7919237252.html
+  Got row: 2011 VW Routan-$5,000(Old bridge) | $5,000
+Scraping 167/322: https://hudsonvalley.craigslist.org/cto/d/middletown-2001-chevy-express-g3500/7919235942.html
+  Got row: 2001 Chevy Express G3500 Diesel 16ft  Cutaway Van  | $4,000
+Scraping 168/322: https://newyork.craigslist.org/lgi/ctd/d/new-hyde-park-2013-mercedes-c300-4matic/7919235800.html
+  Got row: 2013 Mercedes C300 4matic Sport/Leath/Roof/Nav/89k | $8,990
+Scraping 169/322: https://newyork.craigslist.org/brk/ctd/d/brooklyn-1990-jeep-cherokee/7919225955.html
+  Got row: 1990 Jeep Cherokee-$2,700 | $2,700
+Scraping 170/322: https://hudsonvalley.craigslist.org/cto/d/goshen-2011-bmw-328i-xdrive-69k-miles/7919224308.html
+  Got row: 2011 BMW 328i XDRIVE 69K MILES AUTOMATIC ONE OWER  | $8,900
+Scraping 171/322: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-1993-mercury-sable/7919220107.html
+  Got row: 1993 Mercury Sable station wagon GS 50 K miles-$9, | $9,900
+Scraping 172/322: https://philadelphia.craigslist.org/cto/d/philadelphia-tesla-model-rental-perfect/7919216879.html
+  Got row: Tesla Model 3 Rental – Perfect for Uber/Lyft Drive | $500
+Scraping 173/322: https://cnj.craigslist.org/cto/d/raritan-1988-f800-diesel/7919213843.html
+  Got row: 1988 F800 diesel-$4,000(somerville) | $4,000
+Scraping 174/322: https://philadelphia.craigslist.org/cto/d/essington-2001-buick-lesabre-limited/7919212735.html
+  Got row: 2001 Buick LeSabre Limited... Clean Car.. 102k-$3, | $3,000
+Scraping 175/322: https://philadelphia.craigslist.org/ctd/d/newtown-2010-buick-lacrosse-cxl-4dr/7919210687.html
+  Got row: 2010 Buick LaCrosse CXL 4dr Sedan-$8,900(Newtown,  | $8,900
+Scraping 176/322: https://newjersey.craigslist.org/cto/d/dumont-2016-mini-cooper-4-door/7919209493.html
+  Got row: 2016 Mini Cooper S 4 door-$7,500(Dumont) | $7,500
+Scraping 177/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2014-maxima/7919199293.html
+  Got row: 2014 maxima-$2,000 | $2,000
+Scraping 178/322: https://hudsonvalley.craigslist.org/ctd/d/poughkeepsie-rated-car-dealer-in-hudson/7919195347.html
+  Got row: RATED # 3 CAR DEALER In HUDSON VALLEY //// Auto Wa | $3,000
+Scraping 179/322: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2017-hyundai-elantra-se-20l/7919186247.html
+  Got row: 2017 Hyundai Elantra SE 2.0L Auto (Alabama) ***Gua | $6,800
+Scraping 180/322: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2013-nissan-juke-5dr-wgn-cvt/7919186240.html
+  Got row: 2013 Nissan JUKE 5dr Wgn CVT SV AWD ***Guaranteed  | $6,900
+Scraping 181/322: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2012-mazda-mazda3-5dr-hb-auto/7919186234.html
+  Got row: 2012 Mazda Mazda3 5dr HB Auto i Touring ***Guarant | $4,900
+Scraping 182/322: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2008-bmw-series-4dr-sdn-335xi/7919186225.html
+  Got row: 2008 BMW 3 Series 4dr Sdn 335xi AWD ***Guaranteed  | $7,900
+Scraping 183/322: https://newyork.craigslist.org/que/ctd/d/fresh-meadows-2012-nissan-juke-sv-awd/7919184057.html
+  Got row: 2012 Nissan JUKE SV AWD All Wheel Drive AUTONATION | $8,363
+Scraping 184/322: https://newjersey.craigslist.org/ctd/d/newark-factory-direct-wheelchair-vans/7919181612.html
+  Got row: FACTORY DIRECT WHEELCHAIR VANS & CONVERSIONS! PAY  | $1
+Scraping 185/322: https://philadelphia.craigslist.org/ctd/d/philadelphia-factory-direct-wheelchair/7919181592.html
+  Got row: FACTORY DIRECT WHEELCHAIR VANS & CONVERSIONS! PAY  | $1
+Scraping 186/322: https://philadelphia.craigslist.org/ctd/d/broomall-2008-volkswagen-jetta/7919175713.html
+  Got row: 2008 Volkswagen Jetta-$4,500 | $4,500
+Scraping 187/322: https://newyork.craigslist.org/que/cto/d/long-island-city-2014-mercedes-benz/7919175348.html
+  Got row: 2014 Mercedes-Benz Freightliner Sprinter 3500-$8,0 | $8,000
+Scraping 188/322: https://newjersey.craigslist.org/cto/d/clifton-2013-vw-jetta-hybrid/7919174016.html
+  Got row: 2013 vw jetta hybrid-$7,300(Clifton) | $7,300
+Scraping 189/322: https://newjersey.craigslist.org/cto/d/clifton-2014-ford-max-hybrid/7919172829.html
+  Got row: 2014 ford C-Max hybrid-$8,800(Clifton nj) | $8,800
+Scraping 190/322: https://newjersey.craigslist.org/cto/d/clifton-2014-honda-accord-sport-sedan/7919172757.html
+  Got row: 2014 honda accord  sport  sedan-$8,800(Clifton) | $8,800
+Scraping 191/322: https://newyork.craigslist.org/que/cto/d/jamaica-infiniti-q50/7919170979.html
+  Got row: Infiniti Q50-$9,000(Jamaica) | $9,000
+Scraping 192/322: https://reading.craigslist.org/cto/d/mahanoy-city-2013-gmc-acadia-denali/7919166486.html
+  Got row: 2013 GMC Acadia Denali-$5,500(Mahanoy city) | $5,500
+Scraping 193/322: https://newyork.craigslist.org/lgi/cto/d/mineola-2012-infiniti-g25-sedan-awd/7919165950.html
+  Got row: 2012 infiniti g25 x sedan awd ( 100.000) automatic | $5,900
+Scraping 194/322: https://newjersey.craigslist.org/cto/d/englewood-vw-beetle-71/7919164750.html
+  Got row: VW Beetle 71-$1,900(Englewood) | $1,900
+Scraping 195/322: https://southjersey.craigslist.org/cto/d/shamong-2005-nissan-altima-sl-only-74k/7919158625.html
+  Got row: 2005 Nissan Altima SL; Only 74K Miles; Fully Loade | $2,700
+Scraping 196/322: https://southjersey.craigslist.org/cto/d/shamong-2010-cadillac-srx4-only-78k/7919158028.html
+  Got row: 2010 Cadillac SRX4; Only 78K Miles...Clean..Runs/D | $5,300
+Scraping 197/322: https://philadelphia.craigslist.org/cto/d/exton-sho-1993-taurus-sho/7919145927.html
+  Got row: SHO 1993 Taurus SHO-$6,900(Exton) | $6,900
+Scraping 198/322: https://scranton.craigslist.org/cto/d/honesdale-2013-jeep-wrangler-sahara/7919135692.html
+  Got row: 2013 jeep wrangler sahara unlimited 4×4  with 112, | $14
+Scraping 199/322: https://cnj.craigslist.org/ctd/d/camden-2012-hyundai-santa-fe-fwd-4dr-v6/7919135219.html
+  Got row: 2012 Hyundai Santa Fe FWD 4dr V6 SE-$6,795(pennsau | $6,795
+Scraping 200/322: https://cnj.craigslist.org/ctd/d/camden-2015-dodge-dart-4dr-sdn-sxt/7919135152.html
+  Got row: 2015 Dodge Dart 4dr Sdn SXT-$7,495(pennsauken) | $7,495
+Scraping 201/322: https://cnj.craigslist.org/ctd/d/camden-2018-ford-focus-se-sedan/7919135125.html
+  Got row: 2018 Ford Focus SE Sedan-$8,295(pennsauken) | $8,295
+Scraping 202/322: https://cnj.craigslist.org/ctd/d/camden-2009-nissan-altima-4dr-sdn-i4/7919135059.html
+  Got row: 2009 Nissan Altima 4dr Sdn I4 CVT 2.5 S-$4,195(pen | $4,195
+Scraping 203/322: https://cnj.craigslist.org/cto/d/bound-brook-volkswagen/7919134492.html
+  Got row: Volkswagen-$1(Bound Brook) | $1
+Scraping 204/322: https://harrisburg.craigslist.org/cto/d/hershey-1938-chevy-coupe/7919134349.html
+  Got row: 1938 Chevy coupe-$9,995(Hershey, PA) | $9,995
+Scraping 205/322: https://philadelphia.craigslist.org/cto/d/havertown-1940-chevy-stylemaster/7919128790.html
+  Got row: 1940 Chevy Stylemaster-$5,000(Havertown pa) | $5,000
+Scraping 206/322: https://hudsonvalley.craigslist.org/cto/d/hastings-on-hudson-2014-toyota-prius/7919125989.html
+  Got row: 2014 Toyota Prius C Hatchback-$5,500(Westchester) | $5,500
+Scraping 207/322: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2015-subaru-crosstrek/7919121162.html
+  Got row: 2015 Subaru Crosstrek Premium XV AWD-$9,850(New Cu | $9,850
+Scraping 208/322: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2014-jeep-patriot/7919121021.html
+  Got row: 2014 Jeep Patriot Latitude 4x4-$6,950(New Cumberla | $6,950
+Scraping 209/322: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2013-mini-cooper-country/7919120935.html
+  Got row: 2013 Mini- Cooper S Country Man FWD-$7,850(New Cum | $7,850
+Scraping 210/322: https://philadelphia.craigslist.org/ctd/d/feasterville-trevose-2006-infiniti-fx35/7919120250.html
+  Got row: 2006 INFINITI FX35 AWD LOW MILES RUNS STRONG CASH  | $5,990
+Scraping 211/322: https://philadelphia.craigslist.org/ctd/d/feasterville-trevose-2015-fiat-500/7919119935.html
+  Got row: 2015 FIAT 500 SPORT LOW MILES RUNS GREAT WE FINANC | $9,990
+Scraping 212/322: https://ithaca.craigslist.org/ctd/d/owego-2016-jeep-renegade-4wd-4dr/7919118843.html
+  Got row: 2016 Jeep Renegade 4WD 4dr Trailhawk-$9,995(Owego) | $9,995
+Scraping 213/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2010-nissan-cube/7919114330.html
+  Got row: 2010 Nissan cube-$1,000(Brooklyn) | $1,000
+Scraping 214/322: https://newyork.craigslist.org/brx/ctd/d/passaic-2016-nissan-leaf-hb-sv/7919112369.html
+  Got row: 2016 Nissan LEAF HB SV-$2,999(The price in this ad | $2,999
+Scraping 215/322: https://newyork.craigslist.org/brk/ctd/d/trenton-2007-cadillac-escalade-base-awd/7919112186.html
+  Got row: 2007 Cadillac Escalade Base AWD 4dr SUV-$8,600(Cad | $8,600
+Scraping 216/322: https://newyork.craigslist.org/lgi/cto/d/great-neck-mini-cooper-roadster/7919106424.html
+  Got row: Mini cooper roadster convertible clean title-$10,0 | $10,000
+Scraping 217/322: https://newyork.craigslist.org/brk/ctd/d/passaic-2020-chevrolet-chevy-equinox/7919104549.html
+  Got row: 2020 Chevrolet Chevy Equinox FWDLT w1LT w 1 LT w-1 | $8,545
+Scraping 218/322: https://allentown.craigslist.org/ctd/d/bethlehem-2015-nissan-altima-4dr-sdn-i4/7919102459.html
+  Got row: 2015 Nissan Altima 4dr Sdn I4 2.5 SV-$7,650(Bethle | $7,650
+Scraping 219/322: https://newyork.craigslist.org/brk/ctd/d/brooklyn-2018-chevorlet-sonic-premier/7919101912.html
+  Got row: 2018 Chevorlet Sonic Premier-$4,800(Brooklyn) | $4,800
+Scraping 220/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2021-bmw-x3-3-3-xdrive30i/7919101322.html
+  Got row: 2021 BMW X3 X 3 X-3 xDrive30i xDrive 30 i xDrive-3 | $359
+Scraping 221/322: https://cnj.craigslist.org/cto/d/skillman-2019-jeep-grand-cherokee/7919099700.html
+  Got row: 2019 Jeep Grand Cherokee Limited-$5,500(Skillman) | $5,500
+Scraping 222/322: https://newyork.craigslist.org/brk/ctd/d/brooklyn-2019-jeep-cherokee/7919098791.html
+  Got row: 2019 Jeep Cherokee-$8,700(Brooklyn) | $8,700
+Scraping 223/322: https://newyork.craigslist.org/wch/cto/d/harrison-ford-econo-van-e250/7919089964.html
+  Got row: Ford Econo Van E250-$1,500(Harrison) | $1,500
+Scraping 224/322: https://cnj.craigslist.org/cto/d/old-bridge-1987-alfa-romeo-spider/7919086969.html
+  Got row: 1987 Alfa Romeo spider Quadrofoglio cnvertible Cle | $6,999
+Scraping 225/322: https://scranton.craigslist.org/cto/d/tunkhannock-1990-c4-corvette/7919080683.html
+  Got row: 1990 C4 Corvette-$7,500(Tunkhannock) | $7,500
+Scraping 226/322: https://newyork.craigslist.org/brx/ctd/d/passaic-2019-ford-fusion-hybrid-se/7919079040.html
+  Got row: 2019 Ford Fusion Hybrid SE-$9,999(The price in thi | $9,999
+Scraping 227/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2021-hyundai-tucson/7919074166.html
+  Got row: 2021 Hyundai Tucson-$10,000(Brooklyn) | $10,000
+Scraping 228/322: https://hudsonvalley.craigslist.org/cto/d/spring-valley-2013-bmw-528i-clean/7919065887.html
+  Got row: 🚨2013 BMW🚙 528i Clean 🧼 Heated 💺 seats🚨-$6,500 | $6,500
+Scraping 229/322: https://newyork.craigslist.org/wch/cto/d/yonkers-2015-honda-odyssey-low-miles/7919062521.html
+  Got row: 2015 Honda odyssey low miles!-$6,500(Westchester n | $6,500
+Scraping 230/322: https://newyork.craigslist.org/que/ctd/d/maspeth-wow-2005-chevrolet-malibu-with/7919061686.html
+  Got row: Wow! A 2005 Chevrolet Malibu with 111,540 Miles-qu | $3,495
+Scraping 231/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2022-mercedes-benz-gle-350/7919061127.html
+  Got row: 2022 Mercedes-Benz GLE 350 4MATIC 4 MATIC 4-MATIC- | $599
+Scraping 232/322: https://newjersey.craigslist.org/cto/d/franklin-lakes-bmw-package-executive/7919057720.html
+  Got row: BMW M package Executive Package by owner-$7,999(Fr | $7,999
+Scraping 233/322: https://pennstate.craigslist.org/ctd/d/mc-clure-2013-ford-mustang-convertible/7919042393.html
+  Got row: 2013 Ford Mustang Convertible - $8,500 - OBO-$8,50 | $8,500
+Scraping 234/322: https://newjersey.craigslist.org/cto/d/jersey-city-for-sale-2017-honda-accord/7919037086.html
+  Got row: For sale 2017 Honda Accord EXL-$9,000 | $9,000
+Scraping 235/322: https://allentown.craigslist.org/ctd/d/bethlehem-2011-bmw-x3-awd-4dr-28i94868/7919034506.html
+  Got row: 2011 BMW X3 AWD 4dr 28i|94,868 Miles|All Wheel Dri | $6,999
+Scraping 236/322: https://newyork.craigslist.org/que/ctd/d/great-neck-2023-tesla-model-base/7919032573.html
+  Got row: 2023 Tesla Model 3 Base-$359(Import Masters) | $359
+Scraping 237/322: https://newyork.craigslist.org/brx/ctd/d/fresh-meadows-infiniti-q50-premium-awd/7919031978.html
+  Got row: ************ 2014 INFINITI Q50 PREMIUM AWD ******* | $8,999
+Scraping 238/322: https://cnj.craigslist.org/cto/d/cranford-2012-nissan-rogue/7919030912.html
+  Got row: 2012 Nissan Rogue-$3,300(Cranford) | $3,300
+Scraping 239/322: https://newyork.craigslist.org/brk/ctd/d/brooklyn-2016-mazda-cx-touring-awd-with/7919027707.html
+  Got row: 2016 MAZDA CX-3 TOURING Awd with 123k miles, Leath | $9,995
+Scraping 240/322: https://allentown.craigslist.org/ctd/d/bath-2013-ford-fusion-in-house/7919026134.html
+  Got row: 2013 Ford Fusion - In-House Financing Available!-$ | $9995.00
+Scraping 241/322: https://allentown.craigslist.org/ctd/d/bath-2011-mitsubishi-endeavor-in-house/7919026106.html
+  Got row: 2011 Mitsubishi Endeavor - In-House Financing Avai | $6495.00
+Scraping 242/322: https://allentown.craigslist.org/ctd/d/bath-2012-chevrolet-cruze-in-house/7919026096.html
+  Got row: 2012 Chevrolet Cruze - In-House Financing Availabl | $6995.00
+Scraping 243/322: https://allentown.craigslist.org/ctd/d/bath-2013-nissan-rogue-in-house/7919026082.html
+  Got row: 2013 Nissan Rogue - In-House Financing Available!- | $9995.00
+Scraping 244/322: https://cnj.craigslist.org/ctd/d/trenton-2016-ford-focus-4dr-sedan/7919025414.html
+  Got row: 2016 Ford Focus S 4dr Sedan-$4,700(Ford Focus Seda | $4,700
+Scraping 245/322: https://newjersey.craigslist.org/cto/d/palisades-park-2009-ford-e350/7919016074.html
+  Got row: 2009 Ford E350 12passenger van perfect condition-$ | $8,500
+Scraping 246/322: https://longisland.craigslist.org/cto/d/brooklyn-2012-nissan-murano/7919008652.html
+  Got row: 2012 Nissan Murano-$4,000(Runs awesome) | $4,000
+Scraping 247/322: https://hudsonvalley.craigslist.org/ctd/d/newburgh-2017-chevrolet-cruze-low-miles/7918997170.html
+  Got row: 2017 CHEVROLET CRUZE LOW MILES GOOD LOOKING CAR ON | $9,899
+Scraping 248/322: https://newyork.craigslist.org/wch/cto/d/white-plains-2014-mercedes-benz-c300/7918995780.html
+  Got row: 2014 Mercedes Benz C300 4Matic-$9,500(White Plains | $9,500
+Scraping 249/322: https://newyork.craigslist.org/fct/cto/d/lakewood-auction-access-dealers-license/7918994778.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 250/322: https://jerseyshore.craigslist.org/cto/d/lakewood-auction-access-dealers-license/7918994468.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 251/322: https://southjersey.craigslist.org/ctd/d/camden-2013-infiniti-g37stuck-in-bad/7918982773.html
+  Got row: 2013 INFINITI G37STUCK IN BAD LOAN WE HELP/GET OUT | $9,999
+Scraping 252/322: https://harrisburg.craigslist.org/ctd/d/hummelstown-2004-chevrolet-trailblazer/7918979807.html
+  Got row: 2004 Chevrolet Trailblazer EXT-$7,295(Hummelstown) | $7,295
+Scraping 253/322: https://newyork.craigslist.org/jsy/ctd/d/spotswood-2016-dodge-journey-crossroad/7918979470.html
+  Got row: 2016 Dodge Journey Crossroad AWD 4dr SUV-$7,000(Ea | $7,000
+Scraping 254/322: https://philadelphia.craigslist.org/ctd/d/spotswood-2009-buick-lucerne-cxl-4dr/7918979234.html
+  Got row: 2009 Buick Lucerne CXL 4dr Sedan w/4XL-$6,000(East | $6,000
+Scraping 255/322: https://newjersey.craigslist.org/cto/d/jersey-city-2010-acura-tl-awd-with-tech/7918978267.html
+  Got row: 2010 Acura TL AWD with tech package-$1,989(Jersey  | $1,989
+Scraping 256/322: https://newjersey.craigslist.org/cto/d/west-orange-2008-nissan-sentra-only-68k/7918975338.html
+  Got row: 2008 Nissan Sentra only 68k miles!!!-$2,600(West O | $2,600
+Scraping 257/322: https://york.craigslist.org/cto/d/red-lion-2000-mitsubishi-fuso-box/7918975187.html
+  Got row: 2000 Mitsubishi Fuso box truck..75k miles-$2,900(R | $2,900
+Scraping 258/322: https://indianapolis.craigslist.org/ctd/d/hamburg-vehicles-of-speed-auction/7918969320.html
+  Got row: VEHICLES OF SPEED AUCTION-$1(HAMBURG) | $1
+Scraping 259/322: https://york.craigslist.org/ctd/d/york-2003-ford-taurus-miles-ibo/7918969206.html
+  Got row: 2003 Ford Taurus 108,000 miles ibo-$2,600(York) | $2,600
+Scraping 260/322: https://jacksonville.craigslist.org/ctd/d/hamburg-vehicles-of-speed-auction/7918969059.html
+  Got row: VEHICLES OF SPEED AUCTION-$1(HAMBURG) | $1
+Scraping 261/322: https://helena.craigslist.org/ctd/d/hamburg-vehicles-of-speed-auction/7918968779.html
+  Got row: VEHICLES OF SPEED AUCTION-$1(HAMBURG) | $1
+Scraping 262/322: https://washingtondc.craigslist.org/nva/ctd/d/hamburg-vehicles-of-speed-auction/7918968449.html
+  Got row: VEHICLES OF SPEED AUCTION-$1(HAMBURG) | $1
+Scraping 263/322: https://allentown.craigslist.org/ctd/d/hamburg-vehicles-of-speed-auction/7918968020.html
+  Got row: VEHICLES OF SPEED AUCTION-$1(HAMBURG) | $1
+Scraping 264/322: https://newyork.craigslist.org/fct/ctd/d/stamford-2017-mini-cooper-clubman-wd/7918967411.html
+  Got row: 2017 MINI COOPER CLUBMAN 4 WD CHOICE OF TWO!!!!-$9 | $9,995
+Scraping 265/322: https://newyork.craigslist.org/fct/ctd/d/stamford-2013-hyundai-velostar-turbo/7918967071.html
+  Got row: 2013 HYUNDAI VELOSTAR TURBO NEW CAR TRADE CLEAN CA | $5,495
+Scraping 266/322: https://hudsonvalley.craigslist.org/cto/d/newburgh-08-kia-spectra-only-81000/7918965783.html
+  Got row: 08 kia spectra only 81.000-$3,400(Marlboro) | $3,400
+Scraping 267/322: https://newyork.craigslist.org/que/cto/d/little-neck-2011-nissan-sentra-sl-sedan/7918962350.html
+  Got row: 2011 Nissan sentra SL sedan 2.0-$2,500(Flushing) | $2,500
+Scraping 268/322: https://pittsburgh.craigslist.org/ctd/d/south-orange-2010-porsche-panamera-499/7918956474.html
+  Got row: 2010 PORSCHE PANAMERA $499 DOWN! COME NOW & BE ON  | $495
+Scraping 269/322: https://pittsburgh.craigslist.org/ctd/d/south-orange-2017-porsche-cayenne-500/7918956403.html
+  Got row: 2017 PORSCHE CAYENNE S! $500 DOWN! YOU DONT LEAVE  | $495
+Scraping 270/322: https://southjersey.craigslist.org/cto/d/brick-2010-nissan-pathfinder/7918956383.html
+  Got row: 2010 Nissan Pathfinder S-$6,000(brick) | $6,000
+Scraping 271/322: https://pittsburgh.craigslist.org/ctd/d/south-orange-2019-jeep-grand-cherokee/7918956341.html
+  Got row: 2019 JEEP GRAND CHEROKEE! $499 DOWN WE DON’T SAY N | $995
+Scraping 272/322: https://cnj.craigslist.org/ctd/d/orange-2014-bmw-series-500-down-make-10/7918955434.html
+  Got row: 2014 BMW 4 SERIES $500 DOWN! MAKE $10/HOUR? ALL CR | $695
+Scraping 273/322: https://cnj.craigslist.org/ctd/d/orange-2020-acura-mdx-499-down-bad/7918955432.html
+  Got row: 2020 ACURA MDX $499 DOWN! BAD CREDIT OK! SAME DAY  | $695
+Scraping 274/322: https://newjersey.craigslist.org/ctd/d/newark-2012-bmw-740li-499-down-we/7918955431.html
+  Got row: 2012 BMW 740LI $499 DOWN! WE CHOOSE OUR APPROVALS, | $995
+Scraping 275/322: https://newjersey.craigslist.org/ctd/d/newark-2014-mercedes-benz-down-drive/7918955425.html
+  Got row: 2014 MERCEDES BENZ S550! $499 DOWN DRIVE NOW! CALL | $499
+Scraping 276/322: https://delaware.craigslist.org/ctd/d/south-orange-2019-audi-down-drive-with/7918955414.html
+  Got row: 2019 AUDI A7 $1399 DOWN! DRIVE WITH NO CREDIT! 500 | $1,399
+Scraping 277/322: https://delaware.craigslist.org/ctd/d/south-orange-2019-jeep-grand-cherokee/7918955411.html
+  Got row: 2019 JEEP GRAND CHEROKEE! $499 DOWN WE DON’T SAY N | $499
+Scraping 278/322: https://newyork.craigslist.org/brk/ctd/d/south-orange-2015-audi-q5-500-down-love/7918955327.html
+  Got row: 2015 AUDI Q5 $500 DOWN! LOVE BAD CREDIT CUSTOMERS! | $999
+Scraping 279/322: https://newyork.craigslist.org/brk/ctd/d/south-orange-2017-porsche-cayenne-500/7918955326.html
+  Got row: 2017 PORSCHE CAYENNE S! $500 DOWN! YOU DONT LEAVE  | $999
+Scraping 280/322: https://newhaven.craigslist.org/ctd/d/south-orange-2018-maseratti-lavente-500/7918955317.html
+  Got row: 2018 MASERATTI LAVENTE $500 DOWN MAKE $10/HR? BE O | $449
+Scraping 281/322: https://newhaven.craigslist.org/ctd/d/south-orange-2014-chrysler-300s-500/7918955316.html
+  Got row: 2014 CHRYSLER 300S $500 DOWN BAD CREDIT OK! NO CRE | $499
+Scraping 282/322: https://philadelphia.craigslist.org/ctd/d/south-orange-2017-alfa-romeo-gulia-499/7918955313.html
+  Got row: 2017 ALFA ROMEO GULIA $499 DOWN! WE DONT SAY NO! W | $499
+Scraping 283/322: https://philadelphia.craigslist.org/ctd/d/south-orange-2017-chevy-camaro-lt-499/7918955311.html
+  Got row: 2017 CHEVY CAMARO LT! $499 DOWN! WE DONT CARE ABOU | $500
+Scraping 284/322: https://washingtondc.craigslist.org/doc/ctd/d/south-orange-2015-audi-a8l-500-down/7918955305.html
+  Got row: 2015 AUDI A8L $500 DOWN! LOVE BAD CREDIT CUSTOMERS | $499
+Scraping 285/322: https://washingtondc.craigslist.org/doc/ctd/d/south-orange-2019-bmw-down-pay-stubs/7918955299.html
+  Got row: 2019 BMW I8 $1499 DOWN! 2 PAY STUBS& YOU DRIVE! NO | $499
+Scraping 286/322: https://newjersey.craigslist.org/cto/d/clifton-2011-gmc-terrain/7918954700.html
+  Got row: 2011 GMC Terrain-$4,900(North Jersey) | $4,900
+Scraping 287/322: https://newjersey.craigslist.org/cto/d/clifton-2012-audi-q5-quattro-20t/7918954316.html
+  Got row: 2012 Audi Q5 Quattro 2.0T-$6,500(North Jersey) | $6,500
+Scraping 288/322: https://newjersey.craigslist.org/cto/d/clifton-2012-volkswagen-gti-20t/7918954073.html
+  Got row: 2012 Volkswagen GTI 2.0T-$7,500(North Jersey) | $7,500
+Scraping 289/322: https://allentown.craigslist.org/cto/d/coopersburg-2008-ford-350/7918950936.html
+  Got row: 2008 ford f-350-$8,000(Coopersburg) | $8,000
+Scraping 290/322: https://philadelphia.craigslist.org/cto/d/haddonfield-buick/7918948794.html
+  Got row: Buick-$3,000(Sewell  new jersey) | $3,000
+Scraping 291/322: https://hudsonvalley.craigslist.org/cto/d/plattekill-2010-mercury-milan-premier/7918938985.html
+  Got row: 2010 Mercury Milan premier only 103k-$3,400(Orange | $3,400
+Scraping 292/322: https://cnj.craigslist.org/cto/d/dayton-2015-dodge-ram-promaster-1500/7918937483.html
+  Got row: 2015 Dodge Ram Promaster 1500-$6,000(South Brunswi | $6,000
+Scraping 293/322: https://newyork.craigslist.org/wch/cto/d/yonkers-2015-jeep-cherokee-81k/7918929319.html
+  Got row: 2015 Jeep Cherokee- 81K-$7,900 | $7,900
+Scraping 294/322: https://newyork.craigslist.org/wch/cto/d/yonkers-2004-nissan-murano-sl-sport/7918928920.html
+  Got row: 2004 Nissan Murano · SL Sport Utility 4D-$3,700(Yo | $3,700
+Scraping 295/322: https://newjersey.craigslist.org/cto/d/hillsdale-volvo-s80-only-94k-miles/7918928036.html
+  Got row: Volvo S80 only 94k Miles!!-$6,995 | $6,995
+Scraping 296/322: https://cnj.craigslist.org/cto/d/linden-2012-toyota-sienna-le-miles/7918917230.html
+  Got row: 2012 Toyota sienna Le - 102.000 miles-$7,500(Linde | $7,500
+Scraping 297/322: https://york.craigslist.org/cto/d/windsor-2008-jeep-liberty-4x4/7918917197.html
+  Got row: 2008 Jeep Liberty 4x4-$3,000(Windsor) | $3,000
+Scraping 298/322: https://delaware.craigslist.org/cto/d/hockessin-2012-chevrolet-equinox/7918894004.html
+  Got row: 2012 Chevrolet Equinox-$5,900 | $5,900
+Scraping 299/322: https://hudsonvalley.craigslist.org/cto/d/poughkeepsie-2013-mini-cooper-paceman/7918893425.html
+  Got row: 2013 Mini Cooper Paceman 2D 1.6L 67k-$7,200(Poughk | $7,200
+Scraping 300/322: https://delaware.craigslist.org/ctd/d/wilmington-2012-ford-f150-one-owner/7918890817.html
+  Got row: 2012 Ford F150 One Owner Only 60k miles-$9,900(Wil | $9,900
+Scraping 301/322: https://southjersey.craigslist.org/ctd/d/clayton-2017-dodge-journey-sxt-awd/7918888190.html
+  Got row: 2017 Dodge Journey SXT AWD-$8,995(Clayton, NJ) | $8,995
+Scraping 302/322: https://cnj.craigslist.org/ctd/d/spotswood-2012-hyundai-elantra-limited/7918887366.html
+  Got row: 2012 Hyundai Elantra Limited 4dr Sedan-$5,700(East | $5,700
+Scraping 303/322: https://cnj.craigslist.org/ctd/d/trenton-2010-ford-fusion-se-4dr-sedan/7918887119.html
+  Got row: 2010 Ford Fusion SE 4dr Sedan-$3,900(Ford Fusion S | $3,900
+Scraping 304/322: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2015-ford-explorer-xlt/7918884419.html
+  Got row: 2015 Ford Explorer XLT AWD SUV w/ 3rd Row Seating- | $9,995
+Scraping 305/322: https://longisland.craigslist.org/ctd/d/east-meadow-2004-nissan-sentra-18-owner/7918869551.html
+  Got row: 2004 NISSAN SENTRA 1.8 S- 1 OWNER-$2,795(East Mead | $2,795
+Scraping 306/322: https://newyork.craigslist.org/que/cto/d/lawrence-2013-mazda-cx-touring-awd/7918869110.html
+  Got row: 2013 Mazda CX-9 Touring AWD Touring 4dr SUV-$6,900 | $6,900
+Scraping 307/322: https://newyork.craigslist.org/que/cto/d/lawrence-2013-honda-accord-ex/7918868722.html
+  Got row: 2013 Honda Accord EX-L🔥✈️🔥✈️-$8,900(Lawrence) | $8,900
+Scraping 308/322: https://newyork.craigslist.org/que/cto/d/lawrence-2017-nissan-altima-25-sv/7918868060.html
+  Got row: 2017 Nissan Altima 2.5 SV🔥🔥✈️✈️🔥🔥-$7,900(Lawrence) | $7,900
+Scraping 309/322: https://southjersey.craigslist.org/cto/d/cherry-hill-2006-hyundai-sonata-lx-miles/7918864563.html
+  Got row: 2006 Hyundai Sonata LX V6 *23,000 Miles*-$8,000(Ch | $8,000
+Scraping 310/322: https://newjersey.craigslist.org/ctd/d/totowa-2015-audi-a3-20t-premium-plus/7918848800.html
+  Got row: 2015 Audi A3 2.0T Premium Plus Sedan 4D-$8,750(Pat | $8,750
+Scraping 311/322: https://newyork.craigslist.org/brk/cto/d/brooklyn-2005-mercedes-benz-class-240/7918750026.html
+  Got row: 2005 Mercedes-Benz C-Class C 240 4matic-$2,700(Bro | $2,700
+Scraping 312/322: https://newjersey.craigslist.org/ctd/d/totowa-2013-audi-a4-premium-plus-sedan/7918845290.html
+  Got row: 2013 Audi A4 Premium Plus Sedan 4D-$6,995(Paterson | $6,995
+Scraping 313/322: https://york.craigslist.org/ctd/d/york-1969-oldsmobile-442/7918844903.html
+  Got row: 1969 Oldsmobile 442-$2,500(York) | $2,500
+Scraping 314/322: https://philadelphia.craigslist.org/cto/d/cheltenham-2013-nissan-sentra-sl/7918844719.html
+  Got row: 2013 nissan sentra sl-$6,350(cheltenham, pa) | $6,350
+Scraping 315/322: https://newjersey.craigslist.org/ctd/d/totowa-2014-mazda-mazda3-touring-sedan/7918843474.html
+  Got row: 2014 MAZDA MAZDA3 i Touring Sedan 4D-$8,850(Paters | $8,850
+Scraping 316/322: https://york.craigslist.org/ctd/d/york-1972-ford-mustang-convertible/7918841599.html
+  Got row: 1972 Ford Mustang , convertible-$1,700(York) | $1,700
+Scraping 317/322: https://newjersey.craigslist.org/ctd/d/totowa-2011-audi-a4-20t-quattro-premium/7918841368.html
+  Got row: 2011 Audi A4 2.0T Quattro Premium Sedan 4D-$7,495( | $7,495
+Scraping 318/322: https://york.craigslist.org/ctd/d/york-1967-pontiac-firebird-convertible/7918841044.html
+  Got row: 1967 Pontiac Firebird convertible-$3,900(York) | $3,900
+Scraping 319/322: https://newjersey.craigslist.org/ctd/d/totowa-2015-bmw-x1-xdrive35i-sport/7918840033.html
+  Got row: 2015 BMW X1 xDrive35i Sport Utility 4D-$8,900(Pate | $8,900
+Scraping 320/322: https://newyork.craigslist.org/que/cto/d/maspeth-2013-kia-soul-only-60k-one/7918838205.html
+  Got row: 2013 Kia Soul + Only 60K. One Owner Car-$7,490(Mas | $7,490
+Scraping 321/322: https://cnj.craigslist.org/ctd/d/spotswood-2012-hyundai-santa-fe-limited/7918837235.html
+  Got row: 2012 Hyundai Santa Fe Limited 4dr SUV (V6)-$7,400( | $7,400
+Scraping 322/322: https://harrisburg.craigslist.org/ctd/d/harrisburg-2013-ford-taurus-se-warranty/7918837163.html
+  Got row: 2013 Ford Taurus SE WARRANTY AVAILABLE !!!-$6,700( | $6,700
+Wrote 322 rows to /Users/bc/craigslist_scraper/craigslist_cars_detailed.csv
+Wrote HTML table to /Users/bc/craigslist_scraper/craigslist_cars_detailed.html
+Sleeping 60 minutes until next run...
+Page length: 34896
+Found result rows: 324
+Extracted links: 324
+Scraping 1/324: https://philadelphia.craigslist.org/cto/d/philadelphia-2012-subaru-outback-awd/7919556923.html
+  Got row: 2012 Subaru Outback AWD - 2.5I - Private owner.-$5 | $5,800
+Scraping 2/324: https://newyork.craigslist.org/que/cto/d/ozone-park-infiniti-qx/7919553796.html
+  Got row: Infiniti QX60 2015-$4,500(Ozone Park) | $4,500
+Scraping 3/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2019-honda-passport-exl-ex/7919552834.html
+  Got row: 2019 Honda Passport EXL EX L EX-L-$349(Import Mast | $349
+Scraping 4/324: https://newyork.craigslist.org/brx/cto/d/bronx-2014-buick-verano-miles/7919551708.html
+  Got row: 2014 Buick Verano 51,000 Miles-$6,500(Bronx) | $6,500
+Scraping 5/324: https://newyork.craigslist.org/brx/cto/d/bronx-2009-ford-ecoline-van/7919551114.html
+  Got row: 2009 Ford Ecoline Van-$1,600(Bronx) | $1,600
+Scraping 6/324: https://hudsonvalley.craigslist.org/ctd/d/poughkeepsie-2012-jeep-liberty/7919545562.html
+  Got row: 2012 Jeep liberty-$5,500(Poughkeepsie) | $5,500
+Scraping 7/324: https://newyork.craigslist.org/que/cto/d/flushing-2002-chevy-astro-cargo-van/7919544960.html
+  Got row: 2002 Chevy Astro cargo van.-$3,500(Auburndale) | $3,500
+Scraping 8/324: https://binghamton.craigslist.org/ctd/d/binghamton-2007-saab-3/7919544273.html
+  Got row: 2007 SAAB 9-3-$5,995(Binghamton, N.Y.) | $5,995
+Scraping 9/324: https://binghamton.craigslist.org/ctd/d/binghamton-2015-honda-civic/7919543004.html
+  Got row: 2015 Honda Civic-$9,795(Binghamton, N.Y.) | $9,795
+Scraping 10/324: https://philadelphia.craigslist.org/cto/d/philadelphia-2003-jeep-wrangler-clean/7919541881.html
+  Got row: 2003 Jeep Wrangler CLEAN!-$8,900(Philadelphia) | $8,900
+Scraping 11/324: https://philadelphia.craigslist.org/cto/d/philadelphia-2010-vw-volkswagen-cc-low/7919541729.html
+  Got row: 2010 VW Volkswagen CC Low Miles!-$5,000(Philadelph | $5,000
+Scraping 12/324: https://york.craigslist.org/ctd/d/york-1973-chevrolet-corvette-convertible/7919541399.html
+  Got row: 1973 Chevrolet Corvette , convertible-$5,900(York) | $5,900
+Scraping 13/324: https://york.craigslist.org/ctd/d/york-1976-pontiac-trans-am/7919540925.html
+  Got row: 1976 Pontiac Trans Am-$2,900(York) | $2,900
+Scraping 14/324: https://hudsonvalley.craigslist.org/cto/d/hopewell-junction-2015-subaru-forester/7919538778.html
+  Got row: 2015 Subaru Forester-$6,400(Hopewell Junction) | $6,400
+Scraping 15/324: https://newjersey.craigslist.org/cto/d/west-new-york-2003-cadillac-deville-low/7919536511.html
+  Got row: 2003 Cadillac Deville low mileage-$3,500(West New  | $3,500
+Scraping 16/324: https://philadelphia.craigslist.org/ctd/d/burlington-2010-mini-cooper-2dr/7919535438.html
+  Got row: 2010 Mini Cooper S 2dr Hatchback-$4,000(_Mini_ _Co | $4,000
+Scraping 17/324: https://york.craigslist.org/ctd/d/york-2007-ford-150/7919532958.html
+  Got row: 2007 Ford F 150-$1,600(York) | $1,600
+Scraping 18/324: https://harrisburg.craigslist.org/ctd/d/new-kingstown-2012-mazda-i-touring/7919532747.html
+  Got row: 2012 Mazda 3 i Touring Hatchback • Low Miles • Rel | $7,950
+Scraping 19/324: https://york.craigslist.org/ctd/d/york-1992-plymouth-sundance/7919532529.html
+  Got row: 1992 Plymouth Sundance-$9,500(York) | $9,500
+Scraping 20/324: https://york.craigslist.org/ctd/d/york-1980-chevrolet-20/7919532058.html
+  Got row: 1980 Chevrolet K 20-$5,900(York) | $5,900
+Scraping 21/324: https://newjersey.craigslist.org/ctd/d/passaic-2017-mercedes-benz-cclass-class/7919526574.html
+  Got row: 2017 Mercedes-Benz CClass C Class C-Class C 300 4M | $8,535
+Scraping 22/324: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919526286.html
+  Got row: FAST AND EASY CREDIT APPROVAL  2015 Nissan JUKE AW | $9,950
+Scraping 23/324: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919525972.html
+  Got row: FAST AND EASY CREDIT APPROVAL 6-SP MANUAL!! 2006 A | $7,450
+Scraping 24/324: https://hudsonvalley.craigslist.org/ctd/d/highland-fast-and-easy-credit-approval/7919525577.html
+  Got row: FAST AND EASY CREDIT APPROVAL   2012 Nissan Juke S | $9,950
+Scraping 25/324: https://hudsonvalley.craigslist.org/ctd/d/poughkeepsie-2012-ford-flex-sel-all/7919525179.html
+  Got row: 2012 Ford Flex SEL All Wheel Drive *Only 80K* Very | $8,495
+Scraping 26/324: https://newyork.craigslist.org/brx/ctd/d/passaic-2021-chevrolet-malibu-sdn-lt/7919517609.html
+  Got row: 2021 Chevrolet Malibu Sdn LT-$7,789(The price in t | $7,789
+Scraping 27/324: https://scranton.craigslist.org/ctd/d/taylor-2014-dodge-challenger-sxt-2180/7919512828.html
+  Got row: 2014 Dodge Challenger SXT (2180)-$6,995(OLD FORGE) | $6,995
+Scraping 28/324: https://delaware.craigslist.org/cto/d/wilmington-1996-jaguar-xjs-convertible/7919512452.html
+  Got row: 1996 Jaguar XJS Convertible, Low miles!, Excellent | $7,995
+Scraping 29/324: https://newyork.craigslist.org/que/cto/d/corona-nissan-sentra-sr-midnight/7919511355.html
+  Got row: Nissan Sentra SR Midnight edition 2018 52 k miles- | $8,499
+Scraping 30/324: https://reading.craigslist.org/ctd/d/fogelsville-2018-nissan-rogue-sv-awd/7919502952.html
+  Got row: 2018 Nissan Rogue SV AWD-$9,990(FOGELSVILLE, PA.) | $9,990
+Scraping 31/324: https://reading.craigslist.org/ctd/d/fogelsville-2016-fiat-500x-trekking-awd/7919502555.html
+  Got row: 2016 Fiat 500x TREKKING AWD-$7,990(FOGELSVILLE, PA | $7,990
+Scraping 32/324: https://longisland.craigslist.org/cto/d/island-park-1989-oldsmobile-toronado/7919502397.html
+  Got row: 1989 Oldsmobile Toronado Trifari 2dr Coupe-$8,500 | $8,500
+Scraping 33/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-toyota/7919498433.html
+  Got row: Toyota-$2,000(Brooklyn) | $2,000
+Scraping 34/324: https://jerseyshore.craigslist.org/cto/d/toms-river-2011-chevy-cruze-lt-low-miles/7919494254.html
+  Got row: 2011 Chevy Cruze LT - Low Miles-$3,000(Toms River) | $3,000
+Scraping 35/324: https://newjersey.craigslist.org/ctd/d/fair-lawn-jaguar-2008-type-black-with/7919494231.html
+  Got row: JAGUAR  2008 S-TYPE BLACK WITH BEIGE LEATHER-$4,58 | $4,588
+Scraping 36/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-have-the-permits-if-you-have/7919490423.html
+  Got row: I have the permits if you have the truck-$1(Brookl | $1
+Scraping 37/324: https://newyork.craigslist.org/fct/cto/d/stamford-florida-dealer-plates-and/7919487147.html
+  Got row: Florida Dealer Plates and Auction Access-$1,800(NY | $1,800
+Scraping 38/324: https://scranton.craigslist.org/ctd/d/taylor-2021-chevrolet-traverse-premier/7919485912.html
+  Got row: 2021 Chevrolet Traverse Premier (2286)-$2,286(OLD  | $2,286
+Scraping 39/324: https://newjersey.craigslist.org/cto/d/north-arlington-2011-ford-mustang/7919481712.html
+  Got row: 2011 Ford Mustang-$8,500 | $8,500
+Scraping 40/324: https://scranton.craigslist.org/ctd/d/taylor-2016-bmw-x3-xdrive-28i-2289/7919480373.html
+  Got row: 2016 BMW X3 Xdrive 28I (2289)-$9,995(OLD FORGE) | $9,995
+Scraping 41/324: https://cnj.craigslist.org/ctd/d/trenton-2006-chrysler-town-country/7919480016.html
+  Got row: 2006 Chrysler Town & Country Limited 4dr Extended  | $4,900
+Scraping 42/324: https://newjersey.craigslist.org/cto/d/union-auction-access-dealers-license/7919477816.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 43/324: https://newyork.craigslist.org/lgi/cto/d/lakewood-auction-access-dealers-license/7919477400.html
+  Got row: AUCTION ACCESS/ DEALERS LICENSE-$100(NJ/NY/PA/CT) | $100
+Scraping 44/324: https://newyork.craigslist.org/stn/cto/d/staten-island-2010-toyota-camry/7919477065.html
+  Got row: 2010 TOYOTA CAMRY-$999(Staten Island) | $999
+Scraping 45/324: https://newjersey.craigslist.org/cto/d/river-edge-2012-honda-accord/7919476990.html
+  Got row: 2012 HONDA ACCORD-$800(New Jersey) | $800
+Scraping 46/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2007-dodge-sprinter-low-miles/7919472564.html
+  Got row: 2007 Dodge Sprinter - Low Miles 62K - OBO-$9,900(B | $9,900
+Scraping 47/324: https://binghamton.craigslist.org/ctd/d/endicott-2008-audi-a6-quattro-32l-v6/7919463029.html
+  Got row: 2008 Audi A6 Quattro 3.2L V6 Automatic AWD LOADED! | $9,995
+Scraping 48/324: https://philadelphia.craigslist.org/cto/d/ardmore-2014-mercedes-benz-c300/7919462214.html
+  Got row: 2014 Mercedes Benz C300-$8,500(Ardmore) | $8,500
+Scraping 49/324: https://newjersey.craigslist.org/cto/d/north-bergen-2010-nissan-rogue-4cyl/7919458715.html
+  Got row: 2010 nissan rogue 4cyl-$4,500(North Bergen) | $4,500
+Scraping 50/324: https://newyork.craigslist.org/lgi/ctd/d/inwood-2012-mazda-mazda3-grand-touring/7919454693.html
+  Got row: 2012 Mazda MAZDA3 i Grand Touring 4dr Sedan-$6,495 | $6,495
+Scraping 51/324: https://harrisburg.craigslist.org/ctd/d/palmyra-2006-audi-a4-quattro-cabriolet/7919454437.html
+  Got row: 2006 Audi A4 Quattro Cabriolet 74,000 Miles Clean  | $9,250
+Scraping 52/324: https://harrisburg.craigslist.org/ctd/d/palmyra-2014-bmw-i3-giga-world-miles/7919454417.html
+  Got row: 2014 BMW i3 Giga World 46,000 Miles Clean Carfax F | $8,850
+Scraping 53/324: https://southjersey.craigslist.org/cto/d/collingswood-1972-lincoln-mark-iv/7919450172.html
+  Got row: 1972 Lincoln Mark IV-$5,900(Cherry Hill NJ area) | $5,900
+Scraping 54/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2022-bmw-x3-3-3-xdrive30i/7919449464.html
+  Got row: 2022 BMW X3 X 3 X-3 xDrive30i xDrive 30 i xDrive-3 | $449
+Scraping 55/324: https://newyork.craigslist.org/que/cto/d/brooklyn-2010-subaru-outback-99-milles/7919447331.html
+  Got row: 2010 Subaru Outback 99 k milles   Leather seats $4 | $4,500
+Scraping 56/324: https://newyork.craigslist.org/lgi/cto/d/valley-stream-2013-honda-pilot-6500/7919446990.html
+  Got row: 2013 Honda pilot $6500 NEGOTIABLE!!!!-$6,500 | $6,500
+Scraping 57/324: https://williamsport.craigslist.org/ctd/d/mifflinburg-2015-dodge-dart-rallye/7919446293.html
+  Got row: 2015 DODGE DART RALLYE-$9,500(Mifflinburg) | $9,500
+Scraping 58/324: https://newyork.craigslist.org/wch/cto/d/mount-vernon-2012-nissan-rogue-sv/7919441578.html
+  Got row: 2012 Nissan Rogue SV-$5,900 | $5,900
+Scraping 59/324: https://newjersey.craigslist.org/cto/d/clifton-2006-ford-150/7919440207.html
+  Got row: 2006 ford F-150-$1,600(Clifton) | $1,600
+Scraping 60/324: https://newjersey.craigslist.org/cto/d/berkeley-heights-2017-ford-escape-se-awd/7919439224.html
+  Got row: 2017 Ford Escape SE AWD-$6,800(Berkeley Heights) | $6,800
+Scraping 61/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-1979-all-custom-oldsmobile/7919438619.html
+  Got row: 1979 ALL CUSTOM OLDSMOBILE CUTLASS-$9,500(SUNSET P | $9,500
+Scraping 62/324: https://southjersey.craigslist.org/ctd/d/burlington-2009-mini-cooper-2dr/7919437710.html
+  Got row: 2009 Mini Cooper S 2dr Hatchback-$3,995(_Mini_ _Co | $3,995
+Scraping 63/324: https://cnj.craigslist.org/ctd/d/burlington-2009-mercedes-benz-class-350/7919437677.html
+  Got row: 2009 Mercedes-Benz E Class E 350 4MATIC AWD 4dr Se | $5,850
+Scraping 64/324: https://southjersey.craigslist.org/cto/d/delanco-dodge-grand-caravan/7919437229.html
+  Got row: Dodge Grand Caravan-$6,199 | $6,199
+Scraping 65/324: https://southjersey.craigslist.org/cto/d/delanco-toyota-corolla/7919436717.html
+  Got row: Toyota Corolla-$4,499 | $4,499
+Scraping 66/324: https://southjersey.craigslist.org/cto/d/delanco-nissan-sentra/7919436600.html
+  Got row: Nissan Sentra-$5,999(South Jersey) | $5,999
+Scraping 67/324: https://southjersey.craigslist.org/ctd/d/riverton-2015-impala-ltz-stuck-in-open/7919436326.html
+  Got row: 2015 Impala ltz/STUCK IN OPEN LOAN/GET OUT/ALL CAR | $9,895
+Scraping 68/324: https://longisland.craigslist.org/cto/d/westbury-2011-buick-regal-cxl-84k/7919435565.html
+  Got row: 2011 Buick Regal CXL 84k Leather, Heated Seats-$4, | $4,500
+Scraping 69/324: https://binghamton.craigslist.org/ctd/d/binghamton-2012-chrysler-town-and/7919434414.html
+  Got row: 2012 Chrysler Town and Country Touring Fully Loade | $8,995
+Scraping 70/324: https://binghamton.craigslist.org/ctd/d/binghamton-2014-ford-focus-se-only-63k/7919434285.html
+  Got row: 2014 Ford Focus SE only 63k miles gas saver-$6,995 | $6,995
+Scraping 71/324: https://newyork.craigslist.org/jsy/ctd/d/spotswood-2013-mazda-mazda3-sv-4dr/7919433918.html
+  Got row: 2013 Mazda Mazda3 i SV 4dr Sedan 5M-$5,900(East Br | $5,900
+Scraping 72/324: https://philadelphia.craigslist.org/ctd/d/huntingdon-valley-2017-nissan/7919432253.html
+  Got row: 2017 Nissan Pathfinder Platinum 4x4 4dr SUV-$9999. | $9999.00
+Scraping 73/324: https://philadelphia.craigslist.org/ctd/d/huntingdon-valley-2015-nissan-rogue-sl/7919432245.html
+  Got row: 2015 Nissan Rogue SL AWD 4dr Crossover-$8999.00 | $8999.00
+Scraping 74/324: https://delaware.craigslist.org/ctd/d/wilmington-2012-honda-accord-ex/7919432226.html
+  Got row: 2012 HONDA ACCORD EX-$2,500(WILMINGTON DELAWARE) | $2,500
+Scraping 75/324: https://newjersey.craigslist.org/cto/d/south-orange-honda-civic-2013-white-in/7919431175.html
+  Got row: Honda Civic 2013 (White in good condition)-$7,000( | $7,000
+Scraping 76/324: https://delaware.craigslist.org/ctd/d/wilmington-2013-hyundai-sonata/7919429853.html
+  Got row: 2013 HYUNDAI SONATA-$2,995(WILMINGTON DELAWARE) | $2,995
+Scraping 77/324: https://williamsport.craigslist.org/cto/d/danville-2016-chevy-equinox-ltz-awd/7919429271.html
+  Got row: 2016 Chevy Equinox LTZ AWD-$6,000(Danville) | $6,000
+Scraping 78/324: https://allentown.craigslist.org/cto/d/whitehall-2015-fiat-500-pop/7919428526.html
+  Got row: 2015 fiat 500 pop-$6,300(whitehall) | $6,300
+Scraping 79/324: https://philadelphia.craigslist.org/cto/d/morton-1980-triumph-tr7-roadster/7919425436.html
+  Got row: 1980 Triumph TR7 Roadster/Covertible/Cabrio-$9,500 | $9,500
+Scraping 80/324: https://cnj.craigslist.org/ctd/d/iselin-2020-nissan-versa-sv-mint/7919423193.html
+  Got row: 2020 NISSAN VERSA SV MINT CONDITION RUNS EXCELLENT | $7,499
+Scraping 81/324: https://newjersey.craigslist.org/ctd/d/iselin-2020-nissan-versa-sv-mint/7919423142.html
+  Got row: 2020 NISSAN VERSA SV MINT CONDITION RUNS EXCELLENT | $7,499
+Scraping 82/324: https://newjersey.craigslist.org/ctd/d/parsippany-2005-toyota-sienna-ce-65k/7919409902.html
+  Got row: 2005 Toyota Sienna CE (65k Miles) - 1 Owner-$8,700 | $8,700
+Scraping 83/324: https://philadelphia.craigslist.org/cto/d/philadelphia-2006-pontiac-grand-prix/7919408621.html
+  Got row: 2006 Pontiac Grand Prix GXP - Project Car-$1,500(P | $1,500
+Scraping 84/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2011-honda-pilot/7919408510.html
+  Got row: 2011 Honda Pilot (Low Miles) (Very Clean)-$8,700(F | $8,700
+Scraping 85/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2012-hyundai/7919408174.html
+  Got row: 2012 Hyundai Sonata Limited (Clean Carfax) (Low Mi | $5,900
+Scraping 86/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2010-bmw-328i/7919407862.html
+  Got row: 2010 BMW 328i X-Drive 2-Door (Low Miles) (Clean Ca | $6,700
+Scraping 87/324: https://newjersey.craigslist.org/cto/d/closter-2015-subaru-forester-limited/7919401583.html
+  Got row: 2015 SUBARU FORESTER LIMITED 1 OWNER-$8,980(Closte | $8,980
+Scraping 88/324: https://newjersey.craigslist.org/ctd/d/branchville-2008-chevrolet-express-3500/7919401278.html
+  Got row: 2008 CHEVROLET EXPRESS 3500 BOX TRUCK-$9,900(BRANC | $9,900
+Scraping 89/324: https://albany.craigslist.org/ctd/d/branchville-2009-chevrolet-express-box/7919400313.html
+  Got row: 2009 CHEVROLET EXPRESS BOX TRUCK 2500-$9,900(BRANC | $9,900
+Scraping 90/324: https://cnj.craigslist.org/ctd/d/port-monmouth-2014-kia-sportage-sx-awd/7919398615.html
+  Got row: 2014 Kia Sportage SX AWD-$9,999(Port Monmouth/Midd | $9,999
+Scraping 91/324: https://southjersey.craigslist.org/ctd/d/burlington-2008-volvo-s40-24i-4dr-sedan/7919397099.html
+  Got row: 2008 Volvo S40 2.4i 4dr Sedan-$2,395(_Volvo_ _S40_ | $2,395
+Scraping 92/324: https://reading.craigslist.org/cto/d/birdsboro-2002-mercedes-benz-skl-320/7919396109.html
+  Got row: 2002 Mercedes-Benz SKL 320-$4,500 | $4,500
+Scraping 93/324: https://newjersey.craigslist.org/ctd/d/north-bergen-2000-off-on-any-new-buick/7919395412.html
+  Got row: $2000 off on any new BUICK OR GMC if you are a fir | $2,500
+Scraping 94/324: https://southjersey.craigslist.org/ctd/d/burlington-2008-jaguar-type-30-4dr/7919395069.html
+  Got row: 2008 Jaguar S-TYPE 3.0 4dr Sedan Luxury-$4,850(_Ja | $4,850
+Scraping 95/324: https://newyork.craigslist.org/jsy/ctd/d/spotswood-2003-ford-focus-se-4dr-wagon/7919394833.html
+  Got row: 2003 Ford Focus SE 4dr Wagon-$2,900(East Brunswick | $2,900
+Scraping 96/324: https://philadelphia.craigslist.org/ctd/d/burlington-1997-nissan-maxima-gle-4dr/7919394822.html
+  Got row: 1997 Nissan Maxima GLE 4dr Sedan-$2,250(_Nissan_ _ | $2,250
+Scraping 97/324: https://philadelphia.craigslist.org/ctd/d/burlington-1989-cadillac-fleetwood-base/7919394813.html
+  Got row: 1989 Cadillac Fleetwood Base 4dr Sedan-$5,995(_Cad | $5,995
+Scraping 98/324: https://cnj.craigslist.org/ctd/d/spotswood-2015-nissan-rogue-sv-4dr/7919394605.html
+  Got row: 2015 Nissan Rogue SV 4dr Crossover-$7,500(East Bru | $7,500
+Scraping 99/324: https://cnj.craigslist.org/ctd/d/spotswood-2010-nissan-murano-sl-awd-4dr/7919394566.html
+  Got row: 2010 Nissan Murano SL AWD 4dr SUV-$8,500(East Brun | $8,500
+Scraping 100/324: https://cnj.craigslist.org/ctd/d/spotswood-2016-audi-a3-tron-14t/7919394515.html
+  Got row: 2016 Audi A3 e-tron 1.4T Prestige 4dr Sportback-$9 | $9,000
+Scraping 101/324: https://cnj.craigslist.org/ctd/d/spotswood-2016-hyundai-sonata-se-4dr/7919394448.html
+  Got row: 2016 Hyundai Sonata SE 4dr Sedan-$6,800(East Bruns | $6,800
+Scraping 102/324: https://cnj.craigslist.org/ctd/d/spotswood-2009-nissan-maxima-35-sv-4dr/7919394409.html
+  Got row: 2009 Nissan Maxima 3.5 SV 4dr Sedan-$5,900(East Br | $5,900
+Scraping 103/324: https://philadelphia.craigslist.org/ctd/d/spotswood-2011-jaguar-xj-base-4dr-sedan/7919394362.html
+  Got row: 2011 Jaguar XJ Base 4dr Sedan-$8,000(East Brunswic | $8,000
+Scraping 104/324: https://cnj.craigslist.org/ctd/d/trenton-2005-dodge-caravan-se-plus-4dr/7919394233.html
+  Got row: 2005 Dodge Caravan SE Plus 4dr Extended Mini Van-$ | $6,900
+Scraping 105/324: https://philadelphia.craigslist.org/ctd/d/trenton-2005-chrysler-pt-cruiser/7919394131.html
+  Got row: 2005 Chrysler PT Cruiser Signature Series 4dr Wago | $3,000
+Scraping 106/324: https://newyork.craigslist.org/mnh/ctd/d/new-york-2007-honda-civic-hybrid/7919393039.html
+  Got row: 2007 Honda Civic Hybrid-$5,000(Autotrader Private  | $5,000
+Scraping 107/324: https://newyork.craigslist.org/brk/ctd/d/brooklyn-ford-fusion-hybrid-plug-in/7919392828.html
+  Got row: Ford Fusion Hybrid Plug-in  2018 Titanium-$9,500(B | $9,500
+Scraping 108/324: https://williamsport.craigslist.org/ctd/d/catawissa-1992-chevrolet-corvette-c4/7919392403.html
+  Got row: 1992 Chevrolet Corvette C4 LT1 Auto Polo Green wit | $8,800
+Scraping 109/324: https://newyork.craigslist.org/lgi/cto/d/hempstead-2019-honda-accord-sport-20l/7919384042.html
+  Got row: 2019 HONDA ACCORD SPORT 2.0L-$10,000(HEMPSTEAD) | $10,000
+Scraping 110/324: https://scranton.craigslist.org/cto/d/wilkes-barre-2011-ford-fusion-low-miles/7919380194.html
+  Got row: 2011 ford fusion low miles wont last-$4,250(Wilkes | $4,250
+Scraping 111/324: https://cnj.craigslist.org/cto/d/warren-2017-nissan-quest/7919368644.html
+  Got row: 2017 Nissan Quest-$6,800(Warren) | $6,800
+Scraping 112/324: https://newyork.craigslist.org/que/cto/d/far-rockaway-2011-hyundai-sonata-limited/7919359786.html
+  Got row: 2011 Hyundai sonata limited-$2,000(FarRockway) | $2,000
+Scraping 113/324: https://newjersey.craigslist.org/cto/d/moonachie-2016-mini-cooper-clubman/7919359196.html
+  Got row: 2016 mini cooper clubman-$9,500 | $9,500
+Scraping 114/324: https://cnj.craigslist.org/cto/d/flemington-2017-gmc-terrain-sle-sport/7919359076.html
+  Got row: 2017 GMC Terrain SLE-2 Sport Utility 4D-$6,500(Fle | $6,500
+Scraping 115/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2018-jaguar-pace-dynamic-p300/7919355689.html
+  Got row: 2018 Jaguar E-Pace R-Dynamic P300 SE Fully Loaded  | $9,990
+Scraping 116/324: https://newyork.craigslist.org/brx/cto/d/bronx-2017-bmw-330i-xdrive/7919354499.html
+  Got row: 2017 BMW 330I XDRIVE-$10,000 | $10,000
+Scraping 117/324: https://philadelphia.craigslist.org/ctd/d/norristown-2014-fiat-500l/7919353506.html
+  Got row: 2014 FIAT 500L-$6,998(MANCINI MOTORS- NORRISTOWN) | $6,998
+Scraping 118/324: https://philadelphia.craigslist.org/ctd/d/norristown-2011-ford-escape-xlt-4x4/7919352311.html
+  Got row: 2011 FORD ESCAPE XLT 4X4-$8,998(MANCINI MOTORS- NO | $8,998
+Scraping 119/324: https://philadelphia.craigslist.org/ctd/d/norristown-2011-subaru-forester-25x/7919351844.html
+  Got row: 2011 SUBARU FORESTER 2.5X PREMIUM AWD 'RARE 5 SPEE | $9,998
+Scraping 120/324: https://delaware.craigslist.org/ctd/d/newark-2013-bmw-x5/7919341662.html
+  Got row: 2013 Bmw X5-$7,200(Newark) | $7,200
+Scraping 121/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2009-mercedes-c300-38k-miles/7919340828.html
+  Got row: 2009 Mercedes C300 38K Miles-$5,700(Brooklyn) | $5,700
+Scraping 122/324: https://newyork.craigslist.org/brk/ctd/d/staten-island-2014-ram-pro-master-cargo/7919339888.html
+  Got row: 2014 RAM PRO MASTER CARGO VAN 1 OWNER FULLY SERVIC | $4,999
+Scraping 123/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2004-buick-lesabre/7919337010.html
+  Got row: 2004 buick LeSabre        with only 71,000 miles-$ | $4,500
+Scraping 124/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2015-hyundai/7919334882.html
+  Got row: 2015 hyundai accent hatchback  new inspection-$7,2 | $7,200
+Scraping 125/324: https://scranton.craigslist.org/cto/d/milford-cash-cars/7919333292.html
+  Got row: CASH 4 CARS-$123(Milford) | $123
+Scraping 126/324: https://newjersey.craigslist.org/ctd/d/branchville-2010-ford-mustang-premium/7919331560.html
+  Got row: 2010 FORD MUSTANG PREMIUM-$7,900(BRANCHVILLE) | $7,900
+Scraping 127/324: https://york.craigslist.org/ctd/d/york-2013-bmw-x5/7919331295.html
+  Got row: 2013 Bmw X5-$7,200(York) | $7,200
+Scraping 128/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-2011-nissan-altima/7919330834.html
+  Got row: 2011 nissan altima        71000 original miles  on | $6,200
+Scraping 129/324: https://philadelphia.craigslist.org/cto/d/bensalem-2012-mercedes-benz-class-c300/7919329226.html
+  Got row: 2012 Mercedes-Benz c-class C300-$7,499(Bensalem) | $7,499
+Scraping 130/324: https://york.craigslist.org/ctd/d/york-1979-chevrolet-corvette/7919328763.html
+  Got row: 1979 Chevrolet Corvette-$4,700(York) | $4,700
+Scraping 131/324: https://newyork.craigslist.org/que/cto/d/lawrence-2011-toyota-prius-one-one-4dr/7919328511.html
+  Got row: 2011 Toyota Prius One One 4dr Hatchback-$8,000(Law | $8,000
+Scraping 132/324: https://albany.craigslist.org/ctd/d/branchville-1966-buick-wildcat-classic/7919323481.html
+  Got row: 1966 BUICK WILDCAT CLASSIC CAR-$7,500(BRANCHVILLE) | $7,500
+Scraping 133/324: https://allentown.craigslist.org/ctd/d/hellertown-2008-buick-lacrosse-cxl-38/7919322510.html
+  Got row: 2008 Buick LaCrosse CXL - 3.8, lower mileage, runs | $2,800
+Scraping 134/324: https://scranton.craigslist.org/cto/d/scranton-bmw-328-xi/7919322389.html
+  Got row: BMW 328 XI-$5,999 | $5,999
+Scraping 135/324: https://newyork.craigslist.org/stn/cto/d/staten-island-subaru-forester-25x-awd/7919321263.html
+  Got row: SUBARU FORESTER  2.5X  AWD PEARL WHITE  SUPER CLEA | $8,999
+Scraping 136/324: https://york.craigslist.org/ctd/d/york-1962-chevrolet-impala/7919320573.html
+  Got row: 1962 Chevrolet Impala-$3,500(York) | $3,500
+Scraping 137/324: https://newjersey.craigslist.org/ctd/d/branchville-1965-buick-skylark-classic/7919320073.html
+  Got row: 1965 BUICK SKYLARK CLASSIC CAR-$9,500(BRANCHVILLE) | $9,500
+Scraping 138/324: https://york.craigslist.org/ctd/d/york-1969-mercury-cougar/7919318157.html
+  Got row: 1969 Mercury Cougar-$4,500(York) | $4,500
+Scraping 139/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2024-toyota-bz4x-bz-x-bz-x/7919317973.html
+  Got row: 2024 Toyota bZ4X bZ 4 X bZ-4-X Limited-$349(Import | $349
+Scraping 140/324: https://newjersey.craigslist.org/cto/d/lyndhurst-2014-ford-fiesta-st/7919317107.html
+  Got row: 2014 Ford Fiesta ST-$8,000(Lyndhurst) | $8,000
+Scraping 141/324: https://york.craigslist.org/ctd/d/york-1970-buick-skylark/7919316774.html
+  Got row: 1970 Buick Skylark-$2,500(York) | $2,500
+Scraping 142/324: https://newyork.craigslist.org/lgi/ctd/d/valley-stream-ive-got-real-nice-2011/7919312312.html
+  Got row: I've Got A Real Nice 2011 TOYOTA CAMRY LE For You! | $8,500
+Scraping 143/324: https://philadelphia.craigslist.org/ctd/d/norristown-2007-kia-spectra-ex/7919312284.html
+  Got row: 2007 KIA SPECTRA EX-$4,998(MANCINI MOTORS- NORRIST | $4,998
+Scraping 144/324: https://philadelphia.craigslist.org/ctd/d/norristown-2014-ford-focus-only-51k/7919312141.html
+  Got row: 2014 FORD FOCUS S 'ONLY 51K MILES'-$9,998(MANCINI  | $9,998
+Scraping 145/324: https://philadelphia.craigslist.org/ctd/d/norristown-2009-ford-taurus-se/7919311777.html
+  Got row: 2009 FORD TAURUS SE-$6,998(MANCINI MOTORS- NORRIST | $6,998
+Scraping 146/324: https://jerseyshore.craigslist.org/cto/d/point-pleasant-beach-2010-kia-soul/7919304101.html
+  Got row: 2010 Kia Soul - 5 Speed Manual - 106 k - Reliable  | $4,950
+Scraping 147/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2017-mercedes-benz-cclass/7919297855.html
+  Got row: 2017 Mercedes-Benz CClass C Class C-Class C 300-$3 | $349
+Scraping 148/324: https://newjersey.craigslist.org/cto/d/union-we-buy-any-cars-running-or-not/7919297487.html
+  Got row: we Buy Any Cars running or not any condition with  | $5,000
+Scraping 149/324: https://jerseyshore.craigslist.org/cto/d/fords-we-buy-any-cars-running-or-not/7919297131.html
+  Got row: we Buy Any Cars running or not any condition with  | $1,000
+Scraping 150/324: https://cnj.craigslist.org/cto/d/springfield-we-buy-2010-and-up-toyota/7919296651.html
+  Got row: We buy 2010 and up Toyota corolla Toyota RAV4 Lexu | $123
+Scraping 151/324: https://reading.craigslist.org/cto/d/temple-2003-subaru-legacy/7919294169.html
+  Got row: 2003 subaru legacy-$5,500(Temple) | $5,500
+Scraping 152/324: https://newyork.craigslist.org/wch/cto/d/yonkers-2006-audi-a6/7919293578.html
+  Got row: 2006 Audi a6-$2,500(Yonkers) | $2,500
+Scraping 153/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-toyota-rav4/7919289693.html
+  Got row: Toyota RAV4-$5,500(Brooklyn) | $5,500
+Scraping 154/324: https://scranton.craigslist.org/ctd/d/taylor-2016-gmc-terrain-denali-2306/7919282776.html
+  Got row: 2016 GMC Terrain Denali (2306)-$8,495(OLD FORGE) | $8,495
+Scraping 155/324: https://newyork.craigslist.org/que/cto/d/lawrence-2014-kia-sportage-lx-awd-lx/7919282189.html
+  Got row: 2014 Kia Sportage LX AWD LX 4dr SUV-$5,900(Lawrenc | $5,900
+Scraping 156/324: https://scranton.craigslist.org/ctd/d/taylor-2015-jeep-cherokee-latitude-2308/7919282093.html
+  Got row: 2015 Jeep Cherokee Latitude (2308)-$7,495(OLD FORG | $7,495
+Scraping 157/324: https://philadelphia.craigslist.org/cto/d/cherry-hill-2012-nissan-altima/7919278837.html
+  Got row: 2012 NISSAN ALTIMA-$4,150 | $4,150
+Scraping 158/324: https://southjersey.craigslist.org/cto/d/cherry-hill-2012-nissan-altima/7919277380.html
+  Got row: 2012 NISSAN ALTIMA-$4,150 | $4,150
+Scraping 159/324: https://newjersey.craigslist.org/cto/d/wyckoff-2012-mercedes-glk350-4matic/7919273966.html
+  Got row: 2012 Mercedes GLK350 4matic 118k miles v6-$8,500(W | $8,500
+Scraping 160/324: https://newjersey.craigslist.org/cto/d/wyckoff-2015-jeep-cherokee-limited-low/7919273666.html
+  Got row: 2015 jeep Cherokee limited 87000 low miles , fully | $8,500
+Scraping 161/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2018-mercedes-benz-gle-350/7919273431.html
+  Got row: 2018 Mercedes-Benz GLE 350-$349(Import Masters) | $349
+Scraping 162/324: https://philadelphia.craigslist.org/cto/d/cherry-hill-2010-volvo-xc90/7919273202.html
+  Got row: 2010 volvo xc90-$4,150 | $4,150
+Scraping 163/324: https://southjersey.craigslist.org/cto/d/marlton-2010-volvo-xc90/7919273012.html
+  Got row: 2010 VOLVO XC90-$4,150 | $4,150
+Scraping 164/324: https://southjersey.craigslist.org/cto/d/marlton-2013-dodge-caravan/7919271528.html
+  Got row: 2013 dodge caravan-$4,200 | $4,200
+Scraping 165/324: https://newyork.craigslist.org/que/cto/d/fresh-meadows-clean-2011-bmw-328i/7919269391.html
+  Got row: Clean 2011 BMW 328i xDrive Sport Sedan Low mileage | $6,700
+Scraping 166/324: https://scranton.craigslist.org/ctd/d/taylor-2011-jaguar-xk-2288/7919268854.html
+  Got row: 2011 Jaguar XK (2288)-$9,995(OLD FORGE) | $9,995
+Scraping 167/324: https://scranton.craigslist.org/ctd/d/taylor-2017-nissan-altima/7919267985.html
+  Got row: 2017 Nissan Altima 2.5 (2294)-$7,495(OLD FORGE) | $7,495
+Scraping 168/324: https://newjersey.craigslist.org/cto/d/lodi-2011-nissan-altima-25s-se/7919266032.html
+  Got row: 2011 Nissan Altima 2.5s SE-$5,995(Lodi) | $5,995
+Scraping 169/324: https://philadelphia.craigslist.org/cto/d/huntingdon-valley-toyota-rav4-excellent/7919260473.html
+  Got row: Toyota RAV4 Excellent Condition-$2,900 | $2,900
+Scraping 170/324: https://lancaster.craigslist.org/ctd/d/elizabethtown-2000-jaguar-type/7919256876.html
+  Got row: 2000 jaguar s-type-$4,500 | $4,500
+Scraping 171/324: https://philadelphia.craigslist.org/cto/d/philadelphia-2016-ford-mustang/7919255161.html
+  Got row: 2016 Ford Mustang-$10,000(Philadelphia) | $10,000
+Scraping 172/324: https://hudsonvalley.craigslist.org/ctd/d/goshen-2014-hyundai-elantra-se-4dr/7919244737.html
+  Got row: 2014 Hyundai Elantra SE 4dr Sedan 6A-$6,995(+ IK A | $6,995
+Scraping 173/324: https://newjersey.craigslist.org/ctd/d/paterson-2020-ford-ecosport-se/7919244663.html
+  Got row: 2020 Ford EcoSport SE-$8,190(All advertised prices | $8,190
+Scraping 174/324: https://newjersey.craigslist.org/cto/d/cedar-grove-2018-nissan-pathfinder/7919243890.html
+  Got row: 2018 Nissan Pathfinder-$7,950(Cedar Grove) | $7,950
+Scraping 175/324: https://allentown.craigslist.org/cto/d/easton-jeep-patriot-4x4/7919240623.html
+  Got row: Jeep Patriot 4x4-$5,500(Easton) | $5,500
+Scraping 176/324: https://newyork.craigslist.org/que/cto/d/mamaroneck-work-van/7919240311.html
+  Got row: Work van-$3,800(Queens) | $3,800
+Scraping 177/324: https://cnj.craigslist.org/cto/d/jersey-city-2013-kia-forte-koupe/7919237718.html
+  Got row: 2013 Kia Forte Koupe-$6,300 | $6,300
+Scraping 178/324: https://cnj.craigslist.org/cto/d/perth-amboy-2011-vw-routan/7919237252.html
+  Got row: 2011 VW Routan-$5,000(Old bridge) | $5,000
+Scraping 179/324: https://hudsonvalley.craigslist.org/cto/d/middletown-2001-chevy-express-g3500/7919235942.html
+  Got row: 2001 Chevy Express G3500 Diesel 16ft  Cutaway Van  | $4,000
+Scraping 180/324: https://newyork.craigslist.org/lgi/ctd/d/new-hyde-park-2013-mercedes-c300-4matic/7919235800.html
+  Got row: 2013 Mercedes C300 4matic Sport/Leath/Roof/Nav/89k | $8,990
+Scraping 181/324: https://newyork.craigslist.org/brk/ctd/d/brooklyn-1990-jeep-cherokee/7919225955.html
+  Got row: 1990 Jeep Cherokee-$2,700 | $2,700
+Scraping 182/324: https://hudsonvalley.craigslist.org/cto/d/goshen-2011-bmw-328i-xdrive-69k-miles/7919224308.html
+  Got row: 2011 BMW 328i XDRIVE 69K MILES AUTOMATIC ONE OWER  | $8,900
+Scraping 183/324: https://philadelphia.craigslist.org/cto/d/feasterville-trevose-1993-mercury-sable/7919220107.html
+  Got row: 1993 Mercury Sable station wagon GS 50 K miles-$9, | $9,900
+Scraping 184/324: https://philadelphia.craigslist.org/cto/d/philadelphia-tesla-model-rental-perfect/7919216879.html
+  Got row: Tesla Model 3 Rental – Perfect for Uber/Lyft Drive | $500
+Scraping 185/324: https://cnj.craigslist.org/cto/d/raritan-1988-f800-diesel/7919213843.html
+  Got row: 1988 F800 diesel-$4,000(somerville) | $4,000
+Scraping 186/324: https://philadelphia.craigslist.org/cto/d/essington-2001-buick-lesabre-limited/7919212735.html
+  Got row: 2001 Buick LeSabre Limited... Clean Car.. 102k-$3, | $3,000
+Scraping 187/324: https://philadelphia.craigslist.org/ctd/d/newtown-2010-buick-lacrosse-cxl-4dr/7919210687.html
+  Got row: 2010 Buick LaCrosse CXL 4dr Sedan-$8,900(Newtown,  | $8,900
+Scraping 188/324: https://newjersey.craigslist.org/cto/d/dumont-2016-mini-cooper-4-door/7919209493.html
+  Got row: 2016 Mini Cooper S 4 door-$7,500(Dumont) | $7,500
+Scraping 189/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2014-maxima/7919199293.html
+  Got row: 2014 maxima-$2,000 | $2,000
+Scraping 190/324: https://hudsonvalley.craigslist.org/ctd/d/poughkeepsie-rated-car-dealer-in-hudson/7919195347.html
+  Got row: RATED # 3 CAR DEALER In HUDSON VALLEY //// Auto Wa | $3,000
+Scraping 191/324: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2017-hyundai-elantra-se-20l/7919186247.html
+  Got row: 2017 Hyundai Elantra SE 2.0L Auto (Alabama) ***Gua | $6,800
+Scraping 192/324: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2013-nissan-juke-5dr-wgn-cvt/7919186240.html
+  Got row: 2013 Nissan JUKE 5dr Wgn CVT SV AWD ***Guaranteed  | $6,900
+Scraping 193/324: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2012-mazda-mazda3-5dr-hb-auto/7919186234.html
+  Got row: 2012 Mazda Mazda3 5dr HB Auto i Touring ***Guarant | $4,900
+Scraping 194/324: https://newyork.craigslist.org/lgi/ctd/d/lynbrook-2008-bmw-series-4dr-sdn-335xi/7919186225.html
+  Got row: 2008 BMW 3 Series 4dr Sdn 335xi AWD ***Guaranteed  | $7,900
+Scraping 195/324: https://newyork.craigslist.org/que/ctd/d/fresh-meadows-2012-nissan-juke-sv-awd/7919184057.html
+  Got row: 2012 Nissan JUKE SV AWD All Wheel Drive AUTONATION | $8,363
+Scraping 196/324: https://newjersey.craigslist.org/ctd/d/newark-factory-direct-wheelchair-vans/7919181612.html
+  Got row: FACTORY DIRECT WHEELCHAIR VANS & CONVERSIONS! PAY  | $1
+Scraping 197/324: https://philadelphia.craigslist.org/ctd/d/philadelphia-factory-direct-wheelchair/7919181592.html
+  Got row: FACTORY DIRECT WHEELCHAIR VANS & CONVERSIONS! PAY  | $1
+Scraping 198/324: https://philadelphia.craigslist.org/ctd/d/broomall-2008-volkswagen-jetta/7919175713.html
+  Got row: 2008 Volkswagen Jetta-$4,500 | $4,500
+Scraping 199/324: https://newyork.craigslist.org/que/cto/d/long-island-city-2014-mercedes-benz/7919175348.html
+  Got row: 2014 Mercedes-Benz Freightliner Sprinter 3500-$8,0 | $8,000
+Scraping 200/324: https://newjersey.craigslist.org/cto/d/clifton-2013-vw-jetta-hybrid/7919174016.html
+  Got row: 2013 vw jetta hybrid-$7,300(Clifton) | $7,300
+Scraping 201/324: https://newjersey.craigslist.org/cto/d/clifton-2014-ford-max-hybrid/7919172829.html
+  Got row: 2014 ford C-Max hybrid-$8,800(Clifton nj) | $8,800
+Scraping 202/324: https://newjersey.craigslist.org/cto/d/clifton-2014-honda-accord-sport-sedan/7919172757.html
+  Got row: 2014 honda accord  sport  sedan-$8,800(Clifton) | $8,800
+Scraping 203/324: https://newyork.craigslist.org/que/cto/d/jamaica-infiniti-q50/7919170979.html
+  Got row: Infiniti Q50-$9,000(Jamaica) | $9,000
+Scraping 204/324: https://reading.craigslist.org/cto/d/mahanoy-city-2013-gmc-acadia-denali/7919166486.html
+  Got row: 2013 GMC Acadia Denali-$5,500(Mahanoy city) | $5,500
+Scraping 205/324: https://newyork.craigslist.org/lgi/cto/d/mineola-2012-infiniti-g25-sedan-awd/7919165950.html
+  Got row: 2012 infiniti g25 x sedan awd ( 100.000) automatic | $5,900
+Scraping 206/324: https://newjersey.craigslist.org/cto/d/englewood-vw-beetle-71/7919164750.html
+  Got row: VW Beetle 71-$1,900(Englewood) | $1,900
+Scraping 207/324: https://southjersey.craigslist.org/cto/d/shamong-2005-nissan-altima-sl-only-74k/7919158625.html
+  Got row: 2005 Nissan Altima SL; Only 74K Miles; Fully Loade | $2,700
+Scraping 208/324: https://southjersey.craigslist.org/cto/d/shamong-2010-cadillac-srx4-only-78k/7919158028.html
+  Got row: 2010 Cadillac SRX4; Only 78K Miles...Clean..Runs/D | $5,300
+Scraping 209/324: https://philadelphia.craigslist.org/cto/d/exton-sho-1993-taurus-sho/7919145927.html
+  Got row: SHO 1993 Taurus SHO-$6,900(Exton) | $6,900
+Scraping 210/324: https://scranton.craigslist.org/cto/d/honesdale-2013-jeep-wrangler-sahara/7919135692.html
+  Got row: 2013 jeep wrangler sahara unlimited 4×4  with 112, | $14
+Scraping 211/324: https://cnj.craigslist.org/ctd/d/camden-2012-hyundai-santa-fe-fwd-4dr-v6/7919135219.html
+  Got row: 2012 Hyundai Santa Fe FWD 4dr V6 SE-$6,795(pennsau | $6,795
+Scraping 212/324: https://cnj.craigslist.org/ctd/d/camden-2015-dodge-dart-4dr-sdn-sxt/7919135152.html
+  Got row: 2015 Dodge Dart 4dr Sdn SXT-$7,495(pennsauken) | $7,495
+Scraping 213/324: https://cnj.craigslist.org/ctd/d/camden-2018-ford-focus-se-sedan/7919135125.html
+  Got row: 2018 Ford Focus SE Sedan-$8,295(pennsauken) | $8,295
+Scraping 214/324: https://cnj.craigslist.org/ctd/d/camden-2009-nissan-altima-4dr-sdn-i4/7919135059.html
+  Got row: 2009 Nissan Altima 4dr Sdn I4 CVT 2.5 S-$4,195(pen | $4,195
+Scraping 215/324: https://cnj.craigslist.org/cto/d/bound-brook-volkswagen/7919134492.html
+  Got row: Volkswagen-$1(Bound Brook) | $1
+Scraping 216/324: https://harrisburg.craigslist.org/cto/d/hershey-1938-chevy-coupe/7919134349.html
+  Got row: 1938 Chevy coupe-$9,995(Hershey, PA) | $9,995
+Scraping 217/324: https://philadelphia.craigslist.org/cto/d/havertown-1940-chevy-stylemaster/7919128790.html
+  Got row: 1940 Chevy Stylemaster-$5,000(Havertown pa) | $5,000
+Scraping 218/324: https://hudsonvalley.craigslist.org/cto/d/hastings-on-hudson-2014-toyota-prius/7919125989.html
+  Got row: 2014 Toyota Prius C Hatchback-$5,500(Westchester) | $5,500
+Scraping 219/324: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2015-subaru-crosstrek/7919121162.html
+  Got row: 2015 Subaru Crosstrek Premium XV AWD-$9,850(New Cu | $9,850
+Scraping 220/324: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2014-jeep-patriot/7919121021.html
+  Got row: 2014 Jeep Patriot Latitude 4x4-$6,950(New Cumberla | $6,950
+Scraping 221/324: https://harrisburg.craigslist.org/ctd/d/new-cumberland-2013-mini-cooper-country/7919120935.html
+  Got row: 2013 Mini- Cooper S Country Man FWD-$7,850(New Cum | $7,850
+Scraping 222/324: https://philadelphia.craigslist.org/ctd/d/feasterville-trevose-2006-infiniti-fx35/7919120250.html
+  Got row: 2006 INFINITI FX35 AWD LOW MILES RUNS STRONG CASH  | $5,990
+Scraping 223/324: https://philadelphia.craigslist.org/ctd/d/feasterville-trevose-2015-fiat-500/7919119935.html
+  Got row: 2015 FIAT 500 SPORT LOW MILES RUNS GREAT WE FINANC | $9,990
+Scraping 224/324: https://ithaca.craigslist.org/ctd/d/owego-2016-jeep-renegade-4wd-4dr/7919118843.html
+  Got row: 2016 Jeep Renegade 4WD 4dr Trailhawk-$9,995(Owego) | $9,995
+Scraping 225/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2010-nissan-cube/7919114330.html
+  Got row: 2010 Nissan cube-$1,000(Brooklyn) | $1,000
+Scraping 226/324: https://newyork.craigslist.org/brx/ctd/d/passaic-2016-nissan-leaf-hb-sv/7919112369.html
+  Got row: 2016 Nissan LEAF HB SV-$2,999(The price in this ad | $2,999
+Scraping 227/324: https://newyork.craigslist.org/brk/ctd/d/trenton-2007-cadillac-escalade-base-awd/7919112186.html
+  Got row: 2007 Cadillac Escalade Base AWD 4dr SUV-$8,600(Cad | $8,600
+Scraping 228/324: https://newyork.craigslist.org/lgi/cto/d/great-neck-mini-cooper-roadster/7919106424.html
+  Got row: Mini cooper roadster convertible clean title-$10,0 | $10,000
+Scraping 229/324: https://newyork.craigslist.org/brk/ctd/d/passaic-2020-chevrolet-chevy-equinox/7919104549.html
+  Got row: 2020 Chevrolet Chevy Equinox FWDLT w1LT w 1 LT w-1 | $8,545
+Scraping 230/324: https://allentown.craigslist.org/ctd/d/bethlehem-2015-nissan-altima-4dr-sdn-i4/7919102459.html
+  Got row: 2015 Nissan Altima 4dr Sdn I4 2.5 SV-$7,650(Bethle | $7,650
+Scraping 231/324: https://newyork.craigslist.org/brk/ctd/d/brooklyn-2018-chevorlet-sonic-premier/7919101912.html
+  Got row: 2018 Chevorlet Sonic Premier-$4,800(Brooklyn) | $4,800
+Scraping 232/324: https://newyork.craigslist.org/que/ctd/d/great-neck-2021-bmw-x3-3-3-xdrive30i/7919101322.html
+  Got row: 2021 BMW X3 X 3 X-3 xDrive30i xDrive 30 i xDrive-3 | $359
+Scraping 233/324: https://cnj.craigslist.org/cto/d/skillman-2019-jeep-grand-cherokee/7919099700.html
+  Got row: 2019 Jeep Grand Cherokee Limited-$5,500(Skillman) | $5,500
+Scraping 234/324: https://newyork.craigslist.org/brk/ctd/d/brooklyn-2019-jeep-cherokee/7919098791.html
+  Got row: 2019 Jeep Cherokee-$8,700(Brooklyn) | $8,700
+Scraping 235/324: https://newyork.craigslist.org/wch/cto/d/harrison-ford-econo-van-e250/7919089964.html
+  Got row: Ford Econo Van E250-$1,500(Harrison) | $1,500
+Scraping 236/324: https://cnj.craigslist.org/cto/d/old-bridge-1987-alfa-romeo-spider/7919086969.html
+  Got row: 1987 Alfa Romeo spider Quadrofoglio cnvertible Cle | $6,999
+Scraping 237/324: https://scranton.craigslist.org/cto/d/tunkhannock-1990-c4-corvette/7919080683.html
+  Got row: 1990 C4 Corvette-$7,500(Tunkhannock) | $7,500
+Scraping 238/324: https://newyork.craigslist.org/brx/ctd/d/passaic-2019-ford-fusion-hybrid-se/7919079040.html
+  Got row: 2019 Ford Fusion Hybrid SE-$9,999(The price in thi | $9,999
+Scraping 239/324: https://newyork.craigslist.org/brk/cto/d/brooklyn-2021-hyundai-tucson/7919074166.html
+  Got row: 2021 Hyundai Tucson-$10,000(Brooklyn) | $10,000
+Scraping 240/324: https://hudsonvalley.craigslist.org/cto/d/spring-valley-2013-bmw-528i-clean/7919065887.html
+  Got row: 🚨2013 BMW🚙 528i Clean 🧼 Heated 💺 seats🚨-$6,500 | $6,500
+Scraping 241/324: https://newyork.craigslist.org/wch/cto/d/yonkers-2015-honda-odyssey-low-miles/7919062521.html
+  Got row: 2015 Honda odyssey low miles!-$6,500(Westchester n | $6,500
+Scraping 242/324: https://newyork.craigslist.org/que/ctd/d/maspeth-wow-2005-chevrolet-malibu-with/7919061686.html
+  Got row: Wow! A 2005 Chevrolet Malibu with 111,540 Miles-qu | $3,495

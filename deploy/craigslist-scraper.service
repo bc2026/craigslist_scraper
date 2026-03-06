@@ -1,0 +1,25 @@
+# Craigslist scraper: runs in watch mode and optionally syncs to the review site.
+# Install: sudo cp craigslist-scraper.service /etc/systemd/system/
+#          sudo systemctl daemon-reload && sudo systemctl enable --now craigslist-scraper
+# Edit APP_DIR and optionally SYNC_URL below to match your install path and site URL.
+
+[Unit]
+Description=Craigslist cars scraper (watch mode)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+# Set this to the directory containing craigslist_to_csv.py
+WorkingDirectory=/home/ubuntu/craigslist_scraper
+Environment=PYTHONUNBUFFERED=1
+# Sync to local review site after each run (use your EC2 public URL or http://127.0.0.1:5000)
+Environment=SYNC_URL=http://127.0.0.1:5000
+ExecStart=/usr/bin/python3 craigslist_to_csv.py watch 60
+Restart=always
+RestartSec=120
+
+[Install]
+WantedBy=multi-user.target

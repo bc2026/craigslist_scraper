@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Family car reviews</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1rem 2rem; background: #f5f5f5; }
+    h1 { color: #333; }
+    table { border-collapse: collapse; background: #fff; width: 100%; }
+    th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: #333; color: #fff; }
+    tr:hover { background: #f0f7ff; }
+    .tag { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-right: 0.25rem; }
+    .tag.reviewed { background: #d4edda; color: #155724; }
+    .tag.new { background: #cce5ff; color: #004085; }
+    th.sortable { cursor: pointer; user-select: none; }
+    th.sortable:hover { background: #444; }
+    th .sort-icon { margin-left: 0.25rem; opacity: 0.6; }
+    th.sorted-asc .sort-icon { opacity: 1; }
+    th.sorted-asc .sort-icon::after { content: ' ▲'; }
+    th.sorted-desc .sort-icon { opacity: 1; }
+    th.sorted-desc .sort-icon::after { content: ' ▼'; }
+    .detail-images { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0; }
+    .detail-images a { display: block; }
+    .detail-images img { width: 120px; height: 90px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
+    .detail-images img:hover { border-color: #0066cc; }
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 20; align-items: center; justify-content: center; cursor: pointer; }
+    #lightbox.show { display: flex; }
+    #lightbox img { max-width: 95vw; max-height: 95vh; object-fit: contain; pointer-events: none; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10; align-items: center; justify-content: center; }
+    .modal.show { display: flex; }
+    .modal-inner { background: #fff; padding: 1.5rem; max-width: 600px; max-height: 90vh; overflow: auto; border-radius: 8px; }
+    .reviews { margin: 1rem 0; }
+    .review { border-left: 3px solid #0066cc; padding-left: 0.75rem; margin-bottom: 0.75rem; }
+    button, .btn { cursor: pointer; padding: 0.4rem 0.8rem; background: #0066cc; color: #fff; border: none; border-radius: 4px; }
+    button.secondary { background: #666; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    input, textarea { padding: 0.4rem; margin: 0.25rem 0; width: 100%; box-sizing: border-box; }
+    #refresh { margin-bottom: 1rem; }
+    #landing { max-width: 360px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    #landing h2 { margin-top: 0; color: #333; }
+    #landing input { font-size: 1rem; padding: 0.6rem; }
+    #main { display: none; }
+    #main.show { display: block; }
+    .user-bar { margin-bottom: 1rem; color: #666; }
+    .user-bar a { color: #0066cc; margin-left: 0.5rem; }
+    .stars { color: #e6b800; font-size: 1.2rem; letter-spacing: 0.1em; }
+    .stars-input { display: flex; gap: 0.25rem; margin: 0.5rem 0; }
+    .stars-input button { padding: 0.25rem; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #ddd; }
+    .stars-input button:hover, .stars-input button.active { color: #e6b800; }
+    .stars-input button[data-value] { transition: color 0.15s; }
+  </style>
+</head>
+<body>
+  <div id="landing">
+    <h2>Family car reviews</h2>
+    <p>Enter your name so your reviews stay organized.</p>
+    <form id="name-form">
+      <input type="text" name="name" placeholder="Your name" required autofocus>
+      <button type="submit" class="btn" style="margin-top: 0.5rem;">Continue</button>
+    </form>
+  </div>
+
+  <div id="main">
+    <h1>Family car reviews</h1>
+    <p class="user-bar">Signed in as <strong id="current-name"></strong> <a href="#" id="change-name">Change name</a></p>
+    <p>Clean-title listings. Sync from scraper; data refreshes every 60 min.</p>
+    <button id="refresh" class="btn">Refresh list</button>
+    <div id="list"></div>
+  </div>
+
+  <div id="lightbox" aria-hidden="true"><img src="" alt="Enlarged"></div>
+  <div id="modal" class="modal">
+    <div class="modal-inner">
+      <h2 id="detail-title"></h2>
+      <p id="detail-meta"></p>
+      <div id="detail-images" class="detail-images"></div>
+      <p id="detail-desc"></p>
+      <a id="detail-link" href="#" target="_blank">View on Craigslist</a>
+      <h3>Reviews</h3>
+      <div id="detail-reviews" class="reviews"></div>
+      <form id="review-form">
+        <input name="author" placeholder="Your name" required>
+        <label>Rating (required)</label>
+        <div class="stars-input" id="stars-input" role="group" aria-label="Star rating">
+          <button type="button" data-value="1" title="1 star">☆</button>
+          <button type="button" data-value="2" title="2 stars">☆</button>
+          <button type="button" data-value="3" title="3 stars">☆</button>
+          <button type="button" data-value="4" title="4 stars">☆</button>
+          <button type="button" data-value="5" title="5 stars">☆</button>
+        </div>
+        <input type="hidden" name="stars" id="review-stars" value="">
+        <textarea name="body" rows="3" placeholder="Your review" required></textarea>
+        <button type="submit">Add review</button>
+      </form>
+      <p style="margin-top: 1rem;">
+        <button id="mark-reviewed" class="btn">Mark as reviewed</button>
+      </p>
+      <button class="btn secondary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const API = '';
+    const NAME_KEY = 'familyCarReviewUserName';
+    let listings = [];
+    let currentId = null;
+
+    function getUserName() {
+      return (sessionStorage.getItem(NAME_KEY) || '').trim();
+    }
+
+    function setUserName(name) {
+      sessionStorage.setItem(NAME_KEY, (name || '').trim());
+    }
+
+    function showLanding() {
+      document.getElementById('landing').style.display = 'block';
+      document.getElementById('main').classList.remove('show');
+    }
+
+    function showMain() {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('main').classList.add('show');
+      document.getElementById('current-name').textContent = getUserName();
+      var authorInput = document.querySelector('#review-form input[name="author"]');
+      if (authorInput) authorInput.value = getUserName();
+    }
+
+    document.getElementById('name-form').onsubmit = function(e) {
+      e.preventDefault();
+      var name = (e.target.name.value || '').trim();
+      if (!name) return;
+      setUserName(name);
+      showMain();
+      load();
+    };
+
+    document.getElementById('change-name').onclick = function(e) {
+      e.preventDefault();
+      sessionStorage.removeItem(NAME_KEY);
+      showLanding();
+      document.getElementById('name-form').name.value = '';
+    };
+
+    if (getUserName()) {
+      showMain();
+    } else {
+      showLanding();
+      document.getElementById('main').classList.remove('show');
+    }
+
+    var sortKey = 'updated_at';
+    var sortDir = 'desc';
+    var NEW_CUTOFF_HOURS = 24;
+
+    async function load() {
+      if (!getUserName()) return;
+      const r = await fetch(API + '/api/listings');
+      listings = await r.json();
+      render();
+    }
+
+    function isNew(listing) {
+      if (listing.reviewed_at) return false;
+      var created = listing.created_at;
+      if (!created) return false;
+      var t = new Date(created).getTime();
+      return (Date.now() - t) < NEW_CUTOFF_HOURS * 60 * 60 * 1000;
+    }
+
+    function statusTags(listing) {
+      if (listing.reviewed_at) return '<span class="tag reviewed">Already reviewed</span>';
+      if (isNew(listing)) return '<span class="tag new">New</span>';
+      return '—';
+    }
+
+    function parsePrice(p) {
+      if (!p) return null;
+      var n = parseFloat(String(p).replace(/[^0-9.]/g, ''));
+      return isNaN(n) ? null : n;
+    }
+
+    function compare(a, b, key, dir) {
+      var va = a[key], vb = b[key];
+      if (key === 'price') {
+        va = parsePrice(va); vb = parsePrice(vb);
+        if (va == null && vb == null) return 0;
+        if (va == null) return dir === 'asc' ? -1 : 1;
+        if (vb == null) return dir === 'asc' ? 1 : -1;
+        return dir === 'asc' ? va - vb : vb - va;
+      }
+      if (key === 'status') {
+        var sa = a.reviewed_at ? 1 : (isNew(a) ? 0 : -1);
+        var sb = b.reviewed_at ? 1 : (isNew(b) ? 0 : -1);
+        return dir === 'asc' ? sa - sb : sb - sa;
+      }
+      if (key === 'updated_at' || key === 'created_at') {
+        var ta = new Date(va || 0).getTime();
+        var tb = new Date(vb || 0).getTime();
+        return dir === 'asc' ? ta - tb : tb - ta;
+      }
+      var sa = (va != null ? String(va) : '').toLowerCase();
+      var sb = (vb != null ? String(vb) : '').toLowerCase();
+      var c = sa.localeCompare(sb);
+      return dir === 'asc' ? c : -c;
+    }
+
+    function sortListings(list) {
+      var key = sortKey;
+      if (key === 'status') {
+        return list.slice().sort(function(a, b) { return compare(a, b, 'status', sortDir); });
+      }
+      return list.slice().sort(function(a, b) { return compare(a, b, key, sortDir); });
+    }
+
+    function setSort(key) {
+      if (sortKey === key) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      else { sortKey = key; sortDir = key === 'updated_at' || key === 'created_at' || key === 'price' ? 'desc' : 'asc'; }
+      render();
+    }
+
+    function render() {
+      const el = document.getElementById('list');
+      if (!listings.length) {
+        el.innerHTML = '<p>No listings yet. Run the scraper and sync, or upload CSV at /api/sync.</p>';
+        return;
+      }
+      var sorted = sortListings(listings);
+      var cols = [
+        { key: 'title', label: 'Title' },
+        { key: 'price', label: 'Price' },
+        { key: 'location', label: 'Location' },
+        { key: 'mileage', label: 'Mileage' },
+        { key: 'status', label: 'Status' },
+        { key: 'updated_at', label: 'Updated' },
+        { key: null, label: '' }
+      ];
+      var thead = '<tr>' + cols.map(function(c) {
+        if (!c.key) return '<th></th>';
+        var cls = 'sortable' + (sortKey === c.key ? ' sorted-' + sortDir : '');
+        return '<th class="' + cls + '" data-sort="' + c.key + '" title="Sort by ' + c.label + '">' + escapeHtml(c.label) + '<span class="sort-icon"></span></th>';
+      }).join('') + '</tr>';
+      function formatDate(iso) {
+        if (!iso) return '—';
+        var d = new Date(iso);
+        return isNaN(d.getTime()) ? '—' : d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      var rows = sorted.map(function(l) {
+        return '<tr>' +
+          '<td>' + escapeHtml(l.title || '—') + '</td>' +
+          '<td>' + escapeHtml(l.price || '—') + '</td>' +
+          '<td>' + escapeHtml(l.location || '—') + '</td>' +
+          '<td>' + escapeHtml(l.mileage || '—') + '</td>' +
+          '<td>' + statusTags(l) + '</td>' +
+          '<td>' + formatDate(l.updated_at) + '</td>' +
+          '<td><button class="btn" onclick="openDetail(' + l.id + ')">View & review</button></td>' +
+          '</tr>';
+      }).join('');
+      el.innerHTML = '<table><thead>' + thead + '</thead><tbody>' + rows + '</tbody></table>';
+      el.querySelectorAll('th[data-sort]').forEach(function(th) {
+        th.addEventListener('click', function() { setSort(th.getAttribute('data-sort')); });
+      });
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    async function openDetail(id) {
+      currentId = id;
+      const r = await fetch(API + '/api/listings/' + id);
+      const d = await r.json();
+      document.getElementById('detail-title').textContent = d.title || 'Listing';
+      document.getElementById('detail-meta').textContent = [d.price, d.location, d.mileage].filter(Boolean).join(' · ') || '—';
+      var imgs = [];
+      try {
+        if (d.images) imgs = typeof d.images === 'string' ? JSON.parse(d.images) : d.images;
+      } catch (e) {}
+      var imagesHtml = '';
+      if (imgs.length) {
+        imagesHtml = '<label>Images</label><div class="detail-images" id="detail-images-wrap">' + imgs.map(function(src) {
+          return '<a href="' + escapeHtml(src) + '" target="_blank" rel="noopener" data-full="' + escapeHtml(src) + '"><img src="' + escapeHtml(src) + '" alt="" loading="lazy"></a>';
+        }).join('') + '</div>';
+      }
+      document.getElementById('detail-images').innerHTML = imagesHtml;
+      document.getElementById('detail-desc').textContent = (d.description || '').slice(0, 500) + (d.description && d.description.length > 500 ? '…' : '');
+      document.getElementById('detail-link').href = d.url || '#';
+      document.getElementById('detail-reviews').innerHTML = (d.reviews || []).map(r => {
+        var stars = r.stars != null && r.stars >= 1 && r.stars <= 5
+          ? '<span class="stars" aria-label="' + r.stars + ' out of 5">' + '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars) + '</span> '
+          : '';
+        return '<div class="review">' + stars + '<strong>' + escapeHtml(r.author) + '</strong> ' + escapeHtml(r.body) + '</div>';
+      }).join('') || '<p>No reviews yet.</p>';
+      document.getElementById('mark-reviewed').style.display = d.reviewed_at ? 'none' : 'inline-block';
+      var authorInput = document.querySelector('#review-form input[name="author"]');
+      if (authorInput && !authorInput.value) authorInput.value = getUserName();
+      var starsInput = document.getElementById('review-stars');
+      if (starsInput) starsInput.value = '';
+      var starsBtns = document.querySelectorAll('#stars-input button[data-value]');
+      starsBtns.forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById('modal').classList.add('show');
+    }
+
+    (function setupStarsInput() {
+      var container = document.getElementById('stars-input');
+      var hidden = document.getElementById('review-stars');
+      if (!container || !hidden) return;
+      container.querySelectorAll('button[data-value]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var v = parseInt(btn.getAttribute('data-value'), 10);
+          hidden.value = v;
+          container.querySelectorAll('button[data-value]').forEach(function(b) {
+            b.classList.toggle('active', parseInt(b.getAttribute('data-value'), 10) <= v);
+            b.textContent = parseInt(b.getAttribute('data-value'), 10) <= v ? '★' : '☆';
+          });
+        });
+      });
+    })();
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('show');
+      currentId = null;
+    }
+
+    function openLightbox(url) {
+      var lb = document.getElementById('lightbox');
+      if (!lb) return;
+      lb.querySelector('img').src = url;
+      lb.classList.add('show');
+      lb.setAttribute('aria-hidden', 'false');
+    }
+    function closeLightbox() {
+      var lb = document.getElementById('lightbox');
+      if (lb) { lb.classList.remove('show'); lb.setAttribute('aria-hidden', 'true'); }
+    }
+    document.getElementById('lightbox').addEventListener('click', closeLightbox);
+    document.addEventListener('click', function(ev) {
+      var wrap = document.getElementById('detail-images-wrap');
+      if (wrap && ev.target.tagName === 'IMG' && ev.target.closest('.detail-images') && ev.target.closest('a')) {
+        ev.preventDefault();
+        openLightbox(ev.target.closest('a').href);
+      }
+    });
+
+    document.getElementById('review-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      var starsVal = form.stars.value ? parseInt(form.stars.value, 10) : null;
+      if (!starsVal || starsVal < 1 || starsVal > 5) {
+        alert('Please select a star rating (1–5).');
+        return;
+      }
+      const body = { author: form.author.value.trim(), body: form.body.value.trim(), stars: starsVal };
+      await fetch(API + '/api/listings/' + currentId + '/reviews', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      form.body.value = '';
+      form.stars.value = '';
+      document.querySelectorAll('#stars-input button[data-value]').forEach(function(b) { b.classList.remove('active'); b.textContent = '☆'; });
+      openDetail(currentId);
+    };
+
+    document.getElementById('mark-reviewed').onclick = async () => {
+      await fetch(API + '/api/listings/' + currentId + '/reviewed', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewed_by: getUserName() }) });
+      load();
+      openDetail(currentId);
+    };
+
+    document.getElementById('refresh').onclick = load;
+    if (getUserName()) {
+      load();
+      setInterval(load, 5 * 60 * 1000);
+    }
+  </script>
+</body>
+</html>
