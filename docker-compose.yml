@@ -3,7 +3,7 @@ services:
     build: .
     restart: unless-stopped
     volumes:
-      - db_data:/app/instance
+      - ./web/instance:/app/instance
     expose:
       - "5000"
     environment:
@@ -21,6 +21,3 @@ services:
       - /var/www/certbot:/var/www/certbot:ro
     depends_on:
       - web
-
-volumes:
-  db_data:
