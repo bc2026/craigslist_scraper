@@ -71,6 +71,14 @@ def init_db():
         conn.execute("SELECT images FROM listing LIMIT 1")
     except sqlite3.OperationalError:
         conn.execute("ALTER TABLE listing ADD COLUMN images TEXT")
+    # Migration: add source column (craigslist / facebook)
+    try:
+        conn.execute("SELECT source FROM listing LIMIT 1")
+    except sqlite3.OperationalError:
+        conn.execute("ALTER TABLE listing ADD COLUMN source TEXT DEFAULT 'craigslist'")
+        conn.execute(
+            "UPDATE listing SET source='craigslist' WHERE source IS NULL OR source=''"
+        )
     conn.commit()
     conn.close()
 
@@ -154,7 +162,7 @@ def index():
 def api_listings():
     conn = get_db()
     rows = conn.execute(
-        "SELECT id, url, title, price, location, mileage, owners, title_status, description, images, reviewed_at, reviewed_by, created_at, updated_at FROM listing ORDER BY updated_at DESC"
+        "SELECT id, url, title, price, location, mileage, owners, title_status, description, images, reviewed_at, reviewed_by, created_at, updated_at, source FROM listing ORDER BY updated_at DESC"
     ).fetchall()
     conn.close()
     return jsonify([listing_row_to_dict(r) for r in rows])
@@ -164,7 +172,7 @@ def api_listings():
 def api_listing(listing_id):
     conn = get_db()
     row = conn.execute(
-        "SELECT id, url, title, price, location, mileage, owners, title_status, description, images, reviewed_at, reviewed_by, created_at, updated_at FROM listing WHERE id = ?",
+        "SELECT id, url, title, price, location, mileage, owners, title_status, description, images, reviewed_at, reviewed_by, created_at, updated_at, source FROM listing WHERE id = ?",
         (listing_id,),
     ).fetchone()
     if not row:

@@ -3,216 +3,1018 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Family car reviews</title>
+  <title>Family Car Reviews</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; margin: 1rem 2rem; background: #f5f5f5; -webkit-text-size-adjust: 100%; }
-    h1 { color: #333; font-size: 1.5rem; }
-    table { border-collapse: collapse; background: #fff; width: 100%; }
-    th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #eee; }
-    th { background: #333; color: #fff; }
-    tr:hover { background: #f0f7ff; }
-    .tag { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-right: 0.25rem; }
-    .tag.reviewed { background: #d4edda; color: #155724; }
-    .tag.new { background: #cce5ff; color: #004085; }
-    th.sortable { cursor: pointer; user-select: none; }
-    th.sortable:hover { background: #444; }
-    th .sort-icon { margin-left: 0.25rem; opacity: 0.6; }
-    th.sorted-asc .sort-icon { opacity: 1; }
-    th.sorted-asc .sort-icon::after { content: ' ▲'; }
-    th.sorted-desc .sort-icon { opacity: 1; }
-    th.sorted-desc .sort-icon::after { content: ' ▼'; }
-    .detail-images { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0; }
-    .detail-images a { display: block; }
-    .detail-images img { width: 120px; height: 90px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
-    .detail-images img:hover { border-color: #0066cc; }
-    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 20; align-items: center; justify-content: center; cursor: pointer; padding: 1rem; box-sizing: border-box; }
-    #lightbox.show { display: flex; }
-    #lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
-    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 10; align-items: center; justify-content: center; padding: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
-    .modal.show { display: flex; }
-    .modal-inner { background: #fff; padding: 1.5rem; max-width: 600px; max-height: 90vh; overflow: auto; border-radius: 8px; -webkit-overflow-scrolling: touch; }
-    .reviews { margin: 1rem 0; }
-    .review { border-left: 3px solid #0066cc; padding-left: 0.75rem; margin-bottom: 0.75rem; }
-    button, .btn { cursor: pointer; padding: 0.4rem 0.8rem; background: #0066cc; color: #fff; border: none; border-radius: 4px; min-height: 44px; }
-    button.secondary { background: #666; }
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
-    input, textarea { padding: 0.5rem; margin: 0.25rem 0; width: 100%; box-sizing: border-box; font-size: 16px; }
-    #refresh { margin-bottom: 1rem; }
-    #landing { max-width: 360px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    #landing h2 { margin-top: 0; color: #333; }
-    #landing input { font-size: 16px; padding: 0.6rem; }
-    #main { display: none; }
-    #main.show { display: block; }
-    .user-bar { margin-bottom: 1rem; color: #666; }
-    .user-bar a { color: #0066cc; margin-left: 0.5rem; }
-    .stars { color: #e6b800; font-size: 1.2rem; letter-spacing: 0.1em; }
-    .stars-input { display: flex; gap: 0.25rem; margin: 0.5rem 0; }
-    .stars-input button { padding: 0.35rem; min-width: 44px; min-height: 44px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: #ddd; }
-    .stars-input button:hover, .stars-input button.active { color: #e6b800; }
-    .stars-input button[data-value] { transition: color 0.15s; }
+    :root {
+      --bg: #090910;
+      --surface: #111119;
+      --card: #15151f;
+      --border: rgba(255,255,255,0.06);
+      --border-mid: rgba(255,255,255,0.10);
+      --gold: #a89880;
+      --gold-dim: rgba(168,152,128,0.10);
+      --gold-glow: rgba(168,152,128,0.18);
+      --text: #f0f0f8;
+      --text-muted: #8888aa;
+      --text-dim: #4a4a68;
+      --green: #34d399;
+      --green-bg: rgba(52,211,153,0.10);
+      --blue: #60a5fa;
+      --blue-bg: rgba(96,165,250,0.10);
+      --red: #f87171;
+      --red-bg: rgba(248,113,113,0.10);
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Landing ─────────────────────────────────────── */
+    #landing {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .landing-card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--surface);
+      border: 1px solid var(--border-mid);
+      border-radius: 20px;
+      padding: 3rem 2.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landing-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .landing-title {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .landing-title em { color: var(--gold); font-style: normal; }
+
+    .landing-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* User switcher on landing */
+    .user-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .user-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 0.875rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text);
+      text-align: left;
+    }
+
+    .user-option:hover { background: rgba(255,255,255,0.08); border-color: rgba(168,152,128,0.3); }
+
+    .user-option .av {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 1px solid rgba(168,152,128,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .user-option .uname { flex: 1; font-weight: 500; }
+    .user-option .uarrow { color: var(--text-dim); font-size: 0.75rem; }
+
+    .divider-or {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.25rem;
+    }
+
+    .divider-or::before, .divider-or::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .landing-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-mid);
+      border-radius: 10px;
+      padding: 0.875rem 1rem;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 0.875rem;
+      -webkit-appearance: none;
+    }
+
+    .landing-input::placeholder { color: var(--text-dim); }
+    .landing-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+
+    /* ── Buttons ─────────────────────────────────────── */
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%; padding: 0.9rem 1.5rem;
+      background: rgba(255,255,255,0.1); color: var(--text);
+      font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 500;
+      border: 1px solid var(--border-mid); border-radius: 10px; cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      min-height: 48px;
+    }
+
+    .btn-gold:hover { background: rgba(255,255,255,0.15); }
+    .btn-gold:active { transform: scale(0.98); }
+    .btn-gold:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem;
+      padding: 0.55rem 1.1rem;
+      background: transparent; color: var(--text-muted);
+      font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 500;
+      border: 1px solid var(--border-mid); border-radius: 8px; cursor: pointer;
+      transition: all 0.15s; min-height: 38px;
+    }
+
+    .btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); }
+
+    .btn-gold-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem;
+      padding: 0.55rem 1.1rem;
+      background: transparent; color: var(--text-muted);
+      font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 500;
+      border: 1px solid var(--border-mid); border-radius: 8px; cursor: pointer;
+      transition: all 0.15s; min-height: 38px;
+    }
+
+    .btn-gold-outline:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); color: var(--text); }
+    .btn-gold-outline:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── App shell ───────────────────────────────────── */
+    #main { display: none; min-height: 100vh; }
+    #main.show { display: block; }
+
+    .app-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(9,9,16,0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-bar-inner {
+      max-width: 1440px; margin: 0 auto; padding: 0 2rem; height: 60px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+
+    .wordmark {
+      font-size: 0.95rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--text);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .wordmark em { color: var(--gold); font-style: normal; }
+    .wordmark-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.6; }
+
+    .user-bar { display: flex; align-items: center; gap: 0.75rem; }
+
+    .avatar {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--gold-dim); border: 1px solid rgba(168,152,128,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 700; color: var(--gold);
+      text-transform: uppercase; flex-shrink: 0;
+    }
+
+    #current-name { font-size: 0.8rem; color: var(--text-muted); }
+
+    .change-btn {
+      font-size: 0.72rem; color: var(--gold); background: none; border: none;
+      cursor: pointer; font-family: 'Sora', sans-serif; opacity: 0.8; transition: opacity 0.15s;
+    }
+
+    .change-btn:hover { opacity: 1; }
+
+    /* ── Content ─────────────────────────────────────── */
+    .content { max-width: 1440px; margin: 0 auto; padding: 1.75rem 2rem 3rem; }
+
+    /* ── Stats row ───────────────────────────────────── */
+    .stats-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem; flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      display: flex; align-items: baseline; gap: 0.4rem;
+      padding: 0.4rem 0.875rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 999px; font-size: 0.75rem;
+    }
+
+    .stat-n { font-size: 0.9rem; font-weight: 600; line-height: 1; color: var(--text); }
+    .stat-l { color: var(--text-muted); }
+    .stats-spacer { flex: 1; }
+
+    /* ── Search + filter row ─────────────────────────── */
+    .filter-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem; flex-wrap: wrap;
+    }
+
+    .search-wrap {
+      flex: 1; min-width: 200px; max-width: 320px;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute; left: 0.75rem; top: 50%;
+      transform: translateY(-50%); pointer-events: none; color: var(--text-dim);
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border-mid);
+      border-radius: 8px;
+      padding: 0.55rem 0.875rem 0.55rem 2.25rem;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .search-input::placeholder { color: var(--text-dim); }
+    .search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+
+    .filter-tabs {
+      display: flex; gap: 0.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.2rem;
+    }
+
+    .filter-tab {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px; border: none;
+      background: transparent; color: var(--text-muted);
+      font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+    }
+
+    .filter-tab.active { background: rgba(255,255,255,0.08); color: var(--text); }
+    .filter-tab:hover:not(.active) { color: var(--text); }
+
+    /* ── Sort bar ────────────────────────────────────── */
+    .sort-bar {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+
+    .sort-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--text-dim); margin-right: 0.25rem;
+    }
+
+    .sort-pill {
+      padding: 0.35rem 0.8rem; border-radius: 999px;
+      border: 1px solid var(--border); background: transparent;
+      font-family: 'Sora', sans-serif; font-size: 0.73rem; color: var(--text-muted);
+      cursor: pointer; transition: all 0.15s;
+    }
+
+    .sort-pill:hover { border-color: var(--border-mid); color: var(--text); }
+    .sort-pill.active { background: rgba(255,255,255,0.06); border-color: var(--border-mid); color: var(--text); }
+
+    /* ── Spinner ─────────────────────────────────────── */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-top-color: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      animation: spin 0.65s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 800;
+      align-items: center; justify-content: center;
+      background: rgba(9,9,16,0.6); backdrop-filter: blur(2px);
+    }
+
+    .loading-overlay.show { display: flex; }
+
+    .loading-box {
+      background: var(--surface); border: 1px solid var(--border-mid);
+      border-radius: 14px; padding: 1.5rem 2rem;
+      display: flex; align-items: center; gap: 0.875rem;
+      font-size: 0.85rem; color: var(--text-muted);
+    }
+
+    /* ── Toast ───────────────────────────────────────── */
+    #toast-area {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      z-index: 900; display: flex; flex-direction: column; gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      display: flex; align-items: center; gap: 0.625rem;
+      padding: 0.75rem 1.125rem;
+      border-radius: 10px; font-size: 0.82rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      animation: toastIn 0.25s ease both;
+      pointer-events: auto;
+    }
+
+    .toast.error { background: #1e1015; border: 1px solid rgba(248,113,113,0.3); color: var(--red); }
+    .toast.success { background: #0e1e18; border: 1px solid rgba(52,211,153,0.3); color: var(--green); }
+
+    @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    /* ── Card grid ───────────────────────────────────── */
+    #list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.125rem;
+    }
+
+    .car-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; cursor: pointer;
+      transition: transform 0.22s ease, border-color 0.22s, box-shadow 0.22s;
+      animation: cardUp 0.45s both;
+    }
+
+    @keyframes cardUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    .car-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+
+    .car-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .card-img {
+      position: relative; height: 175px; background: #0e0e18; overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.45s ease; display: block;
+    }
+
+    .car-card:hover .card-img img { transform: scale(1.05); }
+
+    .card-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,9,16,0.55) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .no-photo {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.5rem; color: var(--text-dim);
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    .no-photo svg { opacity: 0.2; }
+
+    .card-price {
+      position: absolute; bottom: 0.75rem; left: 0.875rem;
+      font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em;
+      color: #f0f0f8; text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    }
+
+    .card-status {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      padding: 0.22rem 0.6rem; border-radius: 999px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    .card-status.reviewed { background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); }
+    .card-status.isnew { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
+
+    .source-badge {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      padding: 0.18rem 0.5rem; border-radius: 4px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    .source-badge.fb { background: rgba(24,119,242,0.2); color: #6fa8f5; border: 1px solid rgba(24,119,242,0.25); }
+    .source-badge.cl { background: rgba(255,255,255,0.06); color: var(--text-dim); border: 1px solid var(--border); }
+
+    .card-body { padding: 0.875rem 1rem 1rem; }
+
+    .card-title {
+      font-size: 0.875rem; font-weight: 600; line-height: 1.38; color: var(--text);
+      margin-bottom: 0.5rem;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    .card-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+    .chip {
+      display: flex; align-items: center; gap: 0.22rem;
+      font-size: 0.68rem; color: var(--text-muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 999px; padding: 0.18rem 0.55rem; line-height: 1.4;
+    }
+
+    .chip svg { opacity: 0.55; flex-shrink: 0; }
+
+    /* ── Empty / count states ───────────────────────── */
+    .empty {
+      grid-column: 1/-1; text-align: center; padding: 5rem 2rem; color: var(--text-dim);
+    }
+
+    .empty svg { display: block; margin: 0 auto 1.5rem; opacity: 0.15; }
+    .empty p { font-size: 0.85rem; max-width: 340px; margin: 0 auto; line-height: 1.65; color: var(--text-muted); }
+
+    .results-count {
+      font-size: 0.72rem; color: var(--text-dim); margin-bottom: 1rem;
+    }
+
+    /* ── Side panel modal ────────────────────────────── */
+    #modal { display: none; position: fixed; inset: 0; z-index: 200; align-items: stretch; justify-content: flex-end; }
+    #modal.show { display: flex; }
+
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+      animation: fadeIn 0.25s;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .modal-panel {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 560px;
+      background: var(--surface); border-left: 1px solid var(--border-mid);
+      height: 100%; overflow-y: auto;
+      animation: slideIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; flex-direction: column;
+    }
+
+    @keyframes slideIn { from { transform: translateX(60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+    .modal-top {
+      position: sticky; top: 0;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 1rem 1.375rem;
+      display: flex; align-items: center; gap: 0.875rem; z-index: 1;
+    }
+
+    #detail-title {
+      flex: 1; font-size: 0.875rem; font-weight: 600; line-height: 1.35; color: var(--text);
+    }
+
+    .close-btn {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); border: none; color: var(--text-muted);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.15s;
+    }
+
+    .close-btn:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+
+    .modal-body { padding: 1.375rem; flex: 1; }
+
+    .detail-price {
+      font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;
+      color: var(--text); margin-bottom: 0.75rem;
+    }
+
+    .detail-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.25rem; }
+
+    .detail-pill {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.775rem; color: var(--text-muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.35rem 0.7rem;
+    }
+
+    .gallery {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; margin-bottom: 1.25rem;
+    }
+
+    .gallery a {
+      display: block; border-radius: 7px; overflow: hidden;
+      aspect-ratio: 4/3; border: 1px solid var(--border);
+    }
+
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; display: block; }
+    .gallery a:hover img { transform: scale(1.07); }
+
+    .sec-head {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--text-dim); margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.625rem;
+    }
+
+    .sec-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .detail-desc {
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 0.875rem;
+    }
+
+    .cl-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.78rem; color: var(--gold); text-decoration: none;
+      margin-bottom: 1.375rem; opacity: 0.85; transition: opacity 0.15s;
+    }
+
+    .cl-link:hover { opacity: 1; text-decoration: underline; }
+
+    .review-card {
+      padding: 0.875rem 1rem; background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.625rem;
+    }
+
+    .review-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.375rem; }
+    .review-author { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+    .review-stars { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.04em; }
+    .review-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; }
+    .no-reviews { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1rem; }
+
+    .review-form-box {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.125rem; margin-top: 0.875rem;
+    }
+
+    .field-label {
+      display: block; font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--text-dim); margin-bottom: 0.35rem;
+    }
+
+    .field-input {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-mid); border-radius: 8px;
+      padding: 0.7rem 0.875rem;
+      font-family: 'Sora', sans-serif; font-size: 0.875rem; color: var(--text);
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 0.875rem; -webkit-appearance: none;
+    }
+
+    .field-input::placeholder { color: var(--text-dim); }
+    .field-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+    textarea.field-input { resize: vertical; min-height: 76px; }
+
+    .star-row { display: flex; gap: 0.1rem; margin-bottom: 0.875rem; }
+
+    .star-btn {
+      background: none; border: none; cursor: pointer; font-size: 1.5rem;
+      color: var(--text-dim); line-height: 1; padding: 0.2rem 0.3rem;
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      transition: color 0.12s, transform 0.1s;
+    }
+
+    .star-btn:hover, .star-btn.active { color: #d4b896; }
+    .star-btn:hover { transform: scale(1.2); }
+
+    .form-btns { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+
+    .hr { height: 1px; background: var(--border); margin: 1.25rem 0; }
+    .action-row { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+
+    /* ── Lightbox ─────────────────────────────────────── */
+    #lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.94); z-index: 500;
+      align-items: center; justify-content: center; cursor: zoom-out;
+    }
+
+    #lightbox.show { display: flex; }
+
+    #lightbox img {
+      max-width: 94vw; max-height: 94vh; object-fit: contain;
+      border-radius: 4px; pointer-events: none;
+    }
+
+    /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 768px) {
-      body { margin: 0.75rem 1rem; }
-      h1 { font-size: 1.25rem; }
-      #landing { margin: 1.5rem 1rem; padding: 1.5rem; }
-      #main p { font-size: 0.9rem; }
-      #refresh { width: 100%; padding: 0.75rem; font-size: 1rem; }
-      .list-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -1rem; padding: 0 1rem; }
-      .list-wrap table { min-width: 100%; }
-      .modal { align-items: flex-start; padding: 0; }
-      .modal.show { display: block; overflow-y: auto; }
-      .modal-inner { max-width: none; width: 100%; min-height: 100vh; max-height: none; border-radius: 0; padding: 1rem; margin: 0; }
-      .detail-images img { width: 100px; height: 75px; }
-      .modal-inner .btn { min-height: 48px; padding: 0.75rem; font-size: 1rem; }
-      .modal-inner button[type="submit"], .modal-inner #mark-reviewed { width: 100%; }
+      .content { padding: 1.25rem 1rem 3rem; }
+      .app-bar-inner { padding: 0 1rem; }
+      #list-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      .modal-panel { max-width: none; }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
+      .filter-row { gap: 0.5rem; }
+      .search-wrap { max-width: none; }
     }
 
     @media (max-width: 480px) {
-      body { margin: 0.5rem; }
-      thead { display: none; }
-      .list-wrap table, .list-wrap tbody, .list-wrap tr { display: block; }
-      .list-wrap tr { background: #fff; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #eee; }
-      .list-wrap td { display: block; padding: 0.5rem 1rem; border-bottom: none; }
-      .list-wrap td:last-child { border-top: 1px solid #eee; padding: 0.75rem 1rem; }
-      .list-wrap td::before { content: attr(data-label); display: block; font-size: 0.75rem; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
-      .list-wrap td:last-child::before { display: none; }
-      .list-wrap .btn { width: 100%; padding: 0.75rem; font-size: 1rem; }
-      #list .tag { display: block; margin-bottom: 0.25rem; }
+      .app-bar-inner { height: 54px; }
+      #list-grid { grid-template-columns: 1fr; gap: 0.875rem; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { gap: 0.5rem; }
+      .modal-panel { border-left: none; border-top: 1px solid var(--border-mid); border-radius: 16px 16px 0 0; max-height: 92vh; }
+      #modal.show { align-items: flex-end; }
+      @keyframes slideIn { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      #toast-area { bottom: 1rem; right: 1rem; left: 1rem; }
     }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
   </style>
 </head>
 <body>
+
+  <!-- ── Landing ── -->
   <div id="landing">
-    <h2>Family car reviews</h2>
-    <p>Enter your name so your reviews stay organized.</p>
-    <form id="name-form">
-      <input type="text" name="name" placeholder="Your name" required autofocus>
-      <button type="submit" class="btn" style="margin-top: 0.5rem;">Continue</button>
-    </form>
-  </div>
+    <div class="landing-card">
+      <p class="landing-eyebrow">Family &middot; Garage</p>
+      <h1 class="landing-title">Find your next car.</h1>
+      <p class="landing-sub">Browse, review, and discuss Craigslist listings with your family.</p>
 
-  <div id="main">
-    <h1>Family car reviews</h1>
-    <p class="user-bar">Signed in as <strong id="current-name"></strong> <a href="#" id="change-name">Change name</a></p>
-    <p>Clean-title listings. Sync from scraper; data refreshes every 60 min.</p>
-    <button id="refresh" class="btn">Refresh list</button>
-    <div id="list"></div>
-  </div>
+      <!-- Recent users (populated by JS) -->
+      <div class="user-list" id="user-list" style="display:none"></div>
+      <div class="divider-or" id="new-user-or" style="display:none">or add a new person</div>
 
-  <div id="lightbox" aria-hidden="true"><img src="" alt="Enlarged"></div>
-  <div id="modal" class="modal">
-    <div class="modal-inner">
-      <h2 id="detail-title"></h2>
-      <p id="detail-meta"></p>
-      <div id="detail-images" class="detail-images"></div>
-      <p id="detail-desc"></p>
-      <a id="detail-link" href="#" target="_blank">View on Craigslist</a>
-      <h3>Reviews</h3>
-      <div id="detail-reviews" class="reviews"></div>
-      <form id="review-form">
-        <input name="author" placeholder="Your name" required>
-        <label>Rating (required)</label>
-        <div class="stars-input" id="stars-input" role="group" aria-label="Star rating">
-          <button type="button" data-value="1" title="1 star">☆</button>
-          <button type="button" data-value="2" title="2 stars">☆</button>
-          <button type="button" data-value="3" title="3 stars">☆</button>
-          <button type="button" data-value="4" title="4 stars">☆</button>
-          <button type="button" data-value="5" title="5 stars">☆</button>
-        </div>
-        <input type="hidden" name="stars" id="review-stars" value="">
-        <textarea name="body" rows="3" placeholder="Your review" required></textarea>
-        <button type="submit">Add review</button>
+      <form id="name-form">
+        <input class="landing-input" type="text" name="name" id="name-input" placeholder="Your name" required autocomplete="off">
+        <button type="submit" class="btn-gold">Continue &rarr;</button>
       </form>
-      <p style="margin-top: 1rem;">
-        <button id="mark-reviewed" class="btn">Mark as reviewed</button>
-      </p>
-      <button class="btn secondary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ── Main ── -->
+  <div id="main">
+    <header class="app-bar">
+      <div class="app-bar-inner">
+        <div class="wordmark">Family Cars</div>
+        <div class="user-bar">
+          <div class="avatar" id="user-avatar">?</div>
+          <span id="current-name"></span>
+          <button class="change-btn" id="change-name">Switch</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="stats-row">
+        <div class="stat-pill"><span class="stat-n" id="stat-total">—</span><span class="stat-l">listings</span></div>
+        <div class="stat-pill"><span class="stat-n" id="stat-new">—</span><span class="stat-l">new</span></div>
+        <div class="stat-pill"><span class="stat-n" id="stat-reviewed">—</span><span class="stat-l">reviewed</span></div>
+        <div class="stats-spacer"></div>
+        <button class="btn-gold-outline" id="refresh">&#8635; Refresh</button>
+      </div>
+
+      <div class="filter-row">
+        <div class="search-wrap">
+          <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="search-input" type="search" id="search-input" placeholder="Search by title or location&hellip;" autocomplete="off">
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="new">New</button>
+          <button class="filter-tab" data-filter="unreviewed">Unreviewed</button>
+          <button class="filter-tab" data-filter="reviewed">Reviewed</button>
+          <button class="filter-tab" data-filter="craigslist">CL</button>
+          <button class="filter-tab" data-filter="facebook">FB</button>
+        </div>
+      </div>
+
+      <div class="sort-bar">
+        <span class="sort-label">Sort</span>
+        <button class="sort-pill active" data-sort="updated_at">Newest &#8595;</button>
+        <button class="sort-pill" data-sort="price">Price</button>
+        <button class="sort-pill" data-sort="title">Title</button>
+        <button class="sort-pill" data-sort="status">Status</button>
+      </div>
+
+      <div id="results-count" class="results-count"></div>
+      <div id="list"></div>
+    </div>
+  </div>
+
+  <!-- ── Loading overlay ── -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      Loading listings&hellip;
+    </div>
+  </div>
+
+  <!-- ── Toast area ── -->
+  <div id="toast-area"></div>
+
+  <!-- ── Lightbox ── -->
+  <div id="lightbox" aria-hidden="true"><img src="" alt="Enlarged photo"></div>
+
+  <!-- ── Detail panel ── -->
+  <div id="modal">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <div class="modal-top">
+        <div id="detail-title">Listing</div>
+        <button class="close-btn" onclick="closeModal()" aria-label="Close">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="detail-price" id="detail-price">—</div>
+        <div class="detail-pills" id="detail-meta"></div>
+        <div class="gallery" id="detail-images"></div>
+        <a id="detail-link" href="#" target="_blank" rel="noopener" class="cl-link">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 1h4v4M11 1l-6 6M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
+          View on Craigslist
+        </a>
+
+        <p class="sec-head">Description</p>
+        <p class="detail-desc" id="detail-desc"></p>
+
+        <p class="sec-head">Reviews</p>
+        <div id="detail-reviews"></div>
+
+        <div class="review-form-box">
+          <p class="sec-head" style="margin-bottom:1rem">Leave a Review</p>
+          <form id="review-form">
+            <label class="field-label" for="rf-author">Your name</label>
+            <input id="rf-author" name="author" class="field-input" placeholder="Name" required autocomplete="off">
+
+            <label class="field-label">Rating</label>
+            <div class="star-row" id="stars-input" role="group" aria-label="Star rating">
+              <button type="button" class="star-btn" data-value="1" title="1 star">&#9734;</button>
+              <button type="button" class="star-btn" data-value="2" title="2 stars">&#9734;</button>
+              <button type="button" class="star-btn" data-value="3" title="3 stars">&#9734;</button>
+              <button type="button" class="star-btn" data-value="4" title="4 stars">&#9734;</button>
+              <button type="button" class="star-btn" data-value="5" title="5 stars">&#9734;</button>
+            </div>
+            <input type="hidden" name="stars" id="review-stars" value="">
+
+            <label class="field-label" for="rf-body">Your thoughts</label>
+            <textarea id="rf-body" name="body" class="field-input" rows="3" placeholder="What do you think about this car?" required></textarea>
+
+            <div class="form-btns">
+              <button type="submit" class="btn-gold" style="width:auto;padding:0.7rem 1.25rem;font-size:0.78rem">Post Review</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="hr"></div>
+        <div class="action-row">
+          <button id="mark-reviewed" class="btn-ghost">&#10003; Mark as Reviewed</button>
+          <button class="btn-ghost" onclick="closeModal()">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
+    // ── Constants & state ────────────────────────────────────────────────────
     const API = '';
-    const NAME_KEY = 'familyCarReviewUserName';
+    const USERS_KEY = 'familyCarUsers';      // localStorage: array of names
+    const ACTIVE_KEY = 'familyCarActiveUser'; // localStorage: current name
+
     let listings = [];
     let currentId = null;
+    let sortKey = 'updated_at', sortDir = 'desc';
+    let filterStatus = 'all';
+    let searchQuery = '';
 
-    function getUserName() {
-      return (sessionStorage.getItem(NAME_KEY) || '').trim();
+    // SVG icons
+    const iconPin  = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
+    const iconOdo  = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
+    const iconUser = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+    const iconTag  = `<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`;
+    const iconCar  = `<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="m16 8 5 3v5h-5"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`;
+
+    // ── User management ──────────────────────────────────────────────────────
+    function getUsers() {
+      try { return JSON.parse(localStorage.getItem(USERS_KEY) || '[]'); } catch(e) { return []; }
     }
 
+    function saveUser(name) {
+      const users = getUsers();
+      if (!users.includes(name)) { users.push(name); localStorage.setItem(USERS_KEY, JSON.stringify(users)); }
+      localStorage.setItem(ACTIVE_KEY, name);
+    }
+
+    function removeUser(name) {
+      const users = getUsers().filter(u => u !== name);
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+      if (localStorage.getItem(ACTIVE_KEY) === name) localStorage.removeItem(ACTIVE_KEY);
+    }
+
+    function getUserName() { return (localStorage.getItem(ACTIVE_KEY) || '').trim(); }
+
     function setUserName(name) {
-      sessionStorage.setItem(NAME_KEY, (name || '').trim());
+      name = name.trim();
+      localStorage.setItem(ACTIVE_KEY, name);
+      saveUser(name);
+    }
+
+    // ── Utilities ────────────────────────────────────────────────────────────
+    function esc(s) {
+      const d = document.createElement('div'); d.textContent = s; return d.innerHTML;
+    }
+
+    function toast(msg, type) {
+      type = type || 'error';
+      const el = document.createElement('div');
+      el.className = 'toast ' + type;
+      el.textContent = msg;
+      document.getElementById('toast-area').appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+
+    function setLoading(on) {
+      document.getElementById('loading-overlay').classList.toggle('show', on);
+    }
+
+    function setRefreshing(on) {
+      const btn = document.getElementById('refresh');
+      if (!btn) return;
+      btn.disabled = on;
+      btn.textContent = on ? '⟳ Refreshing…' : '↻ Refresh';
+    }
+
+    // ── Landing / auth ───────────────────────────────────────────────────────
+    function renderLandingUsers() {
+      const users = getUsers();
+      const listEl = document.getElementById('user-list');
+      const orEl = document.getElementById('new-user-or');
+      if (!users.length) { listEl.style.display = 'none'; orEl.style.display = 'none'; return; }
+      listEl.style.display = 'flex';
+      orEl.style.display = 'flex';
+      listEl.innerHTML = users.map(u => `
+        <button type="button" class="user-option" onclick="pickUser(${JSON.stringify(esc(u))})">
+          <div class="av">${esc(u).charAt(0).toUpperCase()}</div>
+          <span class="uname">${esc(u)}</span>
+          <span class="uarrow">→</span>
+        </button>`).join('');
+    }
+
+    function pickUser(name) {
+      setUserName(name);
+      showMain();
+      load();
     }
 
     function showLanding() {
-      document.getElementById('landing').style.display = 'block';
+      renderLandingUsers();
+      document.getElementById('landing').style.display = 'flex';
       document.getElementById('main').classList.remove('show');
     }
 
     function showMain() {
       document.getElementById('landing').style.display = 'none';
       document.getElementById('main').classList.add('show');
-      document.getElementById('current-name').textContent = getUserName();
-      var authorInput = document.querySelector('#review-form input[name="author"]');
-      if (authorInput) authorInput.value = getUserName();
+      const name = getUserName();
+      document.getElementById('current-name').textContent = name;
+      const av = document.getElementById('user-avatar');
+      if (av) av.textContent = name.charAt(0).toUpperCase() || '?';
+      const ai = document.querySelector('#review-form input[name="author"]');
+      if (ai) ai.value = name;
     }
 
     document.getElementById('name-form').onsubmit = function(e) {
       e.preventDefault();
-      var name = (e.target.name.value || '').trim();
+      const name = (e.target.name.value || '').trim();
       if (!name) return;
       setUserName(name);
       showMain();
       load();
     };
 
-    document.getElementById('change-name').onclick = function(e) {
-      e.preventDefault();
-      sessionStorage.removeItem(NAME_KEY);
+    document.getElementById('change-name').onclick = function() {
+      localStorage.removeItem(ACTIVE_KEY);
       showLanding();
-      document.getElementById('name-form').name.value = '';
+      document.getElementById('name-input').value = '';
     };
 
-    if (getUserName()) {
-      showMain();
-    } else {
-      showLanding();
-      document.getElementById('main').classList.remove('show');
-    }
+    if (getUserName()) { showMain(); } else { showLanding(); }
 
-    var sortKey = 'updated_at';
-    var sortDir = 'desc';
-    var NEW_CUTOFF_HOURS = 24;
+    // ── Sort pills ───────────────────────────────────────────────────────────
+    document.querySelectorAll('.sort-pill').forEach(function(pill) {
+      pill.addEventListener('click', function() { setSort(pill.getAttribute('data-sort')); });
+    });
 
+    // ── Filter tabs ──────────────────────────────────────────────────────────
+    document.querySelectorAll('.filter-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        filterStatus = tab.getAttribute('data-filter');
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        render();
+      });
+    });
+
+    // ── Search ───────────────────────────────────────────────────────────────
+    document.getElementById('search-input').addEventListener('input', function() {
+      searchQuery = this.value.toLowerCase();
+      render();
+    });
+
+    // ── Data loading ─────────────────────────────────────────────────────────
     async function load() {
       if (!getUserName()) return;
-      const r = await fetch(API + '/api/listings');
-      listings = await r.json();
-      render();
+      setRefreshing(true);
+      if (!listings.length) setLoading(true);
+      try {
+        const r = await fetch(API + '/api/listings');
+        if (!r.ok) throw new Error('Server error ' + r.status);
+        listings = await r.json();
+        render();
+      } catch(e) {
+        toast('Failed to load listings — check your connection.', 'error');
+      } finally {
+        setLoading(false);
+        setRefreshing(false);
+      }
     }
 
-    function isNew(listing) {
-      if (listing.reviewed_at) return false;
-      var created = listing.created_at;
-      if (!created) return false;
-      var t = new Date(created).getTime();
-      return (Date.now() - t) < NEW_CUTOFF_HOURS * 60 * 60 * 1000;
-    }
+    // ── Helpers ──────────────────────────────────────────────────────────────
+    const NEW_CUTOFF_MS = 24 * 3600 * 1000;
 
-    function statusTags(listing) {
-      if (listing.reviewed_at) return '<span class="tag reviewed">Already reviewed</span>';
-      if (isNew(listing)) return '<span class="tag new">New</span>';
-      return '—';
+    function isNew(l) {
+      if (l.reviewed_at || !l.created_at) return false;
+      return (Date.now() - new Date(l.created_at).getTime()) < NEW_CUTOFF_MS;
     }
 
     function parsePrice(p) {
       if (!p) return null;
-      var n = parseFloat(String(p).replace(/[^0-9.]/g, ''));
+      const n = parseFloat(String(p).replace(/[^0-9.]/g, ''));
       return isNaN(n) ? null : n;
     }
 
     function compare(a, b, key, dir) {
-      var va = a[key], vb = b[key];
+      let va = a[key], vb = b[key];
       if (key === 'price') {
         va = parsePrice(va); vb = parsePrice(vb);
         if (va == null && vb == null) return 0;
@@ -221,183 +1023,272 @@
         return dir === 'asc' ? va - vb : vb - va;
       }
       if (key === 'status') {
-        var sa = a.reviewed_at ? 1 : (isNew(a) ? 0 : -1);
-        var sb = b.reviewed_at ? 1 : (isNew(b) ? 0 : -1);
+        const sa = a.reviewed_at ? 1 : (isNew(a) ? 0 : -1);
+        const sb = b.reviewed_at ? 1 : (isNew(b) ? 0 : -1);
         return dir === 'asc' ? sa - sb : sb - sa;
       }
       if (key === 'updated_at' || key === 'created_at') {
-        var ta = new Date(va || 0).getTime();
-        var tb = new Date(vb || 0).getTime();
-        return dir === 'asc' ? ta - tb : tb - ta;
+        return dir === 'asc'
+          ? new Date(va || 0) - new Date(vb || 0)
+          : new Date(vb || 0) - new Date(va || 0);
       }
-      var sa = (va != null ? String(va) : '').toLowerCase();
-      var sb = (vb != null ? String(vb) : '').toLowerCase();
-      var c = sa.localeCompare(sb);
+      const sa = (va != null ? String(va) : '').toLowerCase();
+      const sb = (vb != null ? String(vb) : '').toLowerCase();
+      const c = sa.localeCompare(sb);
       return dir === 'asc' ? c : -c;
-    }
-
-    function sortListings(list) {
-      var key = sortKey;
-      if (key === 'status') {
-        return list.slice().sort(function(a, b) { return compare(a, b, 'status', sortDir); });
-      }
-      return list.slice().sort(function(a, b) { return compare(a, b, key, sortDir); });
     }
 
     function setSort(key) {
       if (sortKey === key) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-      else { sortKey = key; sortDir = key === 'updated_at' || key === 'created_at' || key === 'price' ? 'desc' : 'asc'; }
+      else { sortKey = key; sortDir = (key === 'updated_at' || key === 'price') ? 'desc' : 'asc'; }
+      const labels = { updated_at: 'Newest', price: 'Price', title: 'Title', status: 'Status' };
+      document.querySelectorAll('.sort-pill').forEach(function(p) {
+        const k = p.getAttribute('data-sort');
+        const active = k === sortKey;
+        p.classList.toggle('active', active);
+        p.textContent = active ? (labels[k] || k) + (sortDir === 'asc' ? ' ↑' : ' ↓') : (labels[k] || k);
+      });
       render();
     }
 
+    function firstImage(l) {
+      try {
+        if (!l.images) return null;
+        const imgs = typeof l.images === 'string' ? JSON.parse(l.images) : l.images;
+        return imgs && imgs.length ? imgs[0] : null;
+      } catch(e) { return null; }
+    }
+
+    function applyFiltersAndSearch(list) {
+      return list.filter(function(l) {
+        // Status filter
+        if (filterStatus === 'new' && !isNew(l)) return false;
+        if (filterStatus === 'reviewed' && !l.reviewed_at) return false;
+        if (filterStatus === 'unreviewed' && l.reviewed_at) return false;
+        // Source filter
+        if (filterStatus === 'craigslist' && l.source !== 'craigslist') return false;
+        if (filterStatus === 'facebook' && l.source !== 'facebook') return false;
+        // Search
+        if (searchQuery) {
+          const hay = ((l.title || '') + ' ' + (l.location || '')).toLowerCase();
+          if (!hay.includes(searchQuery)) return false;
+        }
+        return true;
+      });
+    }
+
+    // ── Render ───────────────────────────────────────────────────────────────
     function render() {
       const el = document.getElementById('list');
-      if (!listings.length) {
-        el.innerHTML = '<p>No listings yet. Run the scraper and sync, or upload CSV at /api/sync.</p>';
+
+      const total = listings.length;
+      const newCount = listings.filter(isNew).length;
+      const reviewedCount = listings.filter(l => l.reviewed_at).length;
+      const setN = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+      setN('stat-total', total); setN('stat-new', newCount); setN('stat-reviewed', reviewedCount);
+
+      const filtered = applyFiltersAndSearch(listings);
+      const sorted = filtered.slice().sort((a, b) => compare(a, b, sortKey, sortDir));
+
+      const countEl = document.getElementById('results-count');
+      if (countEl) {
+        if (filtered.length !== total) {
+          countEl.textContent = filtered.length + ' of ' + total + ' listings';
+        } else {
+          countEl.textContent = '';
+        }
+      }
+
+      if (!total) {
+        el.innerHTML = `<div id="list-grid"><div class="empty">${iconCar}<p>No listings yet. Run the scraper and sync, or upload a CSV at /api/sync.</p></div></div>`;
         return;
       }
-      var sorted = sortListings(listings);
-      var cols = [
-        { key: 'title', label: 'Title' },
-        { key: 'price', label: 'Price' },
-        { key: 'location', label: 'Location' },
-        { key: 'mileage', label: 'Mileage' },
-        { key: 'status', label: 'Status' },
-        { key: 'updated_at', label: 'Updated' },
-        { key: null, label: '' }
-      ];
-      var thead = '<tr>' + cols.map(function(c) {
-        if (!c.key) return '<th></th>';
-        var cls = 'sortable' + (sortKey === c.key ? ' sorted-' + sortDir : '');
-        return '<th class="' + cls + '" data-sort="' + c.key + '" title="Sort by ' + c.label + '">' + escapeHtml(c.label) + '<span class="sort-icon"></span></th>';
-      }).join('') + '</tr>';
-      function formatDate(iso) {
-        if (!iso) return '—';
-        var d = new Date(iso);
-        return isNaN(d.getTime()) ? '—' : d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      if (!sorted.length) {
+        el.innerHTML = `<div id="list-grid"><div class="empty">${iconCar}<p>No listings match your current filters. Try adjusting the search or status filter.</p></div></div>`;
+        return;
       }
-      var rows = sorted.map(function(l) {
-        return '<tr>' +
-          '<td data-label="Title">' + escapeHtml(l.title || '—') + '</td>' +
-          '<td data-label="Price">' + escapeHtml(l.price || '—') + '</td>' +
-          '<td data-label="Location">' + escapeHtml(l.location || '—') + '</td>' +
-          '<td data-label="Mileage">' + escapeHtml(l.mileage || '—') + '</td>' +
-          '<td data-label="Status">' + statusTags(l) + '</td>' +
-          '<td data-label="Updated">' + formatDate(l.updated_at) + '</td>' +
-          '<td><button class="btn" onclick="openDetail(' + l.id + ')">View & review</button></td>' +
-          '</tr>';
-      }).join('');
-      el.innerHTML = '<div class="list-wrap"><table><thead>' + thead + '</thead><tbody>' + rows + '</tbody></table></div>';
-      el.querySelectorAll('th[data-sort]').forEach(function(th) {
-        th.addEventListener('click', function() { setSort(th.getAttribute('data-sort')); });
-      });
+
+      el.innerHTML = '<div id="list-grid">' + sorted.map(function(l, i) {
+        const img = firstImage(l);
+        const imgHtml = img
+          ? `<img src="${esc(img)}" alt="" loading="lazy"><div class="card-img-overlay"></div>`
+          : `<div class="no-photo">${iconCar}<span>No photo</span></div>`;
+        const priceBadge = l.price ? `<div class="card-price">${esc(l.price)}</div>` : '';
+        const badge = l.reviewed_at
+          ? `<span class="card-status reviewed">&#10003; Reviewed</span>`
+          : isNew(l) ? `<span class="card-status isnew">New</span>` : '';
+        const srcBadge = l.source === 'facebook'
+          ? `<span class="source-badge fb">FB</span>`
+          : `<span class="source-badge cl">CL</span>`;
+        const chips = [
+          l.location ? `<span class="chip">${iconPin}${esc(l.location)}</span>` : '',
+          l.mileage  ? `<span class="chip">${iconOdo}${esc(l.mileage)}</span>`  : '',
+        ].filter(Boolean).join('');
+        const delay = Math.min(i * 0.05, 0.55).toFixed(2);
+        return `<div class="car-card" onclick="openDetail(${l.id})" role="button" tabindex="0" style="animation-delay:${delay}s" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail(${l.id})}">
+  <div class="card-img">${imgHtml}${priceBadge}${badge}${srcBadge}</div>
+  <div class="card-body">
+    <div class="card-title">${esc(l.title || '—')}</div>
+    <div class="card-chips">${chips}</div>
+  </div>
+</div>`;
+      }).join('') + '</div>';
     }
 
-    function escapeHtml(s) {
-      const d = document.createElement('div');
-      d.textContent = s;
-      return d.innerHTML;
-    }
-
+    // ── Detail modal ─────────────────────────────────────────────────────────
     async function openDetail(id) {
       currentId = id;
-      const r = await fetch(API + '/api/listings/' + id);
-      const d = await r.json();
-      document.getElementById('detail-title').textContent = d.title || 'Listing';
-      document.getElementById('detail-meta').textContent = [d.price, d.location, d.mileage].filter(Boolean).join(' · ') || '—';
-      var imgs = [];
       try {
-        if (d.images) imgs = typeof d.images === 'string' ? JSON.parse(d.images) : d.images;
-      } catch (e) {}
-      var imagesHtml = '';
-      if (imgs.length) {
-        imagesHtml = '<label>Images</label><div class="detail-images" id="detail-images-wrap">' + imgs.map(function(src) {
-          return '<a href="' + escapeHtml(src) + '" target="_blank" rel="noopener" data-full="' + escapeHtml(src) + '"><img src="' + escapeHtml(src) + '" alt="" loading="lazy"></a>';
-        }).join('') + '</div>';
-      }
-      document.getElementById('detail-images').innerHTML = imagesHtml;
-      document.getElementById('detail-desc').textContent = (d.description || '').slice(0, 500) + (d.description && d.description.length > 500 ? '…' : '');
-      document.getElementById('detail-link').href = d.url || '#';
-      document.getElementById('detail-reviews').innerHTML = (d.reviews || []).map(r => {
-        var stars = r.stars != null && r.stars >= 1 && r.stars <= 5
-          ? '<span class="stars" aria-label="' + r.stars + ' out of 5">' + '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars) + '</span> '
-          : '';
-        return '<div class="review">' + stars + '<strong>' + escapeHtml(r.author) + '</strong> ' + escapeHtml(r.body) + '</div>';
-      }).join('') || '<p>No reviews yet.</p>';
-      document.getElementById('mark-reviewed').style.display = d.reviewed_at ? 'none' : 'inline-block';
-      var authorInput = document.querySelector('#review-form input[name="author"]');
-      if (authorInput && !authorInput.value) authorInput.value = getUserName();
-      var starsInput = document.getElementById('review-stars');
-      if (starsInput) starsInput.value = '';
-      var starsBtns = document.querySelectorAll('#stars-input button[data-value]');
-      starsBtns.forEach(function(b) { b.classList.remove('active'); });
-      document.getElementById('modal').classList.add('show');
-    }
+        const r = await fetch(API + '/api/listings/' + id);
+        if (!r.ok) throw new Error('Server error ' + r.status);
+        const d = await r.json();
 
-    (function setupStarsInput() {
-      var container = document.getElementById('stars-input');
-      var hidden = document.getElementById('review-stars');
-      if (!container || !hidden) return;
-      container.querySelectorAll('button[data-value]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var v = parseInt(btn.getAttribute('data-value'), 10);
-          hidden.value = v;
-          container.querySelectorAll('button[data-value]').forEach(function(b) {
-            b.classList.toggle('active', parseInt(b.getAttribute('data-value'), 10) <= v);
-            b.textContent = parseInt(b.getAttribute('data-value'), 10) <= v ? '★' : '☆';
-          });
-        });
-      });
-    })();
+        document.getElementById('detail-title').textContent = d.title || 'Listing';
+        document.getElementById('detail-price').textContent = d.price || '—';
+
+        const metaEl = document.getElementById('detail-meta');
+        metaEl.innerHTML = [
+          d.location     ? `<span class="detail-pill">${iconPin}${esc(d.location)}</span>` : '',
+          d.mileage      ? `<span class="detail-pill">${iconOdo}${esc(d.mileage)}</span>`  : '',
+          d.owners       ? `<span class="detail-pill">${iconUser}${esc(d.owners)} owner${d.owners !== '1' ? 's' : ''}</span>` : '',
+          d.title_status ? `<span class="detail-pill">${iconTag}${esc(d.title_status)}</span>` : '',
+        ].filter(Boolean).join('');
+
+        let imgs = [];
+        try { if (d.images) imgs = typeof d.images === 'string' ? JSON.parse(d.images) : d.images; } catch(e) {}
+        const imgEl = document.getElementById('detail-images');
+        imgEl.innerHTML = imgs.length
+          ? imgs.map(src => `<a href="${esc(src)}" target="_blank" rel="noopener" data-full="${esc(src)}"><img src="${esc(src)}" alt="" loading="lazy"></a>`).join('')
+          : '';
+
+        document.getElementById('detail-desc').textContent =
+          (d.description || 'No description provided.').slice(0, 600) +
+          (d.description && d.description.length > 600 ? '…' : '');
+        document.getElementById('detail-link').href = d.url || '#';
+
+        const revEl = document.getElementById('detail-reviews');
+        revEl.innerHTML = (d.reviews || []).length
+          ? (d.reviews || []).map(rv => {
+              const stars = rv.stars >= 1 && rv.stars <= 5
+                ? `<span class="review-stars">${'★'.repeat(rv.stars)}${'☆'.repeat(5 - rv.stars)}</span>` : '';
+              return `<div class="review-card"><div class="review-top"><span class="review-author">${esc(rv.author)}</span>${stars}</div><p class="review-text">${esc(rv.body)}</p></div>`;
+            }).join('')
+          : '<p class="no-reviews">No reviews yet. Be the first!</p>';
+
+        document.getElementById('mark-reviewed').style.display = d.reviewed_at ? 'none' : '';
+        const ai = document.querySelector('#review-form input[name="author"]');
+        if (ai) ai.value = getUserName();
+        document.getElementById('review-stars').value = '';
+        document.querySelectorAll('#stars-input .star-btn').forEach(b => { b.classList.remove('active'); b.textContent = '☆'; });
+
+        document.getElementById('modal').classList.add('show');
+      } catch(e) {
+        toast('Could not load listing details.', 'error');
+      }
+    }
 
     function closeModal() {
       document.getElementById('modal').classList.remove('show');
       currentId = null;
     }
 
-    function openLightbox(url) {
-      var lb = document.getElementById('lightbox');
-      if (!lb) return;
-      lb.querySelector('img').src = url;
-      lb.classList.add('show');
-      lb.setAttribute('aria-hidden', 'false');
-    }
-    function closeLightbox() {
-      var lb = document.getElementById('lightbox');
-      if (lb) { lb.classList.remove('show'); lb.setAttribute('aria-hidden', 'true'); }
-    }
-    document.getElementById('lightbox').addEventListener('click', closeLightbox);
+    document.getElementById('modal-backdrop').addEventListener('click', closeModal);
+
+    // ── Stars input ──────────────────────────────────────────────────────────
+    (function setupStars() {
+      const container = document.getElementById('stars-input');
+      const hidden = document.getElementById('review-stars');
+      container.querySelectorAll('.star-btn[data-value]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const v = parseInt(btn.getAttribute('data-value'), 10);
+          hidden.value = v;
+          container.querySelectorAll('.star-btn[data-value]').forEach(function(b) {
+            const bv = parseInt(b.getAttribute('data-value'), 10);
+            b.classList.toggle('active', bv <= v);
+            b.textContent = bv <= v ? '★' : '☆';
+          });
+        });
+      });
+    })();
+
+    // ── Review form ──────────────────────────────────────────────────────────
+    document.getElementById('review-form').onsubmit = async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const starsVal = form.stars.value ? parseInt(form.stars.value, 10) : null;
+      if (!starsVal || starsVal < 1 || starsVal > 5) { toast('Please select a star rating (1–5).', 'error'); return; }
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      try {
+        const r = await fetch(API + '/api/listings/' + currentId + '/reviews', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ author: form.author.value.trim(), body: form.body.value.trim(), stars: starsVal })
+        });
+        if (!r.ok) throw new Error('Server error');
+        form.body.value = '';
+        form.stars.value = '';
+        document.querySelectorAll('#stars-input .star-btn').forEach(b => { b.classList.remove('active'); b.textContent = '☆'; });
+        toast('Review posted!', 'success');
+        openDetail(currentId);
+        load();
+      } catch(err) {
+        toast('Failed to post review — try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    };
+
+    // ── Mark reviewed ────────────────────────────────────────────────────────
+    document.getElementById('mark-reviewed').onclick = async function() {
+      this.disabled = true;
+      try {
+        const r = await fetch(API + '/api/listings/' + currentId + '/reviewed', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reviewed_by: getUserName() })
+        });
+        if (!r.ok) throw new Error('Server error');
+        toast('Marked as reviewed!', 'success');
+        load();
+        openDetail(currentId);
+      } catch(err) {
+        toast('Failed to mark reviewed.', 'error');
+        this.disabled = false;
+      }
+    };
+
+    // ── Lightbox ─────────────────────────────────────────────────────────────
     document.addEventListener('click', function(ev) {
-      var wrap = document.getElementById('detail-images-wrap');
-      if (wrap && ev.target.tagName === 'IMG' && ev.target.closest('.detail-images') && ev.target.closest('a')) {
+      const imgEl = document.getElementById('detail-images');
+      if (imgEl && ev.target.tagName === 'IMG' && ev.target.closest('.gallery') && ev.target.closest('a')) {
         ev.preventDefault();
-        openLightbox(ev.target.closest('a').href);
+        const lb = document.getElementById('lightbox');
+        lb.querySelector('img').src = ev.target.closest('a').href;
+        lb.classList.add('show');
+        lb.setAttribute('aria-hidden', 'false');
       }
     });
 
-    document.getElementById('review-form').onsubmit = async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      var starsVal = form.stars.value ? parseInt(form.stars.value, 10) : null;
-      if (!starsVal || starsVal < 1 || starsVal > 5) {
-        alert('Please select a star rating (1–5).');
-        return;
-      }
-      const body = { author: form.author.value.trim(), body: form.body.value.trim(), stars: starsVal };
-      await fetch(API + '/api/listings/' + currentId + '/reviews', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-      form.body.value = '';
-      form.stars.value = '';
-      document.querySelectorAll('#stars-input button[data-value]').forEach(function(b) { b.classList.remove('active'); b.textContent = '☆'; });
-      openDetail(currentId);
-    };
+    document.getElementById('lightbox').addEventListener('click', function() {
+      this.classList.remove('show');
+      this.setAttribute('aria-hidden', 'true');
+    });
 
-    document.getElementById('mark-reviewed').onclick = async () => {
-      await fetch(API + '/api/listings/' + currentId + '/reviewed', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewed_by: getUserName() }) });
-      load();
-      openDetail(currentId);
-    };
-
+    // ── Refresh ───────────────────────────────────────────────────────────────
     document.getElementById('refresh').onclick = load;
+
+    // ── Keyboard shortcuts ────────────────────────────────────────────────────
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const lb = document.getElementById('lightbox');
+        if (lb.classList.contains('show')) { lb.classList.remove('show'); lb.setAttribute('aria-hidden', 'true'); return; }
+        if (document.getElementById('modal').classList.contains('show')) { closeModal(); }
+      }
+    });
+
+    // ── Init ──────────────────────────────────────────────────────────────────
     if (getUserName()) {
       load();
       setInterval(load, 5 * 60 * 1000);

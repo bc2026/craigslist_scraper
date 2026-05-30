@@ -8,9 +8,13 @@ import sys
 import html
 import requests
 from datetime import datetime
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
-SEARCH_URL = "https://poconos.craigslist.org/search/kresgeville-pa/cta?lat=40.9179&lon=-75.5213&max_auto_miles=120000&max_price=10000&search_distance=104"
+SEARCH_URLS = [
+    "https://poconos.craigslist.org/search/kresgeville-pa/cta?lat=40.9179&lon=-75.5213&max_auto_miles=120000&max_price=10000&search_distance=104",
+    "https://columbus.craigslist.org/search/cta?postal=43201&search_distance=10&max_auto_miles=120000&max_price=10000",
+]
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -76,6 +80,13 @@ def init_db():
         conn.execute("SELECT images FROM listing LIMIT 1")
     except sqlite3.OperationalError:
         conn.execute("ALTER TABLE listing ADD COLUMN images TEXT")
+    try:
+        conn.execute("SELECT source FROM listing LIMIT 1")
+    except sqlite3.OperationalError:
+        conn.execute("ALTER TABLE listing ADD COLUMN source TEXT DEFAULT 'craigslist'")
+        conn.execute(
+            "UPDATE listing SET source='craigslist' WHERE source IS NULL OR source=''"
+        )
     conn.commit()
     conn.close()
 
@@ -122,7 +133,7 @@ def upsert_listing(conn, row):
         images = json.dumps(images) if images else ""
     if existing:
         conn.execute(
-            """UPDATE listing SET title=?, price=?, location=?, mileage=?, owners=?, title_status=?, description=?, images=?, updated_at=? WHERE url=?""",
+            """UPDATE listing SET title=?, price=?, location=?, mileage=?, owners=?, title_status=?, description=?, images=?, source='craigslist', updated_at=? WHERE url=?""",
             (
                 row.get("title", ""),
                 row.get("price", ""),
@@ -138,8 +149,8 @@ def upsert_listing(conn, row):
         )
     else:
         conn.execute(
-            """INSERT INTO listing (url, title, price, location, mileage, owners, title_status, description, images, created_at, updated_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT INTO listing (url, title, price, location, mileage, owners, title_status, description, images, source, created_at, updated_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'craigslist', ?, ?)""",
             (
                 url,
                 row.get("title", ""),
@@ -422,13 +433,6 @@ def write_html_table(rows, fieldnames, path):
 
 
 def main():
-    search_soup = get_soup(SEARCH_URL)
-
-    # Debug: see what we got
-    print("Page length:", len(search_soup.text))
-    result_rows = search_soup.select("li.cl-static-search-result, li.result-row")
-    print("Found result rows:", len(result_rows))
-
     def is_listing_url(href):
         if not href or len(href) < 10:
             return False
@@ -436,23 +440,32 @@ def main():
         return "/cto/" in href or "/ctd/" in href or "/cta/" in href or re.search(r"\d+\.html", href) is not None
 
     links = []
-    for li in result_rows:
-        # Try explicit selectors first, then any <a> that looks like a listing link
-        a = li.select_one("a.cl-app-anchor.text-only") or li.select_one("a.cl-app-anchor") or li.select_one("a.hdrlnk")
-        if not a or not a.get("href"):
-            for tag in li.select("a[href]"):
-                href = tag.get("href") or ""
-                if is_listing_url(href):
-                    a = tag
-                    break
-        if a and a.get("href"):
-            href = a["href"]
-            if href.startswith("/"):
-                href = "https://poconos.craigslist.org" + href
-            if is_listing_url(href):
-                links.append(href)
+    for search_url in SEARCH_URLS:
+        base = f"{urlparse(search_url).scheme}://{urlparse(search_url).netloc}"
+        search_soup = get_soup(search_url)
+        print(f"\nSearching: {search_url}")
+        print("Page length:", len(search_soup.text))
+        result_rows = search_soup.select("li.cl-static-search-result, li.result-row")
+        print("Found result rows:", len(result_rows))
 
-    # Only process listings newer than the newest we've already listed
+        for li in result_rows:
+            # Try explicit selectors first, then any <a> that looks like a listing link
+            a = li.select_one("a.cl-app-anchor.text-only") or li.select_one("a.cl-app-anchor") or li.select_one("a.hdrlnk")
+            if not a or not a.get("href"):
+                for tag in li.select("a[href]"):
+                    href = tag.get("href") or ""
+                    if is_listing_url(href):
+                        a = tag
+                        break
+            if a and a.get("href"):
+                href = a["href"]
+                if href.startswith("/"):
+                    href = base + href
+                if is_listing_url(href):
+                    links.append(href)
+
+    # Deduplicate and filter to only listings newer than the newest already saved
+    links = list(dict.fromkeys(links))
     cutoff = load_state()
     links = [url for url in links if post_id_from_url(url) > cutoff]
     print("Newest already listed (post ID):", cutoff)

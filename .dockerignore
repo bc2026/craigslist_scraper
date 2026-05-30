@@ -1,0 +1,9 @@
+web/instance/
+my-gcp-key
+*.csv
+*.html
+*.log
+.claude/
+__pycache__/
+*.pyc
+.git/
