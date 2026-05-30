@@ -792,7 +792,7 @@
         <div class="gallery" id="detail-images"></div>
         <a id="detail-link" href="#" target="_blank" rel="noopener" class="cl-link">
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 1h4v4M11 1l-6 6M5 3H2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8"/></svg>
-          View on Craigslist
+          <span id="detail-link-label">View on Craigslist</span>
         </a>
 
         <p class="sec-head">Description</p>
@@ -1166,6 +1166,7 @@
           (d.description || 'No description provided.').slice(0, 600) +
           (d.description && d.description.length > 600 ? '…' : '');
         document.getElementById('detail-link').href = d.url || '#';
+        document.getElementById('detail-link-label').textContent = d.source === 'facebook' ? 'View on Facebook Marketplace' : 'View on Craigslist';
 
         const revEl = document.getElementById('detail-reviews');
         revEl.innerHTML = (d.reviews || []).length
