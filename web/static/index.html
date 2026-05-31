@@ -687,6 +687,173 @@
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+
+    /* ── Gauntlet ─────────────────────────────────────── */
+    .btn-gauntlet {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      background: linear-gradient(135deg, rgba(168,152,128,0.15), rgba(168,152,128,0.08));
+      color: var(--gold); font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 600;
+      border: 1px solid rgba(168,152,128,0.35); border-radius: 8px; cursor: pointer;
+      transition: all 0.2s; min-height: 38px; letter-spacing: 0.02em;
+    }
+    .btn-gauntlet:hover { background: linear-gradient(135deg, rgba(168,152,128,0.25), rgba(168,152,128,0.15)); border-color: rgba(168,152,128,0.6); box-shadow: 0 0 12px rgba(168,152,128,0.12); }
+
+    #gauntlet-modal {
+      position: fixed; inset: 0; z-index: 300;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+
+    .gauntlet-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      animation: fadeIn 0.2s;
+    }
+
+    .gauntlet-panel {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 680px; max-height: 90vh;
+      background: var(--surface); border: 1px solid var(--border-mid);
+      border-radius: 20px; display: flex; flex-direction: column;
+      animation: scaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.94) translateY(10px); } to { opacity: 1; transform: none; } }
+
+    .gauntlet-header {
+      padding: 1.375rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.875rem; flex-shrink: 0;
+    }
+
+    .gauntlet-title {
+      flex: 1; font-size: 1.05rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.02em;
+    }
+
+    .gauntlet-body {
+      padding: 1.5rem; overflow-y: auto; flex: 1;
+    }
+
+    .gauntlet-sub {
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.25rem;
+    }
+
+    #gauntlet-prompt {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-mid); border-radius: 10px;
+      padding: 0.875rem 1rem; font-family: 'Sora', sans-serif;
+      font-size: 0.875rem; color: var(--text); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      resize: vertical; min-height: 90px; margin-bottom: 1rem;
+      -webkit-appearance: none;
+    }
+    #gauntlet-prompt::placeholder { color: var(--text-dim); }
+    #gauntlet-prompt:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+
+    .gauntlet-deliberating {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 3rem 1rem; gap: 1rem; text-align: center;
+    }
+
+    .gauntlet-deliberating .spinner {
+      width: 32px; height: 32px;
+      border: 2.5px solid rgba(168,152,128,0.15);
+      border-top-color: var(--gold);
+      border-radius: 50%; animation: spin 0.8s linear infinite;
+      margin-bottom: 0.5rem;
+    }
+
+    .gauntlet-deliberating p { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+    .gauntlet-deliberating-sub { font-size: 0.78rem !important; color: var(--text-muted) !important; font-weight: 400 !important; margin-top: -0.25rem; }
+
+    .gauntlet-summary {
+      font-size: 0.82rem; color: var(--text-muted); line-height: 1.7;
+      background: rgba(168,152,128,0.07); border: 1px solid rgba(168,152,128,0.15);
+      border-radius: 10px; padding: 0.875rem 1rem; margin-bottom: 1.25rem;
+    }
+
+    .gauntlet-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; margin-bottom: 0.875rem; overflow: hidden;
+      cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex; gap: 0;
+    }
+    .gauntlet-card:hover { border-color: rgba(255,255,255,0.14); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+
+    .gauntlet-rank {
+      flex-shrink: 0; width: 52px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: rgba(168,152,128,0.06); border-right: 1px solid var(--border);
+      gap: 0.25rem; padding: 0.75rem 0;
+    }
+
+    .gauntlet-rank-num {
+      font-size: 1.1rem; font-weight: 700; color: var(--gold); line-height: 1;
+    }
+
+    .gauntlet-rank-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+
+    .gauntlet-card-img {
+      flex-shrink: 0; width: 90px; height: auto;
+      background: #0e0e18; overflow: hidden; position: relative;
+    }
+
+    .gauntlet-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .gauntlet-card-body { flex: 1; padding: 0.875rem 1rem; min-width: 0; }
+
+    .gauntlet-card-top {
+      display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.3rem; flex-wrap: wrap;
+    }
+
+    .gauntlet-card-title { font-size: 0.875rem; font-weight: 600; color: var(--text); flex: 1; min-width: 0; }
+    .gauntlet-card-price { font-size: 0.875rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+
+    .gauntlet-score-bar {
+      height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px;
+      margin-bottom: 0.625rem; overflow: hidden;
+    }
+
+    .gauntlet-score-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, #a89880, #d4b896);
+      transition: width 0.6s ease;
+    }
+
+    .gauntlet-verdict {
+      font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.625rem;
+    }
+
+    .gauntlet-pc {
+      display: flex; gap: 0.875rem; flex-wrap: wrap;
+    }
+
+    .gauntlet-pros, .gauntlet-cons {
+      flex: 1; min-width: 120px;
+    }
+
+    .gauntlet-pc-label {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+
+    .gauntlet-pros .gauntlet-pc-label { color: var(--green); }
+    .gauntlet-cons .gauntlet-pc-label { color: var(--red); }
+
+    .gauntlet-pc-item {
+      font-size: 0.72rem; color: var(--text-muted); line-height: 1.5;
+    }
+
+    .gauntlet-pc-item::before { content: '· '; }
+
+    @media (max-width: 480px) {
+      .gauntlet-panel { max-height: 96vh; border-radius: 16px; }
+      .gauntlet-card-img { display: none; }
+      .gauntlet-rank { width: 44px; }
+    }
   </style>
 </head>
 <body>
@@ -728,6 +895,7 @@
         <div class="stat-pill"><span class="stat-n" id="stat-new">—</span><span class="stat-l">new</span></div>
         <div class="stat-pill"><span class="stat-n" id="stat-reviewed">—</span><span class="stat-l">reviewed</span></div>
         <div class="stats-spacer"></div>
+        <button class="btn-gauntlet" id="gauntlet-btn" onclick="openGauntlet()">⚔ Gauntlet</button>
         <button class="btn-gold-outline" id="refresh">&#8635; Refresh</button>
       </div>
 
@@ -772,6 +940,40 @@
 
   <!-- ── Lightbox ── -->
   <div id="lightbox" aria-hidden="true"><img src="" alt="Enlarged photo"></div>
+
+  <!-- ── Gauntlet modal ── -->
+  <div id="gauntlet-modal" style="display:none" aria-modal="true" role="dialog" aria-labelledby="gauntlet-modal-title">
+    <div class="gauntlet-backdrop" onclick="closeGauntlet()"></div>
+    <div class="gauntlet-panel">
+      <div class="gauntlet-header">
+        <div class="gauntlet-title" id="gauntlet-modal-title">⚔ The Gauntlet</div>
+        <button class="close-btn" onclick="closeGauntlet()" aria-label="Close">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/>
+          </svg>
+        </button>
+      </div>
+      <div class="gauntlet-body">
+        <div id="gauntlet-form-area">
+          <p class="gauntlet-sub">Describe what you're looking for. The council — a mechanic, a financial advisor, and a family specialist — will analyze all listings and return the top 10.</p>
+          <textarea id="gauntlet-prompt" placeholder="e.g. Best family car for long highway drives, need 4 doors, prefer under 80k miles, reliability matters most, budget is firm at the listed prices"></textarea>
+          <button class="btn-gold" id="gauntlet-run-btn" onclick="runGauntlet()">Run Gauntlet &rarr;</button>
+        </div>
+        <div id="gauntlet-loading" style="display:none">
+          <div class="gauntlet-deliberating">
+            <div class="spinner"></div>
+            <p>The council is deliberating&hellip;</p>
+            <p class="gauntlet-deliberating-sub">Analyzing all listings against your criteria</p>
+          </div>
+        </div>
+        <div id="gauntlet-results" style="display:none">
+          <div id="gauntlet-summary" class="gauntlet-summary"></div>
+          <div id="gauntlet-list"></div>
+          <button class="btn-ghost" onclick="resetGauntlet()" style="margin-top:0.5rem">&#8592; Run again</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ── Detail panel ── -->
   <div id="modal">
@@ -1286,6 +1488,95 @@
         const lb = document.getElementById('lightbox');
         if (lb.classList.contains('show')) { lb.classList.remove('show'); lb.setAttribute('aria-hidden', 'true'); return; }
         if (document.getElementById('modal').classList.contains('show')) { closeModal(); }
+      }
+    });
+
+    // ── Gauntlet ──────────────────────────────────────────────────────────────
+    function openGauntlet() {
+      resetGauntlet();
+      document.getElementById('gauntlet-modal').style.display = 'flex';
+      setTimeout(() => document.getElementById('gauntlet-prompt').focus(), 50);
+    }
+
+    function closeGauntlet() {
+      document.getElementById('gauntlet-modal').style.display = 'none';
+    }
+
+    function resetGauntlet() {
+      document.getElementById('gauntlet-form-area').style.display = '';
+      document.getElementById('gauntlet-loading').style.display = 'none';
+      document.getElementById('gauntlet-results').style.display = 'none';
+      document.getElementById('gauntlet-run-btn').disabled = false;
+    }
+
+    async function runGauntlet() {
+      const prompt = (document.getElementById('gauntlet-prompt').value || '').trim();
+      if (!prompt) { document.getElementById('gauntlet-prompt').focus(); return; }
+
+      document.getElementById('gauntlet-form-area').style.display = 'none';
+      document.getElementById('gauntlet-loading').style.display = '';
+      document.getElementById('gauntlet-results').style.display = 'none';
+
+      try {
+        const r = await fetch(API + '/api/gauntlet', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt }),
+        });
+        const data = await r.json();
+        if (!r.ok) { throw new Error(data.error || 'Server error ' + r.status); }
+        renderGauntletResults(data);
+      } catch(e) {
+        document.getElementById('gauntlet-form-area').style.display = '';
+        document.getElementById('gauntlet-loading').style.display = 'none';
+        toast('Gauntlet failed: ' + (e.message || 'Unknown error'), 'error');
+      }
+    }
+
+    function renderGauntletResults(data) {
+      document.getElementById('gauntlet-loading').style.display = 'none';
+
+      const summaryEl = document.getElementById('gauntlet-summary');
+      summaryEl.textContent = data.summary || '';
+
+      const listEl = document.getElementById('gauntlet-list');
+      const items = data.top10 || [];
+      listEl.innerHTML = items.map(function(item) {
+        const imgHtml = item.image
+          ? `<img src="${esc(item.image)}" alt="" loading="lazy">`
+          : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:1.5rem">🚗</div>`;
+        const pros = (item.pros || []).map(p => `<div class="gauntlet-pc-item">${esc(p)}</div>`).join('');
+        const cons = (item.cons || []).map(c => `<div class="gauntlet-pc-item">${esc(c)}</div>`).join('');
+        const score = Math.min(100, Math.max(0, item.score || 0));
+        const lid = item.listing_id;
+        return `<div class="gauntlet-card" onclick="closeGauntlet();openDetail(${lid})" role="button" tabindex="0"
+          onkeydown="if(event.key==='Enter'){closeGauntlet();openDetail(${lid})}">
+  <div class="gauntlet-rank">
+    <div class="gauntlet-rank-num">#${item.rank}</div>
+    <div class="gauntlet-rank-label">${score}</div>
+  </div>
+  <div class="gauntlet-card-img">${imgHtml}</div>
+  <div class="gauntlet-card-body">
+    <div class="gauntlet-card-top">
+      <div class="gauntlet-card-title">${esc(item.title || '—')}</div>
+      <div class="gauntlet-card-price">${esc(item.price || '')}</div>
+    </div>
+    <div class="gauntlet-score-bar"><div class="gauntlet-score-fill" style="width:${score}%"></div></div>
+    <div class="gauntlet-verdict">${esc(item.verdict || '')}</div>
+    <div class="gauntlet-pc">
+      ${pros ? `<div class="gauntlet-pros"><div class="gauntlet-pc-label">Pros</div>${pros}</div>` : ''}
+      ${cons ? `<div class="gauntlet-cons"><div class="gauntlet-pc-label">Cons</div>${cons}</div>` : ''}
+    </div>
+  </div>
+</div>`;
+      }).join('');
+
+      document.getElementById('gauntlet-results').style.display = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && document.getElementById('gauntlet-modal').style.display !== 'none') {
+        closeGauntlet();
       }
     });
 

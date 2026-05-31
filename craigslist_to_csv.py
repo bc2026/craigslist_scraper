@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 SEARCH_URLS = [
     "https://poconos.craigslist.org/search/kresgeville-pa/cta?lat=40.9179&lon=-75.5213&max_auto_miles=120000&max_price=10000&search_distance=104",
-    "https://columbus.craigslist.org/search/cta?postal=43201&search_distance=10&max_auto_miles=120000&max_price=10000",
+    "https://columbus.craigslist.org/search/cta?postal=43201&search_distance=100&max_auto_miles=120000&max_price=10000",
 ]
 
 HEADERS = {

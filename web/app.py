@@ -5,11 +5,14 @@ Optional: POST /api/sync with a CSV to import listings manually.
 """
 import csv
 import io
+import json
 import os
+import re
 import sqlite3
 from datetime import datetime
 from pathlib import Path
 
+import google.generativeai as genai
 from flask import (
     Flask,
     jsonify,
@@ -253,6 +256,107 @@ def api_sync():
         return jsonify({"error": "CSV must have 'url' column"}), 400
     inserted, updated = result
     return jsonify({"ok": True, "inserted": inserted, "updated": updated})
+
+
+@app.route("/api/gauntlet", methods=["POST"])
+def api_gauntlet():
+    data = request.get_json() or {}
+    prompt = (data.get("prompt") or "").strip()
+    if not prompt:
+        return jsonify({"error": "prompt required"}), 400
+
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return jsonify({"error": "GEMINI_API_KEY not configured on server"}), 500
+
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT id, url, title, price, location, mileage, owners, title_status, description, images "
+        "FROM listing ORDER BY updated_at DESC LIMIT 150"
+    ).fetchall()
+    conn.close()
+
+    if not rows:
+        return jsonify({"error": "No listings in database"}), 404
+
+    listings_text = ""
+    for r in rows:
+        d = dict(r)
+        desc = (d.get("description") or "")[:250].replace("\n", " ")
+        listings_text += (
+            f"[ID:{d['id']}] {d.get('title', '?')} | {d.get('price', '?')} | "
+            f"Mileage:{d.get('mileage', '?')} | Location:{d.get('location', '?')} | "
+            f"Owners:{d.get('owners', '?')} | Title:{d.get('title_status', '?')} | "
+            f"Desc:{desc}\n"
+        )
+
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel(
+        model_name="gemini-2.0-flash",
+        system_instruction=(
+            "You are a council of three expert used car evaluators — a veteran mechanic, a financial advisor, "
+            "and a family car specialist — working together to rank listings for a buyer. You give brutally "
+            "honest, practical assessments based on the buyer's stated needs. "
+            "Return ONLY raw valid JSON, no markdown fences, no explanation outside the JSON."
+        ),
+    )
+
+    user_msg = (
+        f"Buyer's criteria: {prompt}\n\n"
+        f"Available listings:\n{listings_text}\n"
+        "Return the top 10 best matches as JSON in exactly this format:\n"
+        '{"summary":"1-2 sentences summarizing findings","top10":['
+        '{"rank":1,"listing_id":<int id from [ID:X]>,"score":<0-100>,'
+        '"verdict":"2-3 sentence honest assessment for this specific buyer",'
+        '"pros":["<pro>","<pro>"],"cons":["<con>"]}]}'
+    )
+
+    try:
+        response = model.generate_content(
+            user_msg,
+            generation_config=genai.GenerationConfig(max_output_tokens=2048),
+        )
+    except Exception as e:
+        return jsonify({"error": f"Gemini API error: {e}"}), 502
+
+    raw = response.text.strip()
+    raw = re.sub(r"^```(?:json)?\s*", "", raw)
+    raw = re.sub(r"\s*```$", "", raw).strip()
+
+    try:
+        result = json.loads(raw)
+    except json.JSONDecodeError:
+        m = re.search(r"\{.*\}", raw, re.DOTALL)
+        if m:
+            try:
+                result = json.loads(m.group())
+            except json.JSONDecodeError:
+                return jsonify({"error": "Failed to parse council response", "raw": raw[:500]}), 500
+        else:
+            return jsonify({"error": "Failed to parse council response", "raw": raw[:500]}), 500
+
+    # Enrich top10 items with listing data from DB
+    conn = get_db()
+    for item in result.get("top10", []):
+        lid = item.get("listing_id")
+        if lid:
+            row = conn.execute(
+                "SELECT title, price, url, images, mileage, location FROM listing WHERE id = ?", (lid,)
+            ).fetchone()
+            if row:
+                item["title"] = row["title"]
+                item["price"] = row["price"]
+                item["url"] = row["url"]
+                item["mileage"] = row["mileage"]
+                item["location"] = row["location"]
+                try:
+                    imgs = json.loads(row["images"] or "[]")
+                    item["image"] = imgs[0] if imgs else None
+                except Exception:
+                    item["image"] = None
+    conn.close()
+
+    return jsonify(result)
 
 
 # Ensure DB exists when app is loaded (e.g. by gunicorn)
